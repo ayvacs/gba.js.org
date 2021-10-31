@@ -46,7 +46,7 @@ ul{
 | Canvas
 |-----------------------------------------
 |
-| Classes are automatically overwritten 
+| Classes are automatically overwritten
 | by the filter styles, therefore only
 | attributes and id's can be used.
 |
@@ -162,7 +162,7 @@ li.hide {
 }
 
 .menu li:hover{
-    background: rgba(0,0,0,.1);
+    /*background: rgba(0,0,0,.1);*/
 }
 
 /* show sub nav on hover */

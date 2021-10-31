@@ -1,0 +1,11 @@
+.menu{
+  box-shadow: 0 0 48px 48px rgba(255, 255, 255, 0.1);
+  background: #202124;
+}
+
+li{
+  font-family: 'Rubik', sans-serif;
+  font-size: 13px;
+  color: #ffffff;
+  background: #202124;
+}
