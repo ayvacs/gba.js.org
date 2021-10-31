@@ -1,0 +1,103 @@
+.text{
+  text-align: center;
+  color: #ffffff;
+}
+
+.sociallinks{
+  height: 200px;
+  display: flex;
+  align-items: flex-end;
+}
+
+.scrollable{
+  overflow-y: auto;
+}
+
+img{
+  border-radius: 8px;
+  box-shadow: 0 0 12px 12px rgba(0, 0, 0, 0.1);
+  top: 50%;
+  left: 50%;
+}
+
+h1{
+  text-align: center;
+  color: #ffffff;
+  font-size: 44px;
+}
+
+h2{
+  text-align: center;
+  color: #ffffff;
+  font-size: 38px;
+}
+
+hr{
+  width:80%;
+  height:2px;
+  border-width:0;
+  color:#161616;
+  background-color:#161616;
+}
+
+a{
+  font-size: 22px;
+  color:#a6b3ff;
+  text-decoration: none;
+}
+
+th{
+  padding: 4px;
+}
+
+p{
+  font-size: 20px;
+  color: #ffffff;
+}
+
+body{
+}
+
+body,
+html {
+  height: 100%;
+}
+
+/* Hide scrollbar */
+
+html{
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+body{
+  font-family: 'Rubik', sans-serif;
+  background: #35363a;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  overflow-y: scroll;
+  padding-right: 17px; /* Increase/decrease this value for cross-browser compatibility */
+  box-sizing: content-box; /* So the width will be 100% + 17px */
+}
+
+#particles-js canvas {
+  display: block;
+  vertical-align: bottom;
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+  opacity: 1;
+  -webkit-transition: opacity .8s ease, -webkit-transform 1.4s ease;
+  transition: opacity .8s ease, transform 1.4s ease
+}
+
+#particles-js {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: -10;
+  top: 0;
+  left: 0
+}
