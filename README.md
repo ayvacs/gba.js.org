@@ -1,7 +1,7 @@
 # GBA Online
 
-![GitHub](https://img.shields.io/github/license/uravgcatboy/gba?style=for-the-badge)
-![GitHub commit activity](https://img.shields.io/github/commit-activity/m/uravgcatboy/gba?style=for-the-badge)
+![GitHub](https://img.shields.io/github/license/frogweezer/gba?style=for-the-badge)
+![GitHub commit activity](https://img.shields.io/github/commit-activity/m/frogweezer/gba?style=for-the-badge)
 
 ## Credits
 
