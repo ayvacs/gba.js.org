@@ -1,3 +1,14 @@
+body{
+  font-family: 'Source Sans Pro', sans-serif;
+  background: #0e1117;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  overflow-y: scroll;
+  padding-right: 17px; /* Increase/decrease this value for cross-browser compatibility */
+  box-sizing: content-box; /* So the width will be 100% + 17px */
+}
+
 .text{
   text-align: center;
   color: #ffffff;
@@ -51,7 +62,7 @@ th{
 }
 
 p{
-  font-size: 20px;
+  font-size: 30px;
   color: #ffffff;
 }
 
@@ -60,15 +71,8 @@ i{
   color: #ffffff;
 }
 
-body{
-}
-
-body,
-html {
-  height: 100%;
-}
-
 /* Hide scrollbar */
+
 
 html{
   width: 100%;
@@ -76,16 +80,8 @@ html{
   overflow: hidden;
 }
 
-body{
-  font-family: 'Rubik', sans-serif;
-  background: #35363a;
-  text-align: center;
-  width: 100%;
-  height: 100%;
-  overflow-y: scroll;
-  padding-right: 17px; /* Increase/decrease this value for cross-browser compatibility */
-  box-sizing: content-box; /* So the width will be 100% + 17px */
-}
+
+/* End hide scrollbar */
 
 #particles-js canvas {
   display: block;
