@@ -61,7 +61,7 @@ if (typeof SIMD == "object" && typeof SIMD.Int32x4 == "function") {
     GameBoyAdvanceCompositor.prototype.mask3 = SIMD.Int32x4.splat(0x1800000);
     GameBoyAdvanceCompositor.prototype.mask4 = SIMD.Bool32x4.splat(true);
 }
-function generateIodineGBAGFXCompositors() {
+function generateiodineGBAGFXCompositors() {
     function generateCompositors() {
         function generateLoop(compositeType, doEffects, layers) {
             function generateLoopHead(useVectorized, compositeType) {
@@ -946,4 +946,4 @@ function generateIodineGBAGFXCompositors() {
     //Build and compile the dispatches for every possible mode/effect combination:
     generateDispatches();
 }
-generateIodineGBAGFXCompositors();
+generateiodineGBAGFXCompositors();

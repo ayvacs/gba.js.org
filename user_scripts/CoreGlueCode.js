@@ -199,7 +199,7 @@ window.onload = function () {
     downloadBIOS();
 }
 function downloadBIOS() {
-    downloadFile("Binaries/gba_bios.bin", registerBIOS);
+    downloadFile("binaries/gba_bios.bin", registerBIOS);
 }
 function registerBIOS() {
     processDownload(this, attachBIOS);
@@ -207,7 +207,7 @@ function registerBIOS() {
 }
 function downloadROM(gamename) {
     writeRedTemporaryText("Downloading \"" + games[gamename] + ".\"");
-    downloadFile("Binaries/" + gamename + ".gba", registerROM);
+    downloadFile("binaries/" + gamename + ".gba", registerROM);
 }
 function registerROM() {
     clearTempString();
@@ -224,11 +224,11 @@ function registerIodineHandler() {
         }
         else if (!IodineGUI.defaults.toggleOffthreadCPU && IodineGUI.defaults.toggleOffthreadGraphics) {
             //Try starting Iodine normally, but initialize offthread gfx:
-            IodineGUI.Iodine = new IodineGBAWorkerGfxShim();
+            IodineGUI.Iodine = new iodineGBAWorkerGfxShim();
         }
         else if (IodineGUI.defaults.toggleOffthreadGraphics) {
             //Try starting Iodine in a webworker:
-            IodineGUI.Iodine = new IodineGBAWorkerShim();
+            IodineGUI.Iodine = new iodineGBAWorkerShim();
             //In order for save on page unload, this needs to be done:
             addEvent("beforeunload", window, registerBeforeUnloadHandler);
         }
@@ -246,7 +246,7 @@ function registerBeforeUnloadHandler(e) {
     if (e.preventDefault) {
         e.preventDefault();
     }
-    return "IodineGBA needs to process your save data, leaving now may result in not saving current data.";
+    return "iodineGBA needs to process your save data, leaving now may result in not saving current data.";
 }
 function initTimer() {
 	IodineGUI.Iodine.setIntervalRate(+IodineGUI.defaults.timerRate);

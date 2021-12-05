@@ -47,7 +47,7 @@
      }
      catch (e) {
          //Google Chrome:
-         var loc3 = loc + "/IodineGBA/core/graphics/Worker.js";
+         var loc3 = loc + "/iodineGBA/core/graphics/Worker.js";
          this.worker = new Worker(loc3);
      }
      this.worker.postMessage({

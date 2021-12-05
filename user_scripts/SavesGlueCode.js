@@ -204,7 +204,7 @@ function getSavesKeys() {
     while (index < storageLength) {
         nextKey = findKey(index++);
         if (nextKey !== null && nextKey.length > 0) {
-            if (nextKey.substring(0, 15) == "IodineGBA_SAVE_") {
+            if (nextKey.substring(0, 15) == "iodineGBA_SAVE_") {
                 keysFound.push(nextKey.substring(10));
             }
         }
@@ -239,7 +239,7 @@ function to_byte(str) {
 }
 //Wrapper for localStorage getItem, so that data can be retrieved in various types.
 function findValue(key) {
-    key = "IodineGBA_" + key;
+    key = "iodineGBA_" + key;
     try {
         if (window.localStorage) {
             if (window.localStorage.getItem(key) != null) {
@@ -259,7 +259,7 @@ function findValue(key) {
 }
 //Wrapper for localStorage setItem, so that data can be set in various types.
 function setValue(key, value) {
-    key = "IodineGBA_" + key;
+    key = "iodineGBA_" + key;
     try {
         if (window.localStorage) {
             window.localStorage.setItem(key, JSON.stringify(value));
@@ -274,7 +274,7 @@ function setValue(key, value) {
 }
 //Wrapper for localStorage removeItem, so that data can be set in various types.
 function deleteValue(key) {
-    key = "IodineGBA_" + key;
+    key = "iodineGBA_" + key;
     try {
         if (window.localStorage) {
             window.localStorage.removeItem(key);

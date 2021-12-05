@@ -10,31 +10,31 @@
  */
 var gfxBuffers = null;
 var gfxCounters = null;
-function IodineGBAWorkerGfxShim() {
+function iodineGBAWorkerGfxShim() {
     this.gfx = null;
     gfxBuffers = [getSharedUint8Array(160 * 240 * 3),
       getSharedUint8Array(160 * 240 * 3)];
     gfxCounters = getSharedInt32Array(3);
     this.Iodine = new GameBoyAdvanceEmulator();
 }
-IodineGBAWorkerGfxShim.prototype.play = function () {
+iodineGBAWorkerGfxShim.prototype.play = function () {
     this.Iodine.play();
 }
-IodineGBAWorkerGfxShim.prototype.pause = function () {
+iodineGBAWorkerGfxShim.prototype.pause = function () {
     this.Iodine.pause();
 }
-IodineGBAWorkerGfxShim.prototype.restart = function () {
+iodineGBAWorkerGfxShim.prototype.restart = function () {
     this.Iodine.restart();
 }
-IodineGBAWorkerGfxShim.prototype.setIntervalRate = function (rate) {
+iodineGBAWorkerGfxShim.prototype.setIntervalRate = function (rate) {
     rate = +rate;
     this.Iodine.setIntervalRate(+rate);
 }
-IodineGBAWorkerGfxShim.prototype.timerCallback = function (timestamp) {
+iodineGBAWorkerGfxShim.prototype.timerCallback = function (timestamp) {
     timestamp = timestamp >>> 0;
     this.Iodine.timerCallback(timestamp);
 }
-IodineGBAWorkerGfxShim.prototype.attachGraphicsFrameHandler = function (gfx) {
+iodineGBAWorkerGfxShim.prototype.attachGraphicsFrameHandler = function (gfx) {
     this.gfx = gfx;
     var parentObj = this;
     this.gfx.attachGfxCallback(function () {
@@ -42,65 +42,65 @@ IodineGBAWorkerGfxShim.prototype.attachGraphicsFrameHandler = function (gfx) {
     });
     this.Iodine.attachGraphicsFrameHandler(gfx);
 }
-IodineGBAWorkerGfxShim.prototype.attachAudioHandler = function (audio) {
+iodineGBAWorkerGfxShim.prototype.attachAudioHandler = function (audio) {
     this.Iodine.attachAudioHandler(audio);
 }
-IodineGBAWorkerGfxShim.prototype.enableAudio = function () {
+iodineGBAWorkerGfxShim.prototype.enableAudio = function () {
     this.Iodine.enableAudio();
 }
-IodineGBAWorkerGfxShim.prototype.disableAudio = function () {
+iodineGBAWorkerGfxShim.prototype.disableAudio = function () {
     this.Iodine.disableAudio();
 }
-IodineGBAWorkerGfxShim.prototype.toggleSkipBootROM = function (doEnable) {
+iodineGBAWorkerGfxShim.prototype.toggleSkipBootROM = function (doEnable) {
     doEnable = doEnable | 0;
     this.Iodine.toggleSkipBootROM(doEnable | 0);
 }
-IodineGBAWorkerGfxShim.prototype.toggleDynamicSpeed = function (doEnable) {
+iodineGBAWorkerGfxShim.prototype.toggleDynamicSpeed = function (doEnable) {
     doEnable = doEnable | 0;
     this.Iodine.toggleDynamicSpeed(doEnable | 0);
 }
-IodineGBAWorkerGfxShim.prototype.toggleOffthreadGraphics = function (doEnable) {
+iodineGBAWorkerGfxShim.prototype.toggleOffthreadGraphics = function (doEnable) {
     doEnable = doEnable | 0;
     this.Iodine.toggleOffthreadGraphics(doEnable | 0);
 }
-IodineGBAWorkerGfxShim.prototype.attachSpeedHandler = function (speed) {
+iodineGBAWorkerGfxShim.prototype.attachSpeedHandler = function (speed) {
     this.Iodine.attachSpeedHandler(speed);
 }
-IodineGBAWorkerGfxShim.prototype.attachPlayStatusHandler = function (playStatus) {
+iodineGBAWorkerGfxShim.prototype.attachPlayStatusHandler = function (playStatus) {
     this.Iodine.attachPlayStatusHandler(playStatus);
 }
-IodineGBAWorkerGfxShim.prototype.keyDown = function (keyCode) {
+iodineGBAWorkerGfxShim.prototype.keyDown = function (keyCode) {
     keyCode = keyCode | 0;
     this.Iodine.keyDown(keyCode | 0);
 }
-IodineGBAWorkerGfxShim.prototype.keyUp = function (keyCode) {
+iodineGBAWorkerGfxShim.prototype.keyUp = function (keyCode) {
     keyCode = keyCode | 0;
     this.Iodine.keyUp(keyCode | 0);
 }
-IodineGBAWorkerGfxShim.prototype.incrementSpeed = function (newSpeed) {
+iodineGBAWorkerGfxShim.prototype.incrementSpeed = function (newSpeed) {
     newSpeed = +newSpeed;
     this.Iodine.incrementSpeed(+newSpeed);
 }
-IodineGBAWorkerGfxShim.prototype.setSpeed = function (newSpeed) {
+iodineGBAWorkerGfxShim.prototype.setSpeed = function (newSpeed) {
     newSpeed = +newSpeed;
     this.Iodine.setSpeed(+newSpeed);
 }
-IodineGBAWorkerGfxShim.prototype.attachBIOS = function (BIOS) {
+iodineGBAWorkerGfxShim.prototype.attachBIOS = function (BIOS) {
     this.Iodine.attachBIOS(BIOS);
 }
-IodineGBAWorkerGfxShim.prototype.attachROM = function (ROM) {
+iodineGBAWorkerGfxShim.prototype.attachROM = function (ROM) {
     this.Iodine.attachROM(ROM);
 }
-IodineGBAWorkerGfxShim.prototype.exportSave = function () {
+iodineGBAWorkerGfxShim.prototype.exportSave = function () {
     this.Iodine.exportSave();
 }
-IodineGBAWorkerGfxShim.prototype.attachSaveExportHandler = function (saveExport) {
+iodineGBAWorkerGfxShim.prototype.attachSaveExportHandler = function (saveExport) {
     this.Iodine.attachSaveExportHandler(saveExport);
 }
-IodineGBAWorkerGfxShim.prototype.attachSaveImportHandler = function (saveImport) {
+iodineGBAWorkerGfxShim.prototype.attachSaveImportHandler = function (saveImport) {
     this.Iodine.attachSaveImportHandler(saveImport);
 }
-IodineGBAWorkerGfxShim.prototype.graphicsHeartBeat = function () {
+iodineGBAWorkerGfxShim.prototype.graphicsHeartBeat = function () {
     //If graphics callback handle provided and we got a buffer reference:
     if (this.gfx && gfxCounters) {
         //Copy the buffer out to local:
@@ -109,7 +109,7 @@ IodineGBAWorkerGfxShim.prototype.graphicsHeartBeat = function () {
         Atomics.notify(gfxCounters, 2, 1);
     }
 }
-IodineGBAWorkerGfxShim.prototype.consumeGraphicsBuffer = function () {
+iodineGBAWorkerGfxShim.prototype.consumeGraphicsBuffer = function () {
     //Load the counter values:
     var start = gfxCounters[0] | 0;              //Written by this thread.
     var end = Atomics.load(gfxCounters, 1) | 0;  //Written by the other thread.
