@@ -21,7 +21,3 @@
 ## Credits
 
 Built on <a href="https://github.com/jsemu2/gba">jsemu2/gba</a>
-
----
-
-`v1.0.1`
