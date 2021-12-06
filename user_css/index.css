@@ -1,3 +1,13 @@
+#site-banner{
+  background-color: #d36c00;
+  border-radius: 6px;
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 25px;
+  height: 31px;
+}
+
 body{
   font-family: 'Source Sans Pro', sans-serif;
   background: #0e1117;
@@ -22,6 +32,23 @@ body{
 
 .scrollable{
   overflow-y: auto;
+}
+
+.table-center {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#version-title-currentver{
+  background-color: #ff4040;
+  border-radius: 6px;
+  width: 110%;
+}
+
+#version-title-latestver{
+  background-color: #4076ff;
+  border-radius: 6px;
+  width: 110%;
 }
 
 img{

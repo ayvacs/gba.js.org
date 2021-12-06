@@ -5,9 +5,14 @@
   <link rel="stylesheet" href="user_css/index.css">
   <link rel="shortcut icon" type="image/png" href="https://raw.githubusercontent.com/frogweezer/gba/gh-pages/assets/favicon.png">
   <meta charset="UTF-8">
+
+  <script src="user_scripts/Homepage/GetVersion.js"></script>
 </head>
 <body>
   <div id="particles-js"></div>  <!-- Add Particles -->
+
+
+  <p id="site-banner">Welcome to the <b>beta test</b> for <b>1.1.0</b>!</p>
 
   <br>
   <img src="assets/repo-card.png" height="300px">
@@ -16,10 +21,19 @@
   <p>Welcome to <b>GBA Online</b>, a modern GameBoy Advance emulator for the web.</p>
 
   <p style="font-size:25px;">
+    <br>
     Created by <b>
       <a style="font-size:25px;" href="https://github.com/frogweezer/gba">@frogweezer</a>
     </b>
   </p>
+
+  <table class="table-center">
+    <tr>
+      <th><p id="version-title-currentver"><!-- managed by user_scripts/Homepage/GetVersion.js --></p></th>
+    </tr><tr>
+      <th><p id="version-title-latestver"><!-- managed by user_scripts/Homepage/GetVersion.js --></p></th>
+    </tr>
+  </table>
 
   <h1>Select a Game</h1>
 
