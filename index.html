@@ -7,7 +7,7 @@
   <link rel="shortcut icon" type="image/png" href="assets/favicon.png">
   <meta charset="UTF-8">
 
-  <script src="user_scripts/Homepage/GetVersion.js"></script>
+  <script src="user_scripts/homepage/GetVersion.js"></script>
   <script src="particles/scripts/particles.js"></script>
   <script src="particles/scripts/load.js"></script>
 </head>
@@ -15,7 +15,7 @@
   <div id="particles-js"></div>  <!-- Add Particles -->
 
   <br>
-  <img src="assets/repo-card.png" height="300px">
+  <img id="repo-card" src="assets/repo-card.png" height="300px">
   <br><br>
 
   <p>Welcome to <b>GBA Online</b>, a modern GameBoy Advance emulator for the web.</p>
@@ -27,13 +27,15 @@
     </b>
   </p>
 
-  <table class="table-center">
-    <tr>
-      <th><p id="version-title-currentver"><!-- managed by user_scripts/Homepage/GetVersion.js --></p></th>
-    </tr><tr>
-      <th><p id="version-title-latestver"><!-- managed by user_scripts/Homepage/GetVersion.js --></p></th>
-    </tr>
-  </table>
+  <div id="version-title-currentver">
+    <p><!-- managed by user_scripts/homepage/GetVersion.js --></p>
+  </div>
+
+  <br>
+
+  <div id="version-title-latestver">
+    <p><!-- managed by user_scripts/homepage/GetVersion.js --></p>
+  </div>
 
   <h1>Select a Game</h1>
 
@@ -136,7 +138,9 @@
   <a href="./player.html#zelda_past">The Legend of Zelda: A Link to the Past</a><br>
   <a href="./player.html#zelda_minish">The Legend of Zelda: The Minish Cap</a><br>
 
-  <hr>
+  <br> <hr> <br>
+
+
 
   <br><br><br><br><br>
 </body>

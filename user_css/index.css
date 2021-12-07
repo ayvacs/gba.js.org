@@ -49,12 +49,14 @@ body{
 
 #version-title-currentver,
 #version-title-latestver{
+  color: white;
   border-radius: 6px;
-  width: 110%;
-  transform: translate(-5%, 0%);
+  width: 40%;
+  transform: translate(75%, 0%);
+  font-size: 22px;
 }
 
-img{
+#repo-card{
   border-radius: 8px;
   box-shadow: 0 0 12px 12px rgba(0, 0, 0, 0.1);
   top: 50%;
@@ -101,6 +103,13 @@ i{
   color: #ffffff;
 }
 
+hr{
+  height: 2px;
+  border-width: 0;
+  color: white;
+  background-color: #919191;
+}
+
 /* Hide scrollbar */
 
 
@@ -112,6 +121,8 @@ html{
 
 
 /* End hide scrollbar */
+
+/* particles-js */
 
 #particles-js canvas {
   display: block;
