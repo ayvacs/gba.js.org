@@ -20,9 +20,23 @@
   <p style="font-size:25px;">
     <br>
     Created by <b>
-      <a style="font-size:25px;" href="https://github.com/frogweezer/gba">@frogweezer</a>
+      <a style="font-size:25px;" href="https://github.com/frogweezer">@frogweezer</a>
     </b>
   </p>
+
+  <button type="collapsible-button" class="collapsible-collapsible">Keybinds</button>
+  <div class="collapsible-content">
+    <p class="collapsible-text">
+      ill do it later 😃
+    </p>
+  </div><br>
+
+  <button type="collapsible-button" class="collapsible-collapsible">Source Code</button>
+  <div class="collapsible-content">
+    <p class="collapsible-text">
+      View the source code on <a href="https://github.com/frogweezer/gba">GitHub</a>!
+    </p>
+  </div><br>
 
   <h1>Select a Game</h1>
 
@@ -42,7 +56,7 @@
   <a href="./player.html#drilldozer">Drill Dozer</a><br>
   <a href="./player.html#earthwormjim">Earthworm Jim</a><br>
   <a href="./player.html#earthwormjim2">Earthworm Jim 2</a><br>
-  <a href="./player.html#ff1and2">Final Fantasy 1 &amp; 2 Advance</a><br>
+  <a href="./player.html#ff1and2">Final Fantasy 1 & 2 Advance</a><br>
   <a href="./player.html#ff4S">Final Fantasy IV Advance (Sound Restoration Mod)</a><br>
   <a href="./player.html#ff6">Final Fantasy VI Advance</a><br>
   <a href="./player.html#final_fantasy_tactics">Final Fantasy Tactics Advance</a><br>
@@ -52,18 +66,18 @@
   <a href="./player.html#frogger3">Frogger"s Adventures 2 - The Lost Wand</a><br>
   <a href="./player.html#fzero_gp">F-Zero - GP Legend</a><br>
   <a href="./player.html#fzero_max">F-Zero - Maximum Velocity</a><br>
-  <a href="./player.html#gamewatch4">Game &amp; Watch Gallery 4</a><br>
+  <a href="./player.html#gamewatch4">Game & Watch Gallery 4</a><br>
   <a href="./player.html#goldensun">Golden Sun</a><br>
   <a href="./player.html#gunstar_super_heroes">Gunstar Super Heroes</a><br>
   <a href="./player.html#hamtaro_heartbreak">Hamtaro - Ham-Ham Heartbreak</a><br>
   <a href="./player.html#iridion">Iridion 3D</a><br>
-  <a href="./player.html#kirbymirror">Kirby &amp; The Amazing Mirror</a><br>
+  <a href="./player.html#kirbymirror">Kirby & The Amazing Mirror</a><br>
   <a href="./player.html#kirbynightmare">Kirby: Nightmare in Dreamland</a><br>
-  <a href="./player.html#superstar">Mario &amp; Luigi: Superstar Saga</a><br>
+  <a href="./player.html#superstar">Mario & Luigi: Superstar Saga</a><br>
   <a href="./player.html#mariokart">Mario Kart: Super Circuit</a><br>
   <a href="./player.html#marioparty">Mario Party Advance</a><br>
   <a href="./player.html#mariopinball">Mario Pinball Land</a><br>
-  <a href="./player.html#megamanbass">Megaman &amp; Bass</a><br>
+  <a href="./player.html#megamanbass">Megaman & Bass</a><br>
   <a href="./player.html#megaman_battle1">Megaman Battle Network 1</a><br>
   <a href="./player.html#megaman_battle2">Megaman Battle Network 2</a><br>
   <a href="./player.html#megaman_battle3_blue">Megaman Battle Network 3 Blue</a><br>
@@ -132,9 +146,27 @@
   <br><br><br><br><br>
   <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
   <script>
+    // Particles JS
     particlesJS.load("particles-js", "particles/main.json", function(){
       console.log("particles.json loaded");
     });
   </script>
+  <script>
+    // Collapsible
+    var coll = document.getElementsByClassName("collapsible-collapsible");
+    var i;
+
+    for (i = 0; i < coll.length; i++) {
+      coll[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var content = this.nextElementSibling;
+        if (content.style.maxHeight){
+          content.style.maxHeight = null;
+        } else {
+          content.style.maxHeight = content.scrollHeight + "px";
+        }
+      });
+    }
+    </script>
 </body>
 </html>
