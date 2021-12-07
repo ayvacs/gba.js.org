@@ -20,6 +20,7 @@ body{
 }
 
 .text{
+  font-family: 'Source Sans Pro', sans-serif;
   text-align: center;
   color: #ffffff;
 }
@@ -59,12 +60,14 @@ img{
 }
 
 h1{
+  font-family: 'Source Sans Pro', sans-serif;
   text-align: center;
   color: #ffffff;
   font-size: 44px;
 }
 
 h2{
+  font-family: 'Source Sans Pro', sans-serif;
   text-align: center;
   color: #ffffff;
   font-size: 38px;
@@ -79,6 +82,7 @@ hr{
 }
 
 a{
+  font-family: 'Source Sans Pro', sans-serif;
   font-size: 22px;
   color:#a6b3ff;
   text-decoration: none;
@@ -89,11 +93,13 @@ th{
 }
 
 p{
+  font-family: 'Source Sans Pro', sans-serif;
   font-size: 30px;
   color: #ffffff;
 }
 
 i{
+  font-family: 'Source Sans Pro', sans-serif;
   font-size: 22px;
   color: #ffffff;
 }
