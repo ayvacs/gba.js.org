@@ -5,11 +5,11 @@
   margin-left: auto;
   margin-right: auto;
   font-size: 22px;
-  height: 26px;
+  height: 32px;
 }
 
 body{
-  font-family: "Source Sans Pro", sans-serif;
+  font-family: 'Merriweather Sans', sans-serif;
   background: #0e1117;
   text-align: center;
   width: 100%;
@@ -41,13 +41,14 @@ body{
 
 #version-title-currentver{
   background-color: #ff4040;
-  border-radius: 6px;
-  width: 110%;
-  transform: translate(-5%, 0%);
 }
 
 #version-title-latestver{
   background-color: #4076ff;
+}
+
+#version-title-currentver,
+#version-title-latestver{
   border-radius: 6px;
   width: 110%;
   transform: translate(-5%, 0%);
@@ -61,14 +62,12 @@ img{
 }
 
 h1{
-  font-family: "Source Sans Pro", sans-serif;
   text-align: center;
   color: #ffffff;
   font-size: 44px;
 }
 
 h2{
-  font-family: "Source Sans Pro", sans-serif;
   text-align: center;
   color: #ffffff;
   font-size: 38px;
@@ -83,7 +82,6 @@ hr{
 }
 
 a{
-  font-family: "Source Sans Pro", sans-serif;
   font-size: 22px;
   color:#a6b3ff;
   text-decoration: none;
@@ -94,13 +92,11 @@ th{
 }
 
 p{
-  font-family: "Source Sans Pro", sans-serif;
   font-size: 30px;
   color: #ffffff;
 }
 
 i{
-  font-family: "Source Sans Pro", sans-serif;
   font-size: 22px;
   color: #ffffff;
 }
