@@ -7,9 +7,7 @@
   <link rel="shortcut icon" type="image/png" href="assets/favicon.png">
   <meta charset="UTF-8">
 
-  <script src="user_scripts/homepage/GetVersion.js"></script>
   <script src="particles/scripts/particles.js"></script>
-  <script src="particles/scripts/load.js"></script>
 </head>
 <body>
   <div id="particles-js"></div>  <!-- Add Particles -->
@@ -26,16 +24,6 @@
       <a style="font-size:25px;" href="https://github.com/frogweezer/gba">@frogweezer</a>
     </b>
   </p>
-
-  <div id="version-title-currentver">
-    <p><!-- managed by user_scripts/homepage/GetVersion.js --></p>
-  </div>
-
-  <br>
-
-  <div id="version-title-latestver">
-    <p><!-- managed by user_scripts/homepage/GetVersion.js --></p>
-  </div>
 
   <h1>Select a Game</h1>
 
@@ -143,5 +131,11 @@
 
 
   <br><br><br><br><br>
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <script>
+    particlesJS.load("particles-js", "particles/main.json", function(){
+      console.log("particles.json loaded");
+    });
+  </script>
 </body>
 </html>

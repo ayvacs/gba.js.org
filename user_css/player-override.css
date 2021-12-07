@@ -14,3 +14,19 @@ li{
   position: fixed;
   left: 94.5%;
 }
+
+.message {
+  font-family: "Rubik", sans-serif;
+  background: #6cc27d;
+  padding: 1em 2em;
+  text-align: center;
+  color: #fff;
+  bottom: 0px;
+  position: fixed;
+  left: 0px;
+  display: none;
+  font-weight: bold;
+  vertical-align: bottom;
+  font-family: monospace;
+  z-index: 1;
+}
