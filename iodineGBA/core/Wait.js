@@ -322,7 +322,7 @@ GameBoyAdvanceWait.prototype.drainOverdueClocks = function () {
             this.clocks = ((this.clocks | 0) - (this.waitStateClocks16[address | 0] | 0)) | 0;
             this.buffer = ((this.buffer | 0) + 1) | 0;
         } while ((this.clocks | 0) > 0 && (this.buffer | 0) < 8);
-        //If we're deficient in clocks, fit them in before the access:
+        //If we"re deficient in clocks, fit them in before the access:
         if ((this.clocks | 0) < 0) {
             this.IOCore.updateCoreNegative(this.clocks | 0);
             this.clocks = 0;

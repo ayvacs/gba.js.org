@@ -124,7 +124,7 @@ GameBoyAdvanceEmulator.prototype.timerCallback = function (lastTimestamp) {
 }
 GameBoyAdvanceEmulator.prototype.iterationStartSequence = function () {
     this.calculateSpeedPercentage();                                    //Calculate the emulator realtime run speed heuristics.
-    this.emulatorStatus = this.emulatorStatus | 0x2;                    //If the end routine doesn't unset this, then we are marked as having crashed.
+    this.emulatorStatus = this.emulatorStatus | 0x2;                    //If the end routine doesn"t unset this, then we are marked as having crashed.
     this.audioUnderrunAdjustment();                                     //If audio is enabled, look to see how much we should overclock by to maintain the audio buffer.
     this.audioPushNewState();                                           //Check to see if we need to update the audio core for any output changes.
     this.runStartJobs();                                                //Run various callbacks assigned from internal components.
@@ -352,7 +352,7 @@ GameBoyAdvanceEmulator.prototype.attachAudioHandler = function (mixerInputHandle
 }
 GameBoyAdvanceEmulator.prototype.enableAudio = function () {
     if ((this.audioFound | 0) == 0 && this.audio) {
-        this.audioFound = 1;    //Set audio to 'found' by default.
+        this.audioFound = 1;    //Set audio to "found" by default.
         //Attempt to enable audio:
         var parentObj = this;
         this.audio.initialize(2, (this.clocksPerSecond | 0) / (this.audioResamplerFirstPassFactor | 0), Math.max((+this.clocksPerMilliSecond) * (this.settings.audioBufferSize | 0) / (this.audioResamplerFirstPassFactor | 0), 4) | 0, function () {

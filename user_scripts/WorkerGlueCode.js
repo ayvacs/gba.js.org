@@ -215,7 +215,7 @@ iodineGBAWorkerShim.prototype.consumeAudioBuffer = function () {
     //Load the counter values:
     var start = this.audioCounters[0] | 0;                //Written by this thread.
     var end = Atomics.load(this.audioCounters, 1) | 0;    //Written to by the other thread.
-    //Don't process if nothing to process:
+    //Don"t process if nothing to process:
     if ((end | 0) == (start | 0)) {
         //Buffer is empty:
         return;
@@ -223,7 +223,7 @@ iodineGBAWorkerShim.prototype.consumeAudioBuffer = function () {
     //Copy samples out from the ring buffer:
     this.copyAudioBuffer(start | 0, end | 0);
     //Update the sample count reported by the audio mixer:
-    //Done before updating ring buffer counter, so we don't over-produce:
+    //Done before updating ring buffer counter, so we don"t over-produce:
     this.audioPostHeartBeat();
     //Update the starting position counter to match the end position:
     //Atomic store, because the sample count by the audio system needs to be reported prior to this:
@@ -237,7 +237,7 @@ iodineGBAWorkerShim.prototype.copyAudioBuffer = function (start, end) {
     //Compute the positions in the ring buffer:
     var startCorrected = ((start | 0) & (this.audioBufferSizeMask | 0)) | 0;
     var endCorrected = ((end | 0) & (this.audioBufferSizeMask | 0)) | 0;
-    //Copy samples out to audio mixer input (but don't process them yet):
+    //Copy samples out to audio mixer input (but don"t process them yet):
     if ((startCorrected | 0) >= (endCorrected | 0)) {
         //Handle looping to start of buffer:
         this.audio.pushDeferred(this.audioBuffer, startCorrected | 0, this.audioBufferSize | 0);
@@ -264,7 +264,7 @@ iodineGBAWorkerShim.prototype.consumeGraphicsBuffer = function () {
     //Load the counter values:
     var start = this.gfxCounters[0] | 0;              //Written by this thread.
     var end = Atomics.load(this.gfxCounters, 1) | 0;  //Written by the other thread.
-    //Don't process if nothing to process:
+    //Don"t process if nothing to process:
     if ((end | 0) == (start | 0)) {
         //Buffer is empty:
         return;

@@ -10,8 +10,8 @@ package {
 		public var volume:Number = 0;
 		public var samplesFound:int = 0;
 		public function XAudioJS() {
-			ExternalInterface.addCallback('initialize', initialize);
-			ExternalInterface.addCallback('changeVolume', changeVolume);
+			ExternalInterface.addCallback("initialize", initialize);
+			ExternalInterface.addCallback("changeVolume", changeVolume);
 		}
 		//Initialization function for the flash backend of XAudioJS:
 		public function initialize(channels:Number, newVolume:Number):void {

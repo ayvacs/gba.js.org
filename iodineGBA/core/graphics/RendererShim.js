@@ -14,7 +14,7 @@
      }
      else {
          try {
-			 //Some browsers don't allow webworkers via file:///
+			 //Some browsers don"t allow webworkers via file:///
 			 return new GameBoyAdvanceGraphicsRendererShim(coreExposed, skippingBIOS);
 		 }
 		 catch (error) {
@@ -37,7 +37,7 @@
      var loc = loc.split("/");
      loc = loc.slice(0, loc.length - 1).join("/");
      try {
-         if (typeof WorkerGlobalScope === 'undefined' || !(self instanceof WorkerGlobalScope)) {
+         if (typeof WorkerGlobalScope === "undefined" || !(self instanceof WorkerGlobalScope)) {
              //Use the catch block:
              throw null;
          }
@@ -218,7 +218,7 @@ GameBoyAdvanceGraphicsRendererShim.prototype.pushOAM32 = function (address, data
 GameBoyAdvanceGraphicsRendererShim.prototype.incrementScanLineQueue = function () {
     //Increment scan line command:
     this.pushCommand(0, 0);
-    //Increment how many scanlines we've pushed out:
+    //Increment how many scanlines we"ve pushed out:
     this.linesPassed = ((this.linesPassed | 0) + 1) | 0;
 }
 GameBoyAdvanceGraphicsRendererShim.prototype.ensureFraming = function () {

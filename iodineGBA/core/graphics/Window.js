@@ -9,7 +9,7 @@
  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 function GameBoyAdvanceWindowRenderer(compositor) {
-    //Get a layer compositor that we'll send our parameters for windowing to:
+    //Get a layer compositor that we"ll send our parameters for windowing to:
     this.compositor = compositor;
 }
 GameBoyAdvanceWindowRenderer.prototype.initialize = function () {
@@ -33,7 +33,7 @@ GameBoyAdvanceWindowRenderer.prototype.renderScanLine = function (line, toRender
     toRender = toRender | 0;
     //Windowing can disable out further layers:
     toRender = toRender & this.windowDisplayControl;
-    //Check if we're doing windowing for the current line:
+    //Check if we"re doing windowing for the current line:
     if (this.checkYRange(line | 0)) {
         //Windowing is active for the current line:
         var right =  this.WINXCoordRight | 0;

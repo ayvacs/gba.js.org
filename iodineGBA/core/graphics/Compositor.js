@@ -81,7 +81,7 @@ function generateiodineGBAGFXCompositors() {
                                 "var backdrop = SIMD.Int32x4.splat(this.gfx.backdrop | 0);";
                         switch (layers) {
                             case 0:
-                                //Don't need any if no layers to process:
+                                //Don"t need any if no layers to process:
                                 break;
                             default:
                                 //Need this temp for more than one layer:
@@ -103,7 +103,7 @@ function generateiodineGBAGFXCompositors() {
                     else {
                         switch (layers) {
                             case 0:
-                                //Don't need any if no layers to process:
+                                //Don"t need any if no layers to process:
                                 break;
                             default:
                                 //Need this temp for more than one layer:
@@ -671,9 +671,9 @@ function generateiodineGBAGFXCompositors() {
                     if (useVectorized) {
                         switch (compositeType) {
                             case 0:
-                                //Check if we're processing the sprite layer:
+                                //Check if we"re processing the sprite layer:
                                 if (layers < 0x10) {
-                                    //Don't need color effects processing for the else case:
+                                    //Don"t need color effects processing for the else case:
                                     if (doEffects) {
                                         //Effects handling:
                                         code +=
@@ -694,9 +694,9 @@ function generateiodineGBAGFXCompositors() {
                                 }
                                 break;
                             case 1:
-                                //Check if we're processing the sprite layer:
+                                //Check if we"re processing the sprite layer:
                                 if (layers < 0x10) {
-                                    //Don't need color effects processing for the else case:
+                                    //Don"t need color effects processing for the else case:
                                     if (doEffects) {
                                         //Effects handling:
                                         code +=
@@ -789,7 +789,7 @@ function generateiodineGBAGFXCompositors() {
             return generateLoopHead(typeof SIMD == "object" && typeof SIMD.Int32x4 == "function", compositeType);
         }
         function generateCompositor(compositeType, doEffects) {
-            //Get function suffix we'll use depending on color effects usage:
+            //Get function suffix we"ll use depending on color effects usage:
             var effectsPrefix = (doEffects) ? "special" : "normal";
             //Loop through all possible combinations of layers:
             for (var layers = 0; layers < 0x20; layers++) {
@@ -836,7 +836,7 @@ function generateiodineGBAGFXCompositors() {
                 }
                 function generateDispatchBody(coordsSpecified, doEffects) {
                     function generateSwitchHead(bodyCode) {
-                        //We're building a switch statement:
+                        //We"re building a switch statement:
                         var code =
                         "switch (layers | 0) {" +
                             bodyCode +

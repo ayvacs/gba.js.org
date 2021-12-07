@@ -152,7 +152,7 @@ ARMInstructionSet.prototype.performMUL32 = function () {
         /*
          http://www.chiark.greenend.org.uk/~theom/riscos/docs/ultimate/a252armc.txt
 
-         Due to the way that Booth's algorithm has been implemented, certain
+         Due to the way that Booth"s algorithm has been implemented, certain
          combinations of operand registers should be avoided. (The assembler will
          issue a warning if these restrictions are overlooked.)
          The destination register (Rd) should not be the same as the Rm operand
@@ -170,7 +170,7 @@ ARMInstructionSet.prototype.performMUL32MLA = function () {
         /*
          http://www.chiark.greenend.org.uk/~theom/riscos/docs/ultimate/a252armc.txt
 
-         Due to the way that Booth's algorithm has been implemented, certain
+         Due to the way that Booth"s algorithm has been implemented, certain
          combinations of operand registers should be avoided. (The assembler will
          issue a warning if these restrictions are overlooked.)
          The destination register (Rd) should not be the same as the Rm operand
@@ -280,11 +280,11 @@ ARMInstructionSet.prototype.guardUserRegisterWriteLDM = function (address, data)
     data = data | 0;
     if ((address | 0) < 0xF) {
         if ((this.execute & 0x8000) != 0) {
-            //PC is in the list, don't do user-mode:
+            //PC is in the list, don"t do user-mode:
             this.writeRegister(address | 0, data | 0);
         }
         else {
-            //PC isn't in the list, do user-mode:
+            //PC isn"t in the list, do user-mode:
             this.guardUserRegisterWrite(address | 0, data | 0);
         }
     }
@@ -2447,7 +2447,7 @@ ARMInstructionSet.prototype.llrs = function () {
                 this.branchFlags.setCarry(register << 31);
             }
             else {
-                //Everything Zero'd:
+                //Everything Zero"d:
                 this.branchFlags.setCarryFalse();
             }
             register = 0;
@@ -2524,7 +2524,7 @@ ARMInstructionSet.prototype.lrrs = function () {
                 this.branchFlags.setCarry(register | 0);
             }
             else {
-                //Everything Zero'd:
+                //Everything Zero"d:
                 this.branchFlags.setCarryFalse();
             }
             register = 0;

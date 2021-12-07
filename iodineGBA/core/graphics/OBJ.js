@@ -264,7 +264,7 @@ GameBoyAdvanceOBJRenderer.prototype.renderSprite = function (line, sprite, cycle
         if ((yOffset & ySize) == (yOffset | 0)) {
             //Compute clocks required to draw the sprite:
             cycles = this.computeCycles(cycles | 0, sprite.matrix2D | 0, xSize | 0) | 0;
-            //If there's enough cycles, render:
+            //If there"s enough cycles, render:
             if ((cycles | 0) >= 0) {
                 switch (sprite.mode | 0) {
                     case 0:

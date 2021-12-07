@@ -62,7 +62,7 @@ XAudioServer.prototype.writeAudio = function (buffer, upTo) {
 			this.failureCallback();
 	}
 }
-/*Pass your samples into here if you don't want automatic callback calling:
+/*Pass your samples into here if you don"t want automatic callback calling:
 Pack your samples as a one-dimenional array
 With the channel samples packed uniformly.
 examples:
@@ -232,14 +232,14 @@ XAudioServer.prototype.setupWebAudio = function () {
      node if it glitches. Google Chrome never had this issue.
      */
     XAudioJSWebAudioWatchDogLast = (new Date()).getTime();
-    if (!XAudioJSWebAudioWatchDogTimer && navigator.userAgent.indexOf('Gecko/') > -1) {
+    if (!XAudioJSWebAudioWatchDogTimer && navigator.userAgent.indexOf("Gecko/") > -1) {
         if (XAudioJSWebAudioWatchDogTimer) {
             clearInterval(XAudioJSWebAudioWatchDogTimer);
         }
         var parentObj = this;
         XAudioJSWebAudioWatchDogTimer = setInterval(function () {
 			if(typeof XAudioJSWebAudioContextHandle.state != "undefined") {
-				if (XAudioJSWebAudioContextHandle.state === 'suspended') {
+				if (XAudioJSWebAudioContextHandle.state === "suspended") {
 					XAudioJSWebAudioWatchDogLast = (new Date()).getTime();
 					try {
 						XAudioJSWebAudioContextHandle.resume();
@@ -460,7 +460,7 @@ function XAudioJSWebAudioEvent(event) {		//Web Audio API callback...
 			XAudioJSResampleBufferStart = 0;
 		}
 	}
-	//Pad with silence if we're underrunning:
+	//Pad with silence if we"re underrunning:
 	while (index < XAudioJSSamplesPerCallback) {
 		for (bufferCount = 0; bufferCount < XAudioJSChannelsAllocated; ++bufferCount) {
 			buffers[bufferCount][index] = 0;

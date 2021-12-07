@@ -54,7 +54,7 @@ function registerGUIEvents() {
     });
     addEvent("click", document.getElementById("offthread-cpu"), function () {
         setValue("toggleOffthreadCPU", !!this.checked);
-        //Can't do anything until reload of page.
+        //Can"t do anything until reload of page.
     });
     addEvent("change", document.getElementById("speedset"), speedChangeFunc);
     addEvent("input", document.getElementById("speedset"), speedChangeFunc);

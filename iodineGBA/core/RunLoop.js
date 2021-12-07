@@ -79,7 +79,7 @@ GameBoyAdvanceIO.prototype.assignInstructionCoreReferences = function (ARM, THUM
 GameBoyAdvanceIO.prototype.enter = function (CPUCyclesTotal) {
     //Find out how many clocks to iterate through this run:
     this.cyclesToIterate = ((CPUCyclesTotal | 0) + (this.cyclesOveriteratedPreviously | 0)) | 0;
-    //An extra check to make sure we don't do stuff if we did too much last run:
+    //An extra check to make sure we don"t do stuff if we did too much last run:
     if ((this.cyclesToIterate | 0) > 0) {
         //Update our core event prediction:
         this.updateCoreEventTime();
@@ -236,7 +236,7 @@ GameBoyAdvanceIO.prototype.updateCoreSpill = function () {
     this.updateCoreEventTime();
 }
 GameBoyAdvanceIO.prototype.updateCoreSpillRetain = function () {
-    //Keep the last prediction, just decrement it out, as it's still valid:
+    //Keep the last prediction, just decrement it out, as it"s still valid:
     this.nextEventClocks = ((this.nextEventClocks | 0) - (this.accumulatedClocks | 0)) | 0;
     this.updateCoreClocking();
 }
@@ -308,7 +308,7 @@ GameBoyAdvanceIO.prototype.handleDMA = function () {
      Loop our state status in here as
      an optimized iteration, as DMA stepping instances
      happen in quick succession of each other, and
-     aren't often done for one memory word only.
+     aren"t often done for one memory word only.
      */
     do {
         //Perform a DMA read and write:

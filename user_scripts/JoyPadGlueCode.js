@@ -41,7 +41,7 @@ function keyUp(keyCode) {
 }
 function keyUpPreprocess(e) {
     var keyCode = e.keyCode | 0;
-    //If we're not mapping a key:
+    //If we"re not mapping a key:
     if (!IodineGUI.toMap) {
         //Check for emulator binding:
         if (!keyUp(keyCode | 0)) {

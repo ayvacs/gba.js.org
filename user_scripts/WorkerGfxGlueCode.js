@@ -113,7 +113,7 @@ iodineGBAWorkerGfxShim.prototype.consumeGraphicsBuffer = function () {
     //Load the counter values:
     var start = gfxCounters[0] | 0;              //Written by this thread.
     var end = Atomics.load(gfxCounters, 1) | 0;  //Written by the other thread.
-    //Don't process if nothing to process:
+    //Don"t process if nothing to process:
     if ((end | 0) == (start | 0)) {
         //Buffer is empty:
         return;

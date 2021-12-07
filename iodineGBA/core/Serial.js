@@ -327,7 +327,7 @@ GameBoyAdvanceSerial.prototype.writeRCNT1 = function (data) {
     this.RCNTMode = data >> 6;
     this.RCNTIRQ = ((data & 0x1) != 0);
     if ((this.RCNTMode | 0) != 0x2) {
-        //Force SI/SO/SC/SD to low as we're never "hooked" up:
+        //Force SI/SO/SC/SD to low as we"re never "hooked" up:
         this.RCNTDataBits = 0;
         this.RCNTDataBitFlow = 0;
     }

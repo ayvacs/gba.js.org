@@ -90,8 +90,8 @@ function processCommands() {
     //Load the counter values:
     var start = gfxCommandCounters[0] | 0;              //Written by this thread.
     var end = Atomics.load(gfxCommandCounters, 1) | 0;  //Written by the other thread.
-    gfxLinesCPU = Atomics.load(gfxLineCounter, 0) | 0;  //Keep atomic; IonMonkey thinks this is dead code if it's removed.
-    //Don't process if nothing to process:
+    gfxLinesCPU = Atomics.load(gfxLineCounter, 0) | 0;  //Keep atomic; IonMonkey thinks this is dead code if it"s removed.
+    //Don"t process if nothing to process:
     if ((end | 0) == (start | 0)) {
         //Buffer is empty:
         return;
@@ -102,7 +102,7 @@ function processCommands() {
     do {
         //Read a command:
         dispatchCommand(gfxCommandBuffer[startCorrected | 0] | 0, gfxCommandBuffer[startCorrected | 1] | 0);
-        //Increment by two since we're reading the command code and corresponding data after it:
+        //Increment by two since we"re reading the command code and corresponding data after it:
         startCorrected = ((startCorrected | 0) + 2) & gfxCommandBufferMask;
     } while ((startCorrected | 0) != (endCorrected | 0));
     //Update the starting position counter to match the end position:
@@ -114,7 +114,7 @@ function dispatchCommand(command, data) {
     /*
         We squeeze some address bits as a portion of the command code.
         The top bits will be the actual command, the bottom ones will be the address,
-        unless of course the top bits are zero, for which then it's purely a command code:
+        unless of course the top bits are zero, for which then it"s purely a command code:
     */
     switch (command >> 16) {
         //IO:
@@ -574,7 +574,7 @@ function decodeInternalCommand(data) {
             }
             //Clock the scanline counter:
             renderer.incrementScanLine();
-            //Increment how many scanlines we've received out:
+            //Increment how many scanlines we"ve received out:
             gfxLinesGPU = ((gfxLinesGPU | 0) + 1) | 0;
             break;
         default:

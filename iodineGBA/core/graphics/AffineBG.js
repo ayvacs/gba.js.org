@@ -319,39 +319,39 @@ GameBoyAdvanceAffineBGRenderer.prototype.writeBGPCD32 = function (data) {
 GameBoyAdvanceAffineBGRenderer.prototype.writeBGX8_0 = function (data) {
     data = data | 0;
     this.BGReferenceX = (this.BGReferenceX & 0xFFFFFF00) | data;
-    //Writing to the x reference doesn't reset the counters during draw!
+    //Writing to the x reference doesn"t reset the counters during draw!
 }
 GameBoyAdvanceAffineBGRenderer.prototype.writeBGX8_1 = function (data) {
     data = data | 0;
     this.BGReferenceX = (data << 8) | (this.BGReferenceX & 0xFFFF00FF);
-    //Writing to the x reference doesn't reset the counters during draw!
+    //Writing to the x reference doesn"t reset the counters during draw!
 }
 GameBoyAdvanceAffineBGRenderer.prototype.writeBGX8_2 = function (data) {
     data = data | 0;
     this.BGReferenceX = (data << 16) | (this.BGReferenceX & 0xFF00FFFF);
-    //Writing to the x reference doesn't reset the counters during draw!
+    //Writing to the x reference doesn"t reset the counters during draw!
 }
 GameBoyAdvanceAffineBGRenderer.prototype.writeBGX8_3 = function (data) {
     data = data | 0;
     data = (data << 28) >> 4;
     this.BGReferenceX = data | (this.BGReferenceX & 0xFFFFFF);
-    //Writing to the x reference doesn't reset the counters during draw!
+    //Writing to the x reference doesn"t reset the counters during draw!
 }
 GameBoyAdvanceAffineBGRenderer.prototype.writeBGX16_0 = function (data) {
     data = data | 0;
     this.BGReferenceX = (this.BGReferenceX & 0xFFFF0000) | data;
-    //Writing to the x reference doesn't reset the counters during draw!
+    //Writing to the x reference doesn"t reset the counters during draw!
 }
 GameBoyAdvanceAffineBGRenderer.prototype.writeBGX16_1 = function (data) {
     data = data | 0;
     data = (data << 20) >> 4;
     this.BGReferenceX = (this.BGReferenceX & 0xFFFF) | data;
-    //Writing to the x reference doesn't reset the counters during draw!
+    //Writing to the x reference doesn"t reset the counters during draw!
 }
 GameBoyAdvanceAffineBGRenderer.prototype.writeBGX32 = function (data) {
     data = data | 0;
     this.BGReferenceX = (data << 4) >> 4;
-    //Writing to the x reference doesn't reset the counters during draw!
+    //Writing to the x reference doesn"t reset the counters during draw!
 }
 GameBoyAdvanceAffineBGRenderer.prototype.writeBGY8_0 = function (data) {
     data = data | 0;

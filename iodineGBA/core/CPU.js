@@ -82,7 +82,7 @@ GameBoyAdvanceCPU.prototype.branch = function (branchTo) {
         this.wait.NonSequentialBroadcastClear();
     /*}
     else {
-        //We're branching into BIOS, handle specially:
+        //We"re branching into BIOS, handle specially:
         if ((branchTo | 0) == 0x130) {
             //IRQ mode exit handling:
             //ROM IRQ handling returns back from its own subroutine back to BIOS at this address.
@@ -262,7 +262,7 @@ GameBoyAdvanceCPU.prototype.UNDEFINED = function () {
         this.branch(0x4);
     /*}
     else {
-        //Pretend we didn't execute the bad instruction then:
+        //Pretend we didn"t execute the bad instruction then:
         if ((this.modeFlags & 0x20) != 0) {
             this.THUMB.incrementProgramCounter();
         }

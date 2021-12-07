@@ -43,7 +43,7 @@ GameBoyAdvanceChannel4Synth.prototype.intializeWhiteNoise = function () {
     var LSFRShifted = 0x3FFF;
     for (var index = 0; index < 0x8000; ++index) {
         //Normalize the last LSFR value for usage:
-        randomFactor = 1 - (LSFR & 1);    //Docs say it's the inverse.
+        randomFactor = 1 - (LSFR & 1);    //Docs say it"s the inverse.
         //Cache the different volume level results:
         this.LSFR15Table[0x08000 | index] = randomFactor;
         this.LSFR15Table[0x10000 | index] = randomFactor * 0x2;
@@ -69,7 +69,7 @@ GameBoyAdvanceChannel4Synth.prototype.intializeWhiteNoise = function () {
     LSFR = 0x7F;    //Seed value has all its bits set.
     for (index = 0; index < 0x80; ++index) {
         //Normalize the last LSFR value for usage:
-        randomFactor = 1 - (LSFR & 1);    //Docs say it's the inverse.
+        randomFactor = 1 - (LSFR & 1);    //Docs say it"s the inverse.
         //Cache the different volume level results:
         this.LSFR7Table[0x080 | index] = randomFactor;
         this.LSFR7Table[0x100 | index] = randomFactor * 0x2;

@@ -45,7 +45,7 @@ GameBoyAdvanceEEPROMChip.prototype.load = function (save) {
     }
 }
 GameBoyAdvanceEEPROMChip.prototype.read8 = function () {
-    //Can't do real reading with 8-bit reads:
+    //Can"t do real reading with 8-bit reads:
     return 0x1;
 }
 GameBoyAdvanceEEPROMChip.prototype.read16 = function () {
@@ -82,7 +82,7 @@ GameBoyAdvanceEEPROMChip.prototype.read16 = function () {
     return data | 0;
 }
 GameBoyAdvanceEEPROMChip.prototype.read32 = function () {
-    //Can't do real reading with 32-bit reads:
+    //Can"t do real reading with 32-bit reads:
     return 0x10001;
 }
 GameBoyAdvanceEEPROMChip.prototype.write16 = function (data) {
@@ -133,7 +133,7 @@ GameBoyAdvanceEEPROMChip.prototype.addressMode = function (data) {
     this.address = (this.address << 1) | data;
     //Increment our bits counter:
     this.bitsProcessed = ((this.bitsProcessed | 0) + 1) | 0;
-    //Check for how many bits we've shifted in:
+    //Check for how many bits we"ve shifted in:
     switch (this.bitsProcessed | 0) {
         //6 bit address mode:
         case 0x6:

@@ -5,7 +5,7 @@ var toBase64 = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M",
 var fromBase64 = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=";
 function base64(data) {
     try {
-        var base64 = window.btoa(data);    //Use this native function when it's available, as it's a magnitude faster than the non-native code below.
+        var base64 = window.btoa(data);    //Use this native function when it"s available, as it"s a magnitude faster than the non-native code below.
     }
     catch (error) {
         //Defaulting to non-native base64 encoding...
@@ -16,7 +16,7 @@ function base64(data) {
             var index = 0;
             var remainder = dataLength % 3;
             while (data.length % 3 > 0) {
-                //Make sure we don't do fuzzy math in the next loop...
+                //Make sure we don"t do fuzzy math in the next loop...
                 data[data.length] = " ";
             }
             while (index < dataLength) {
@@ -41,7 +41,7 @@ function base64(data) {
 }
 function base64_decode(data) {
     try {
-        var decode64 = window.atob(data);    //Use this native function when it's available, as it's a magnitude faster than the non-native code below.
+        var decode64 = window.atob(data);    //Use this native function when it"s available, as it"s a magnitude faster than the non-native code below.
     }
     catch (error) {
         //Defaulting to non-native base64 decoding...
@@ -55,7 +55,7 @@ function base64_decode(data) {
                 sixbits = [fromBase64.indexOf(data.charAt(index++)), fromBase64.indexOf(data.charAt(index++)), fromBase64.indexOf(data.charAt(index++)), fromBase64.indexOf(data.charAt(index++))];
                 decode64 += String.fromCharCode((sixbits[0] << 2) | (sixbits[1] >> 4)) + String.fromCharCode(((sixbits[1] & 0x0F) << 4) | (sixbits[2] >> 2)) + String.fromCharCode(((sixbits[2] & 0x03) << 6) | sixbits[3]);
             }
-            //Check for the '=' character after the loop, so we don't hose it up.
+            //Check for the "=" character after the loop, so we don"t hose it up.
             if (sixbits[3] >= 0x40) {
                 decode64.length -= 1;
                 if (sixbits[2] >= 0x40) {

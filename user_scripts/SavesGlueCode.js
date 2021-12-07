@@ -74,7 +74,7 @@ function generateBlob(keyName, encodedData) {
     var totalLength = (saveString.length + 4 + (1 + consoleID.length)) + ((1 + keyName.length) + (4 + encodedData.length));
     //Append the total length in bytes:
     saveString += to_little_endian_word(totalLength);
-    //Append the console ID text's length:
+    //Append the console ID text"s length:
     saveString += to_byte(consoleID.length);
     //Append the console ID text:
     saveString += consoleID;
@@ -90,7 +90,7 @@ function generateMultiBlob(blobPairs) {
     var consoleID = "GameBoyAdvance";
     //Figure out the initial length:
     var totalLength = 13 + 4 + 1 + consoleID.length;
-    //Append the console ID text's length:
+    //Append the console ID text"s length:
     var saveString = to_byte(consoleID.length);
     //Append the console ID text:
     saveString += consoleID;
