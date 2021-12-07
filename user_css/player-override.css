@@ -9,3 +9,8 @@ li{
   color: #ffffff;
   background: #202124;
 }
+
+#logo-small{
+  position: fixed;
+  left: 95.5%;
+}
