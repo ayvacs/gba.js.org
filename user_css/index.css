@@ -1,6 +1,5 @@
 #site-banner{
-  background-color: #d36c00;
-  border-radius: 6px;
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
   width: 70%;
   margin-left: auto;
   margin-right: auto;
@@ -113,6 +112,7 @@ hr{
 /* Collapsible Sections */
 
 .collapsible-collapsible {
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
   border-radius: 5px;
   background-color: #151b22;
   color: white;
