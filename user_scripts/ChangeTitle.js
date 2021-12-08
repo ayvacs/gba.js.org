@@ -98,30 +98,37 @@ var games = {
   "wario_ware":"Wario Ware Inc",
   "zelda_past":"The Legend of Zelda: A Link to the Past",
   "zelda_minish":"The Legend of Zelda: The Minish Cap",
-  "DEBUG-AGB-buttontest":"AGB-buttontest",
-  "DEBUG-arm":"arm",
-  "DEBUG-bios":"bios",
-  "DEBUG-flash64":"flash64",
-  "DEBUG-flash128":"flash128",
-  "DEBUG-hello":"hello",
-  "DEBUG-memory":"memory",
-  "DEBUG-nes":"nes",
-  "DEBUG-none":"none",
-  "DEBUG-shades":"shades",
-  "DEBUG-sram":"sram",
-  "DEBUG-stripes":"stripes",
-  "DEBUG-thumb":"thumb",
-  "DEBUG-AGB":"AGB"
+  "-DEBUG-AGB-buttontest":"AGB-buttontest",
+  "-DEBUG-arm":"arm",
+  "-DEBUG-bios":"bios",
+  "-DEBUG-flash64":"flash64",
+  "-DEBUG-flash128":"flash128",
+  "-DEBUG-hello":"hello",
+  "-DEBUG-memory":"memory",
+  "-DEBUG-nes":"nes",
+  "-DEBUG-none":"none",
+  "-DEBUG-shades":"shades",
+  "-DEBUG-sram":"sram",
+  "-DEBUG-stripes":"stripes",
+  "-DEBUG-thumb":"thumb"
 };
 
 
 var defaultTitle = document.title;
 var hashTags = location.hash.substr(1); //substr removes the leading #
-var gameName = games[hashTags]
+var gameName = games[hashTags];
+var startLetter = hashTags.charAt(0);
 
 if (hashTags.length > 0) {
-  //document.title = defaultTitle + " [" + gameName + "]";
-  document.title = gameName + " on GBA Online";
+  var title = gameName + " on GBA Online";
+
+  // document.title = defaultTitle + " [" + gameName + "]";
+  if (startLetter === "-") {
+    document.title = "[DEBUG] " + title;
+  } else {
+    document.title = title;
+  }
+
   console.log("Current game: " + gameName + " [" + hashTags + "]");
 } else {
   document.title = defaultTitle
