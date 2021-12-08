@@ -106,7 +106,8 @@ var hashTags = location.hash.substr(1); //substr removes the leading #
 var gameName = games[hashTags]
 
 if (hashTags.length > 0) {
-  document.title = defaultTitle + " [" + gameName + "]";
+  //document.title = defaultTitle + " [" + gameName + "]";
+  document.title = gameName + " on GBA Online";
   console.log("Current game: " + gameName + " [" + hashTags + "]");
 } else {
   document.title = defaultTitle

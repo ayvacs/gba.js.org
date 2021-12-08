@@ -2,7 +2,7 @@
 
 <img alt="Header Image" src="https://github.com/frogweezer/gba/blob/gh-pages/assets/repo-card.png?raw=true">
 
-<div style="margin: auto; text-align: center;">
+<div>
   <p>GBA Online is a modern GameBoy Advance emulator for the web.</p>
 
   <img alt="Github" src="https://img.shields.io/github/license/frogweezer/gba?style=for-the-badge">
