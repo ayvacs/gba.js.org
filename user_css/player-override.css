@@ -4,7 +4,7 @@
 }
 
 li{
-  font-family: "Rubik", sans-serif;
+  font-family: 'Merriweather Sans', sans-serif;
   font-size: 13px;
   color: #ffffff;
   background: #202124;
@@ -16,7 +16,7 @@ li{
 }
 
 .message {
-  font-family: "Rubik", sans-serif;
+  font-family: 'Merriweather Sans', sans-serif;
   background: #6cc27d;
   padding: 1em 2em;
   text-align: center;

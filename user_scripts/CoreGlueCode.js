@@ -107,7 +107,21 @@ var games = {
   "warioland4":"Wario Land 4",
   "wario_ware":"Wario Ware Inc",
   "zelda_past":"The Legend of Zelda: A Link to the Past",
-  "zelda_minish":"The Legend of Zelda: The Minish Cap"
+  "zelda_minish":"The Legend of Zelda: The Minish Cap",
+  "DEBUG-AGB-buttontest":"AGB-buttontest",
+  "DEBUG-arm":"arm",
+  "DEBUG-bios":"bios",
+  "DEBUG-flash64":"flash64",
+  "DEBUG-flash128":"flash128",
+  "DEBUG-hello":"hello",
+  "DEBUG-memory":"memory",
+  "DEBUG-nes":"nes",
+  "DEBUG-none":"none",
+  "DEBUG-shades":"shades",
+  "DEBUG-sram":"sram",
+  "DEBUG-stripes":"stripes",
+  "DEBUG-thumb":"thumb",
+  "DEBUG-AGB":"AGB"
 };
 var IodineGUI = {
     Iodine:null,
