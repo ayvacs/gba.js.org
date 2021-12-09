@@ -103,6 +103,7 @@ var games = {
   "-DEBUG-bios":"bios",
   "-DEBUG-flash64":"flash64",
   "-DEBUG-flash128":"flash128",
+  "-DEBUG-gbaframetest":"gbaframetest",
   "-DEBUG-hello":"hello",
   "-DEBUG-memory":"memory",
   "-DEBUG-nes":"nes",
@@ -110,6 +111,7 @@ var games = {
   "-DEBUG-shades":"shades",
   "-DEBUG-sram":"sram",
   "-DEBUG-stripes":"stripes",
+  "-DEBUG-suite":"suite",
   "-DEBUG-thumb":"thumb"
 };
 
