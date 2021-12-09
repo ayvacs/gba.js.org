@@ -1,0 +1,33 @@
+.collapsible-collapsible {
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+  border-radius: 5px;
+  background-color: #151b22;
+  color: white;
+  cursor: pointer;
+  padding: 18px;
+  width: 60%;
+  border: none;
+  text-align: center;
+  outline: none;
+  font-size: 30px;
+  font-family: 'Merriweather Sans', sans-serif;
+}
+
+.collapsible-active, .collapsible-collapsible:hover {
+  background-color: #11151a;
+}
+
+.collapsible-text {
+  font-size: 20px;
+}
+
+.collapsible-content {
+  transition: max-height 0.2s ease-out;
+  text-align: center;
+  overflow: hidden;
+  padding: 0 18px;
+  font-size: 20px;
+  max-height: 0;
+  margin: auto;
+  width: 60%;
+}

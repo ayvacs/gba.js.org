@@ -1,15 +1,21 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <link rel="stylesheet" href="user_css/index.css">
-  <link rel="stylesheet" href="user_css/fonts.css">
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <script src="resources/particles/scripts/load.js"></script>
+  <script src="resources/user_scripts/Collapsible.js"></script>
+  
+  <link rel="stylesheet" href="resources/user_css/index.css">
+  <link rel="stylesheet" href="resources/user_css/fonts.css">
+  <link rel="stylesheet" href="resources/user_css/collapsible.css">
+  <link rel="stylesheet" href="resources/user_css/particles-js.css">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Merriweather+Sans&display=swap" rel="stylesheet">
 
-  <link href="assets/favicon.png" type="image/png" rel="shortcut icon">
-  <link href="assets/apple-touch-icon.png" type="image/png" rel="apple-touch-icon">
+  <link href="resources/favicon.png" type="image/png" rel="shortcut icon">
+  <link href="resources/apple-touch-icon.png" type="image/png" rel="apple-touch-icon">
 
   <meta charset="UTF-8">
   <meta name="google-site-verification" content="EQgtqgYpirWekvBNi5Vi9re6ruqv6WL0MYnzG9b9-lc" />
@@ -24,20 +30,20 @@
   <meta property="og:url" content="https://metatags.io/">
   <meta property="og:title" content="GBA Online">
   <meta property="og:description" content="A free, online, and lightweight GameBoy Advance emulator.">
-  <meta property="og:image" content="https://raw.githubusercontent.com/frogweezer/gba/gh-pages/assets/repo-card.png">
+  <meta property="og:image" content="https://raw.githubusercontent.com/frogweezer/gba/gh-pages/resources/repo-card.png">
 
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image">
   <meta property="twitter:url" content="https://metatags.io/">
   <meta property="twitter:title" content="GBA Online">
   <meta property="twitter:description" content="A free, online, and lightweight GameBoy Advance emulator.">
-  <meta property="twitter:image" content="https://raw.githubusercontent.com/frogweezer/gba/gh-pages/assets/repo-card.png">
+  <meta property="twitter:image" content="https://raw.githubusercontent.com/frogweezer/gba/gh-pages/resources/repo-card.png">
 </head>
 <body>
   <div id="particles-js"></div>  <!-- Add Particles -->
 
   <br>
-  <img id="repo-card" src="assets/repo-card.png" height="300px">
+  <img id="repo-card" src="resources/repo-card.png" height="300px">
   <br><br>
 
   <p>Welcome to <b>GBA Online</b>, a modern GameBoy Advance emulator for the web.</p>
@@ -54,7 +60,7 @@
   </button>
   <div class="collapsible-content">
     <p class="collapsible-text">
-      <img src="assets/controls-keybinds/gba-diagram.png" width="100%"></img>
+      <img src="resources/controls-gba-diagram.png" width="100%"></img>
     </p>
   </div><br>
 
@@ -205,29 +211,5 @@
 
 
   <br><br><br><br><br>
-  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-  <script>
-    // Particles JS
-    particlesJS.load("particles-js", "particles/main.json", function(){
-      console.log("particles.json loaded");
-    });
-  </script>
-  <script>
-    // Collapsible
-    var coll = document.getElementsByClassName("collapsible-collapsible");
-    var i;
-
-    for (i = 0; i < coll.length; i++) {
-      coll[i].addEventListener("click", function() {
-        this.classList.toggle("active");
-        var content = this.nextElementSibling;
-        if (content.style.maxHeight){
-          content.style.maxHeight = null;
-        } else {
-          content.style.maxHeight = content.scrollHeight + "px";
-        }
-      });
-    }
-    </script>
 </body>
 </html>
