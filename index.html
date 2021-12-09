@@ -3,8 +3,7 @@
 <head>
   <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
   <script src="resources/particles/scripts/load.js"></script>
-  <script src="resources/user_scripts/Collapsible.js"></script>
-  
+
   <link rel="stylesheet" href="resources/user_css/index.css">
   <link rel="stylesheet" href="resources/user_css/fonts.css">
   <link rel="stylesheet" href="resources/user_css/collapsible.css">
@@ -12,13 +11,14 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Merriweather+Sans&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Merriweather+Sans&display=swap">
 
   <link href="resources/favicon.png" type="image/png" rel="shortcut icon">
   <link href="resources/apple-touch-icon.png" type="image/png" rel="apple-touch-icon">
 
   <meta charset="UTF-8">
   <meta name="google-site-verification" content="EQgtqgYpirWekvBNi5Vi9re6ruqv6WL0MYnzG9b9-lc" />
+
 
   <!-- Primary Meta Tags -->
   <title>GBA Online</title>
@@ -61,6 +61,10 @@
   <div class="collapsible-content">
     <p class="collapsible-text">
       <img src="resources/controls-gba-diagram.png" width="100%"></img>
+
+      <u>Emulator Keybinds</u>      <br><br>
+      <b>Reset Game:</b> R              <br>
+      <b>Play/Pause:</b> P
     </p>
   </div><br>
 
@@ -211,5 +215,22 @@
 
 
   <br><br><br><br><br>
+
+  <script>
+    var coll = document.getElementsByClassName("collapsible-collapsible");
+    var i;
+
+    for (i = 0; i < coll.length; i++) {
+      coll[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var content = this.nextElementSibling;
+        if (content.style.maxHeight){
+          content.style.maxHeight = null;
+        } else {
+          content.style.maxHeight = content.scrollHeight + "px";
+        }
+      });
+    }
+  </script>
 </body>
 </html>
