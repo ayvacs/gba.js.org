@@ -11,15 +11,50 @@
     <img alt="Github commit activity" src="https://img.shields.io/github/commit-activity/m/frogweezer/gba?style=for-the-badge">
     <img alt="Github release (latest by date)" src="https://img.shields.io/github/v/release/frogweezer/gba?style=for-the-badge">
   </p>
-</div>
 
-🌎: [**English**](https://github.com/frogweezer/gba/blob/gh-pages/README.md)
+  <p align="center">
+    🌎: <a href="https://github.com/frogweezer/gba/blob/gh-pages/README.md"><b>English</b></a>
+  </p>
+</div>
 
 ---
 
 **The older version of GBA Online which ran on walsh/gba, the older version, is deprecated and no longer available. The new version (Iodine) provides a better user interface and lighter performance. You can download and compile the older version if you wish, on the [releases page](https://github.com/frogweezer/gba/releases/tag/v1.0.0).**
 
 ## If you want to contribute:
+
+1. Fork the project with GitHub
+2. Make any local changes you want
+3. Create a **pull request** to merge the repos
+
+## Project Structure
+
+```
+📁 gba-online
+├ about
+│ └ index.html
+├ assets
+│ ├ particles
+│ │ └ ...
+│ ├ user_css
+│ │ └ ...
+│ ├ user_scripts
+│ │ └ ...
+│ └ ...
+├ binaries
+│ └ ...
+├ iodineGBA
+│ ├ core
+│ │ └ ...
+│ ├ includes
+│ │ └ ...
+│ └ README.md
+├ qr
+│ └ ...
+
+
+│ └ ├ ─
+```
 
 ## Releases
 
