@@ -19,7 +19,7 @@
 
 ---
 
-**The older version of GBA Online which ran on walsh/gba, the older version, is deprecated and no longer available. The new version (Iodine) provides a better user interface and lighter performance. You can download and compile the older version if you wish, on the [releases page](https://github.com/frogweezer/gba/releases/tag/v1.0.0).**
+**The older version of GBA Online which ran on walsh/gba is deprecated and no longer available on the website. The new version (Iodine) provides a better user interface and performance. You can download and compile the older version if you wish, on the [releases page](https://github.com/frogweezer/gba/releases/tag/v1.0.0).**
 
 ## If you want to contribute:
 
@@ -45,19 +45,27 @@ If you want to download a past version and host it locally, check out the [GitHu
 │ │ # Branding and marketing assets...
 │ │
 │ ├ particles
-│ │ └ # Everything needed for Particles-JS to run...
+│ │ │ # Particles.JS Configuration Profiles...
+│ │ │
+│ │ └ scripts
+│ │   └ # Everything needed for Particles.JS to run...
+│ │
 │ │
 │ ├ user_css
 │ │ └ # Stylesheets...
 │ │
 │ └ user_scripts
-│   └ # Emulator JavaScripts...
+│   ├ # Emulator scripts...
+│   │
+│   └  XAudioJS
+│     │
+│     └  # Audio-related emulator scripts
 │
 ├ binaries
-│ └ # Game files...
+│ └ # GameBoy Advance ROMs...
 │
 ├ iodineGBA
-│ │ # Iodine Emulator...
+│ │ # Iodine Emulator master folder...
 │ │
 │ ├ core
 │ │ └ # Iodine Core...
@@ -66,12 +74,26 @@ If you want to download a past version and host it locally, check out the [GitHu
 │ │ └ # Iodine Extra Files...
 │ │
 │ └ README.md
-└ qr
-  └ # QR Code assets...
-
-
-│ └ ├ ─
+├ qr
+│ └ # QR Code assets...
+│
+├ index.html
+└ player.html
 ```
+
+1. The `about` folder contains documentation for the project.
+2. The `assets` folder contains project branding and images.
+3. The `binaries` folder contains GameBoy Advance ROMs.
+4. The `iodineGBA` folder contains most of the Iodine emulator.
+5. The `qr` folder contains QR codes.
+
+
+1. The `index.html` page is the project's landing page.
+2. The `player.html` page is the emulator page.
+
+## Credits
+
+Built on <a href="https://github.com/jsemu2/gba">jsemu2/gba</a>
 
 ## License
 
@@ -751,7 +773,3 @@ the library.  If this is what you want to do, use the GNU Lesser General
 Public License instead of this License.  But first, please read
 <https://www.gnu.org/licenses/why-not-lgpl.html>.
 ```
-
-## Credits
-
-Built on <a href="https://github.com/jsemu2/gba">jsemu2/gba</a>
