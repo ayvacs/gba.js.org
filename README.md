@@ -39,43 +39,18 @@ If you want to download a past version and host it locally, check out the [GitHu
 📁 gba-online
 │
 ├ about
-│ └ index.html
-│
 ├ assets
-│ │ # Branding and marketing assets...
-│ │
 │ ├ particles
-│ │ │ # Particles.JS Configuration Profiles...
-│ │ │
 │ │ └ scripts
-│ │   └ # Everything needed for Particles.JS to run...
-│ │
-│ │
 │ ├ user_css
-│ │ └ # Stylesheets...
-│ │
 │ └ user_scripts
-│   ├ # Emulator scripts...
-│   │
 │   └  XAudioJS
-│     │
-│     └  # Audio-related emulator scripts
-│
 ├ binaries
-│ └ # GameBoy Advance ROMs...
-│
 ├ iodineGBA
-│ │ # Iodine Emulator master folder...
-│ │
 │ ├ core
-│ │ └ # Iodine Core...
-│ │
 │ ├ includes
-│ │ └ # Iodine Extra Files...
-│ │
 │ └ README.md
 ├ qr
-│ └ # QR Code assets...
 │
 ├ index.html
 └ player.html
@@ -88,6 +63,7 @@ If you want to download a past version and host it locally, check out the [GitHu
 5. The `qr` folder contains QR codes.
 
 
+
 1. The `index.html` page is the project's landing page.
 2. The `player.html` page is the emulator page.
 
@@ -96,6 +72,8 @@ If you want to download a past version and host it locally, check out the [GitHu
 Built on <a href="https://github.com/jsemu2/gba">jsemu2/gba</a>
 
 ## License
+
+[Latest license file](https://github.com/frogweezer/gba/blob/gh-pages/LICENSE)
 
 ```
 GNU GENERAL PUBLIC LICENSE
@@ -752,7 +730,7 @@ Also add information on how to contact you by electronic and paper mail.
 If the program does terminal interaction, make it output a short
 notice like this when it starts in an interactive mode:
 
-<program>  Copyright (C) <year>  <name of author>
+GBAONLINE  Copyright (C) 2021 FROGWEEZER
 This program comes with ABSOLUTELY NO WARRANTY; for details type `show w'.
 This is free software, and you are welcome to redistribute it
 under certain conditions; type `show c' for details.
