@@ -13,7 +13,7 @@
   </p>
 
   <p align="center">
-    🌎: <a href="https://github.com/frogweezer/gba/blob/gh-pages/README.md"><b>English</b></a>
+    🌎 <a href="https://github.com/frogweezer/gba/blob/gh-pages/README.md"><b>English</b></a>
   </p>
 </div>
 
@@ -27,40 +27,51 @@
 2. Make any local changes you want
 3. Create a **pull request** to merge the repos
 
+## Releases
+
+GBA Online is available without a download at <a href="gba.js.org">gba.js.org</a>!
+
+If you want to download a past version and host it locally, check out the [GitHub releases page](https://github.com/frogweezer/gba/releases).
+
 ## Project Structure
 
 ```
 📁 gba-online
+│
 ├ about
 │ └ index.html
+│
 ├ assets
+│ │ # Branding and marketing assets...
+│ │
 │ ├ particles
-│ │ └ ...
+│ │ └ # Everything needed for Particles-JS to run...
+│ │
 │ ├ user_css
-│ │ └ ...
-│ ├ user_scripts
-│ │ └ ...
-│ └ ...
+│ │ └ # Stylesheets...
+│ │
+│ └ user_scripts
+│   └ # Emulator JavaScripts...
+│
 ├ binaries
-│ └ ...
+│ └ # Game files...
+│
 ├ iodineGBA
+│ │ # Iodine Emulator...
+│ │
 │ ├ core
-│ │ └ ...
+│ │ └ # Iodine Core...
+│ │
 │ ├ includes
-│ │ └ ...
+│ │ └ # Iodine Extra Files...
+│ │
 │ └ README.md
-├ qr
-│ └ ...
+└ qr
+  └ # QR Code assets...
 
 
 │ └ ├ ─
 ```
-
-## Releases
-
-**Latest Release:** [on the web](https://frogweezer.github.io/gba)
-
-**Past Releases:** [via GitHub](https://github.com/frogweezer/gba/releases)
 
 ## License
 
