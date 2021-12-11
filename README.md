@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="https://raw.githubusercontent.com/frogweezer/gba/gh-pages/assets/repo-card.png">
+  <img src="https://raw.githubusercontent.com/frogweezer/gba/gh-pages/assets/readme-card.png">
 
   <h1 align="center">GBA Online</h1>
   <p align="center">A simple, fast, online emulator for the GameBoy Advance</p>
