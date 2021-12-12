@@ -1,3 +1,10 @@
+<!--
+
+GBA ONLINE;  GBA.JS.ORG;  "Online GameBoy Advance Emulator"
+Copyright (C) 2021 FROGWEEZER
+
+-->
+
 ### 🌎 Documentación del proyecto en español
 
 **⚠️ Translated with Google Translate**
