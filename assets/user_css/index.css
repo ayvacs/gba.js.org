@@ -38,23 +38,6 @@ body{
   margin-right: auto;
 }
 
-#version-title-currentver{
-  background-color: #ff4040;
-}
-
-#version-title-latestver{
-  background-color: #4076ff;
-}
-
-#version-title-currentver,
-#version-title-latestver{
-  color: white;
-  border-radius: 6px;
-  width: 40%;
-  transform: translate(75%, 0%);
-  font-size: 22px;
-}
-
 #repo-card{
   border-radius: 8px;
   box-shadow: 0 0 12px 12px rgba(0, 0, 0, 0.1);
