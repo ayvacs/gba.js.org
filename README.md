@@ -19,7 +19,46 @@
 
 ---
 
-**The older version of GBA Online which ran on walsh/gba is deprecated and no longer available on the website. The new version (Iodine) provides a better user interface and performance. You can download and compile the older version if you wish, on the [releases page](https://github.com/frogweezer/gba/releases/tag/v1.0.0).**
+**The older version of GBA Online which ran on walsh/gba is deprecated and no longer available on the website. The new version (Iodine) provides a better user interface and performance. The older version of GBA Online will no longer be able to view or download via GitHub.**
+
+*Supported versions:* 1.x.x
+
+*Deprecated versions:* 0.1.0, 0.1.1, 0.2.0, 0.2.1, 0.2.15, 0.3
+
+## Let's jump into the game
+
+GBA Online is available without a download at <a href="gba.js.org">gba.js.org</a>!
+
+If you want to download a past version and host it locally, check out the [GitHub releases page](https://github.com/frogweezer/gba/releases).
+
+## Performance
+
+Supported platforms:
+
+* **MacOS**
+* Windows *(partial support)*
+* iOS
+
+### Known to work well in:
+
+**Windows / MacOS:**
+
+* Google Chrome 96.0.4664.55+
+* Firefox 4-27
+* MacOS Safari 5.1.5+
+
+**Mobile:**
+
+* iOS Safari on iOS 15.1.1+
+
+### Poor performance, or failed to run:
+
+**Windows / MacOS:**
+
+* Firefox 28+
+* Opera
+* Safari 5.1.4 and below
+* Internet Explorer
 
 ## If you want to contribute:
 
@@ -27,11 +66,7 @@
 2. Make any local changes you want
 3. Create a **pull request** to merge the repos
 
-## Releases
-
-GBA Online is available without a download at <a href="gba.js.org">gba.js.org</a>!
-
-If you want to download a past version and host it locally, check out the [GitHub releases page](https://github.com/frogweezer/gba/releases).
+Thank you for your contributions :)
 
 ## Project Structure
 
@@ -69,7 +104,9 @@ If you want to download a past version and host it locally, check out the [GitHu
 
 ## Credits
 
-Built on <a href="https://github.com/jsemu2/gba">jsemu2/gba</a>
+Originally built on [jsemu2/gba](https://github.com/jsemu2/gba)
+
+Using [IodineGBA](https://github.com/taisel/IodineGBA)
 
 ## License
 
