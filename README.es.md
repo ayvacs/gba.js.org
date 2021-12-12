@@ -1,4 +1,12 @@
-**translated with google translate, december 11th 2021**
+### 🌎 Documentación del proyecto en español
+
+**⚠️ Translated with Google Translate**
+
+Last Updated: 12/12/21
+
+*Translations may not be fully accurate!*
+
+----
 
 <div align="center">
   <img src="https://raw.githubusercontent.com/frogweezer/gba/gh-pages/assets/readme-card.png">
@@ -78,7 +86,10 @@ Gracias por sus aportaciones :)
 ## Estructura del proyecto
 
 ```
-📁 gba-online
+📁 gba.js.org
+│
+├ _layouts
+├ .git
 │
 ├ about
 ├ assets
@@ -95,7 +106,15 @@ Gracias por sus aportaciones :)
 ├ qr
 │
 ├ index.html
-└ player.html
+├ player.html
+│
+├ README.es.md
+├ README.fr.md
+├ README.md
+│
+├ CNAME
+├ LICENSE
+└ VERSION
 ```
 
 1. La carpeta `about` contiene documentación para el proyecto.

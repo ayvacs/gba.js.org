@@ -76,7 +76,10 @@ Thank you for your contributions :)
 ## Project Structure
 
 ```
-📁 gba-online
+📁 gba.js.org
+│
+├ _layouts
+├ .git
 │
 ├ about
 ├ assets
@@ -93,7 +96,15 @@ Thank you for your contributions :)
 ├ qr
 │
 ├ index.html
-└ player.html
+├ player.html
+│
+├ README.es.md
+├ README.fr.md
+├ README.md
+│
+├ CNAME
+├ LICENSE
+└ VERSION
 ```
 
 1. The `about` folder contains documentation for the project.
