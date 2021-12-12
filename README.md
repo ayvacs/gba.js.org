@@ -4,7 +4,7 @@
   <h1 align="center">GBA Online</h1>
   <p align="center">A simple, fast, online emulator for the GameBoy Advance</p>
 
-  <p align="center"><a href="https://gba.js.org">🔗 gba.js.org</a></p>
+  <p align="center"><a target="_blank" href="https://gba.js.org">🔗 gba.js.org</a></p>
 
   <p align="center">
     <img alt="Github License" src="https://img.shields.io/github/license/frogweezer/gba?style=for-the-badge">
@@ -16,9 +16,9 @@
 
   <p align="center">
     🌎
-    <a href="https://github.com/frogweezer/gba/blob/gh-pages/README.md"><b>English</b></a>,
-    <a href="https://github.com/frogweezer/gba/blob/gh-pages/README.es.md"><b>Español</b></a>,
-    <a href="https://github.com/frogweezer/gba/blob/gh-pages/README.fr.md"><b>Français</b></a>
+    <a target="_blank" href="https://github.com/frogweezer/gba/blob/gh-pages/README.md"><b>English</b></a>,
+    <a target="_blank" href="https://github.com/frogweezer/gba/blob/gh-pages/README.es.md"><b>Español</b></a>,
+    <a target="_blank" href="https://github.com/frogweezer/gba/blob/gh-pages/README.fr.md"><b>Français</b></a>
   </p>
 </div>
 
