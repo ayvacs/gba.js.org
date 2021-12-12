@@ -19,7 +19,7 @@
 
 ---
 
-**The older version of GBA Online which ran on walsh/gba is deprecated and no longer available on the website. The new version (Iodine) provides a better user interface and performance. The older version of GBA Online will no longer be able to view or download via GitHub.**
+**The older, legacy version of GBA Online is deprecated and no longer available on the website. The new version (Iodine) provides a better user interface and performance. The older version of GBA Online will no longer be able to view or download.**
 
 *Supported versions:* 1.x.x
 
