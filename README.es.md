@@ -1,8 +1,10 @@
+**translated with google translate, december 11th 2021**
+
 <div align="center">
   <img src="https://raw.githubusercontent.com/frogweezer/gba/gh-pages/assets/readme-card.png">
 
   <h1 align="center">GBA Online</h1>
-  <p align="center">A simple, fast, online emulator for the GameBoy Advance</p>
+  <p align="center">Un emulador en línea simple y rápido para GameBoy Advance</p>
 
   <p align="center"><a href="gba.js.org">🔗 gba.js.org</a></p>
 
@@ -12,7 +14,7 @@
     <img alt="Github release (latest by date)" src="https://img.shields.io/github/v/release/frogweezer/gba?style=for-the-badge">
   </p>
 
-  <b align="center">Documentation languages</b>
+  <b align="center">Idiomas de documentación</b>
 
   <p align="center">
     🌎
@@ -24,27 +26,27 @@
 
 ---
 
-**The older, legacy version of GBA Online is deprecated and no longer available on the website. The new version (Iodine) provides a better user interface and performance. The older version of GBA Online will no longer be able to view or download.**
+**La versión anterior y heredada de GBA Online está obsoleta y ya no está disponible en el sitio web. La nueva versión (Iodine) proporciona una mejor interfaz de usuario y rendimiento. La versión anterior de GBA Online ya no se podrá ver ni descargar.**
 
-*Supported versions:* 1.x.x
+*Versiones admitidas:* 1.x.x
 
-*Deprecated versions:* 0.1.0, 0.1.1, 0.2.0, 0.2.1, 0.2.15, 0.3
+*Versiones obsoletas:* 0.1.0, 0.1.1, 0.2.0, 0.2.1, 0.2.15, 0.3
 
-## Let's jump into the game
+## Saltemos al juego
 
-GBA Online is available without a download at [gba.js.org](gba.js.org)!
+GBA Online está disponible sin descarga en [gba.js.org](gba.js.org).
 
-If you want to download a past version and host it locally, check out the [GitHub releases page](https://github.com/frogweezer/gba/releases).
+Si desea descargar una versión anterior y alojarla localmente, consulte la [página de versiones de GitHub](https://github.com/frogweezer/gba/releases).
 
-## Performance
+## Rendimiento
 
-Supported platforms:
+Plataformas compatibles:
 
 * **MacOS**
 * Windows *(partial support)*
 * iOS
 
-### Known to work well in:
+### Conocido por funcionar bien en:
 
 **Windows / MacOS:**
 
@@ -56,7 +58,7 @@ Supported platforms:
 
 * iOS Safari on iOS 15.1.1+
 
-### Poor performance, or failed to run:
+### Rendimiento deficiente o no se pudo ejecutar:
 
 **Windows / MacOS:**
 
@@ -65,15 +67,15 @@ Supported platforms:
 * Safari 5.1.4 and below
 * Internet Explorer
 
-## If you want to contribute:
+## Si quieres contribuir:
 
-1. Fork the project with GitHub
-2. Make any local changes you want
-3. Create a **pull request** to merge the repos
+1. Bifurque el proyecto con GitHub
+2.Realice los cambios locales que desee
+3. Cree una ** solicitud de extracción ** para fusionar los repositorios
 
-Thank you for your contributions :)
+Gracias por sus aportaciones :)
 
-## Project Structure
+## Estructura del proyecto
 
 ```
 📁 gba-online
@@ -96,24 +98,24 @@ Thank you for your contributions :)
 └ player.html
 ```
 
-1. The `about` folder contains documentation for the project.
-2. The `assets` folder contains project branding and images.
-3. The `binaries` folder contains GameBoy Advance ROMs.
-4. The `iodineGBA` folder contains most of the Iodine emulator.
-5. The `qr` folder contains QR codes.
+1. La carpeta `about` contiene documentación para el proyecto.
+2. La carpeta `assets` contiene imágenes y la marca del proyecto.
+3. La carpeta `binaries` contiene ROM de GameBoy Advance.
+4. La carpeta `iodineGBA` contiene la mayor parte del emulador Iodine.
+5. La carpeta `qr` contiene códigos QR.
 
 <br>
 
-1. The `index.html` page is the project's landing page.
-2. The `player.html` page is the emulator page.
+1. La página `index.html` es la página de inicio del proyecto.
+2. La página `player.html` es la página del emulador.
 
-## Credits
+## Créditos
 
-Originally built on [jsemu2/gba](https://github.com/jsemu2/gba)
+Construido originalmente en [jsemu2/gba](https://github.com/jsemu2/gba)
 
-Using [IodineGBA](https://github.com/taisel/IodineGBA)
+Usando [IodineGBA](https://github.com/taisel/IodineGBA)
 
-## License
+## Licencia
 
 [GNU GENERAL PUBLIC LICENSE  Version 3, 29 June 2007](https://github.com/frogweezer/gba/blob/gh-pages/LICENSE)
 
