@@ -4,7 +4,7 @@
   <h1 align="center">GBA Online</h1>
   <p align="center">A simple, fast, online emulator for the GameBoy Advance</p>
 
-  <p align="center"><a href="gba.js.org">🔗 gba.js.org</a></p>
+  <p align="center"><a href="https://gba.js.org">🔗 gba.js.org</a></p>
 
   <p align="center">
     <img alt="Github License" src="https://img.shields.io/github/license/frogweezer/gba?style=for-the-badge">
@@ -32,7 +32,7 @@
 
 ## Let's jump into the game
 
-GBA Online is available without a download at [gba.js.org](gba.js.org)!
+GBA Online is available without a download at [https://gba.js.org](gba.js.org)!
 
 If you want to download a past version and host it locally, check out the [GitHub releases page](https://github.com/frogweezer/gba/releases).
 
