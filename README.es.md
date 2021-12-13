@@ -16,7 +16,7 @@ Last Updated: 12/12/21
 ----
 
 <div align="center">
-  <img src="https://raw.githubusercontent.com/frogweezer/gba/gh-pages/assets/readme-card.png">
+  <img src="https://raw.githubusercontent.com/frogweezer/gba/gh-pages/assets/images/readme-card.png">
 
   <h1 align="center">GBA Online</h1>
   <p align="center">Un emulador en línea simple y rápido para GameBoy Advance</p>
