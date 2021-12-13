@@ -8,10 +8,12 @@
 
  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
+
 function registerGUIEvents() {
     //Catch any play status changes:
     IodineGUI.Iodine.attachPlayStatusHandler(updatePlayButton);
     //Add DOM events:
+
     addEvent("keydown", document, keyDown);
     addEvent("keyup", document, keyUpPreprocess);
     addEvent("change", document.getElementById("rom_load"), fileLoadROM);
@@ -527,12 +529,12 @@ function stepVolume(delta) {
 }
 function volChangeFunc() {
     var volume = Math.min(Math.max(parseInt(this.value), 0), 100) * 0.01;
-    setValue("volume", +volume);
-    IodineGUI.mixerInput.setVolume(+volume);
+    setValue("volume", + volume);
+    IodineGUI.mixerInput.setVolume(+ volume);
 };
 function speedChangeFunc() {
     var speed = Math.min(Math.max(parseInt(this.value), 0), 100) / 50;
-    speed = speed * speed;
+    speed *= speed;
     IodineGUI.Iodine.setSpeed(+speed);
 }
 function writeRedTemporaryText(textString) {

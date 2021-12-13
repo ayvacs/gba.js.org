@@ -42,7 +42,7 @@ Resampler.prototype.initialize = function () {
 			}
 			else {
 				/*
-					Custom resampler I wrote that doesn"t skip samples
+					Custom resampler I wrote that doesn't skip samples
 					like standard linear interpolation in high downsampling.
 					This is more accurate than linear interpolation on downsampling.
 				*/
