@@ -19,7 +19,11 @@ function Get(yourUrl){
    return Httpreq.responseText;
 }
 
-var json_obj = JSON.parse(Get("assets/user_data/GamesList.json"));
+var json_obj = JSON.parse(
+  Get(
+    "assets/user_data/GamesList.json"
+  )
+);
 
 var games = json_obj[0];
 
