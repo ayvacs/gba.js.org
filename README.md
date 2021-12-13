@@ -88,6 +88,9 @@ Thank you for your contributions :)
 │
 ├ about
 ├ assets
+│ ├ images
+│ ├ jquery
+│ │ └ 3.6.0.js
 │ ├ particles
 │ │ └ scripts
 │ ├ user_css
