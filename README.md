@@ -19,8 +19,6 @@ Copyright (C) 2021 FROGWEEZER
     <img alt="Github release (latest by date)" src="https://img.shields.io/github/v/release/frogweezer/gba?style=for-the-badge">
   </p>
 
-  <b align="center">Documentation languages</b>
-
   <p align="center">
     🌎
     <a target="_blank" href="https://github.com/frogweezer/gba/blob/gh-pages/README.md"><b>English</b></a>,
