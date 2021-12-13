@@ -120,9 +120,7 @@ Thank you for your contributions :)
 4. The `index.html` page is the project's landing page.
 5. The `player.html` page is the emulator page.
 
-## Credits
-
-**Libraries**
+## Libraries
 
 * [IodineGBA](https://github.com/taisel/IodineGBA)
 
