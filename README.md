@@ -39,6 +39,23 @@ Copyright (C) 2021 FROGWEEZER
 
 GBA Online is available without a download at [https://gba.js.org](gba.js.org)!
 
+### Web-App
+
+Saving the website as a Web-App is a convenient way to access the site from anywhere.
+
+**You must be using Google Chrome**
+
+1. Navigate to [gba.js.org](https://gba.js.org/)
+2. Click the three dots in the top right → More Tools → Create Shortcut...
+3. Check *Open as Window*
+4. Click *Create*
+
+And you're done! Pin the app to your taskbar and click to access it from anywhere.
+
+You can pin the app to your taskbar, and it fits in perfectly with macOS.
+
+### Hosting Locally
+
 If you want to download a past version and host it locally, check out the [GitHub releases page](https://github.com/frogweezer/gba/releases).
 
 ## Performance
