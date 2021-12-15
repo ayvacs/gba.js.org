@@ -12,14 +12,12 @@
 
 // Get Games Dictionary //
 
-function Get(yourUrl){
-  var Httpreq = new XMLHttpRequest(); // a new request
-  Httpreq.open("GET", yourUrl, false);
-  Httpreq.send(null);
-  return Httpreq.responseText;
-}
+var games;
 
-var games = JSON.parse(Get("assets/user_data/GamesList.json"));
+$.getJSON("assets/user_data/GamesList.json", function (data) {
+  games = data;
+});
+
 
 // Get Games Dictionary //
 
