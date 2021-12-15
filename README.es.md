@@ -16,7 +16,7 @@ Last Updated: 12/12/21
 ----
 
 <div align="center">
-  <img src="https://raw.githubusercontent.com/frogweezer/gba/gh-pages/assets/images/readme-card.png">
+  <img src="https://raw.githubusercontent.com/frogweezer/gba.js.org/gh-pages/assets/images/readme-card.png">
 
   <h1 align="center">GBA Online</h1>
   <p align="center">Un emulador en línea simple y rápido para GameBoy Advance</p>
@@ -24,18 +24,18 @@ Last Updated: 12/12/21
   <p align="center"><a target="_blank" href="https://gba.js.org">🔗 gba.js.org</a></p>
 
   <p align="center">
-    <img alt="Github License" src="https://img.shields.io/github/license/frogweezer/gba?style=for-the-badge">
-    <img alt="Github commit activity" src="https://img.shields.io/github/commit-activity/m/frogweezer/gba?style=for-the-badge">
-    <img alt="Github release (latest by date)" src="https://img.shields.io/github/v/release/frogweezer/gba?style=for-the-badge">
+    <img alt="Github License" src="https://img.shields.io/github/license/frogweezer/gba.js.org?style=for-the-badge">
+    <img alt="Github commit activity" src="https://img.shields.io/github/commit-activity/m/frogweezer/gba.js.org?style=for-the-badge">
+    <img alt="Github release (latest by date)" src="https://img.shields.io/github/v/release/frogweezer/gba.js.org?style=for-the-badge">
   </p>
 
   <b align="center">Idiomas de documentación</b>
 
   <p align="center">
     🌎
-    <a target="_blank" href="https://github.com/frogweezer/gba/blob/gh-pages/README.md"><b>English</b></a>,
-    <a target="_blank" href="https://github.com/frogweezer/gba/blob/gh-pages/README.es.md"><b>Español</b></a>,
-    <a target="_blank" href="https://github.com/frogweezer/gba/blob/gh-pages/README.fr.md"><b>Français</b></a>
+    <a target="_blank" href="https://github.com/frogweezer/gba.js.org/blob/gh-pages/README.md"><b>English</b></a>,
+    <a target="_blank" href="https://github.com/frogweezer/gba.js.org/blob/gh-pages/README.es.md"><b>Español</b></a>,
+    <a target="_blank" href="https://github.com/frogweezer/gba.js.org/blob/gh-pages/README.fr.md"><b>Français</b></a>
   </p>
 </div>
 
@@ -51,7 +51,7 @@ Last Updated: 12/12/21
 
 GBA Online está disponible sin descarga en [https://gba.js.org](gba.js.org).
 
-Si desea descargar una versión anterior y alojarla localmente, consulte la [página de versiones de GitHub](https://github.com/frogweezer/gba/releases).
+Si desea descargar una versión anterior y alojarla localmente, consulte la [página de versiones de GitHub](https://github.com/frogweezer/gba.js.org/releases).
 
 ## Rendimiento
 
@@ -143,7 +143,7 @@ Usando [IodineGBA](https://github.com/taisel/IodineGBA)
 
 ## Licencia
 
-[GNU GENERAL PUBLIC LICENSE  Version 3, 29 June 2007](https://github.com/frogweezer/gba/blob/gh-pages/LICENSE)
+[GNU GENERAL PUBLIC LICENSE  Version 3, 29 June 2007](https://github.com/frogweezer/gba.js.org/blob/gh-pages/LICENSE)
 
 ```
 GNU GENERAL PUBLIC LICENSE

@@ -6,7 +6,7 @@ Copyright (C) 2021 FROGWEEZER
 -->
 
 <div align="center">
-  <img src="https://raw.githubusercontent.com/frogweezer/gba/gh-pages/assets/images/readme-card.png">
+  <img src="https://raw.githubusercontent.com/frogweezer/gba.js.org/gh-pages/assets/images/readme-card.png">
 
   <h1 align="center">GBA Online</h1>
   <p align="center">A simple, fast, online emulator for the GameBoy Advance</p>
@@ -14,16 +14,16 @@ Copyright (C) 2021 FROGWEEZER
   <p align="center"><a target="_blank" href="https://gba.js.org">🔗 gba.js.org</a></p>
 
   <p align="center">
-    <img alt="Github License" src="https://img.shields.io/github/license/frogweezer/gba?style=for-the-badge">
-    <img alt="Github commit activity" src="https://img.shields.io/github/commit-activity/m/frogweezer/gba?style=for-the-badge">
-    <img alt="Github release (latest by date)" src="https://img.shields.io/github/v/release/frogweezer/gba?style=for-the-badge">
+    <img alt="Github License" src="https://img.shields.io/github/license/frogweezer/gba.js.org?style=for-the-badge">
+    <img alt="Github commit activity" src="https://img.shields.io/github/commit-activity/m/frogweezer/gba.js.org?style=for-the-badge">
+    <img alt="Github release (latest by date)" src="https://img.shields.io/github/v/release/frogweezer/gba.js.org?style=for-the-badge">
   </p>
 
   <p align="center">
     🌎
-    <a target="_blank" href="https://github.com/frogweezer/gba/blob/gh-pages/README.md"><b>English</b></a>,
-    <a target="_blank" href="https://github.com/frogweezer/gba/blob/gh-pages/README.es.md"><b>Español</b></a>,
-    <a target="_blank" href="https://github.com/frogweezer/gba/blob/gh-pages/README.fr.md"><b>Français</b></a>
+    <a target="_blank" href="https://github.com/frogweezer/gba.js.org/blob/gh-pages/README.md"><b>English</b></a>,
+    <a target="_blank" href="https://github.com/frogweezer/gba.js.org/blob/gh-pages/README.es.md"><b>Español</b></a>,
+    <a target="_blank" href="https://github.com/frogweezer/gba.js.org/blob/gh-pages/README.fr.md"><b>Français</b></a>
   </p>
 </div>
 
@@ -56,7 +56,7 @@ You can pin the app to your taskbar, and it fits in perfectly with macOS.
 
 ### Hosting Locally
 
-If you want to download a past version and host it locally, check out the [GitHub releases page](https://github.com/frogweezer/gba/releases).
+If you want to download a past version and host it locally, check out the [GitHub releases page](https://github.com/frogweezer/gba.js.org/releases).
 
 ## Performance
 
@@ -189,7 +189,7 @@ Thank you for your contributions :)
 Permissions of this strong copyleft license are conditioned on making available complete source code of licensed works and modifications, which include larger works using a licensed work, under the same license. Copyright and license notices must be preserved. Contributors provide an express grant of patent rights.
 
 * [More information](https://choosealicense.com/licenses/gpl-3.0/)
-* [License text](https://github.com/frogweezer/gba/blob/gh-pages/LICENSE)
+* [License text](https://github.com/frogweezer/gba.js.org/blob/gh-pages/LICENSE)
 
 ```
 GBA ONLINE;  GBA.JS.ORG;  "Online GameBoy Advance Emulator"
