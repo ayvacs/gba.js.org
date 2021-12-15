@@ -1,3 +1,8 @@
+body,
+html {
+  font-family: 'Merriweather Sans', sans-serif;
+}
+
 .menu{
   box-shadow: 0 0 48px 48px rgba(0, 0, 0, 0.1);
   background: #202124;
@@ -12,11 +17,12 @@ li{
 
 #logo-small{
   position: fixed;
-  left: 94.5%;
+  left: 92.5%;
+  top: 1.35%;
 }
 
-.message {
-  font-family: 'Merriweather Sans', sans-serif;
+.message,
+#tempMessage {
   background: #6cc27d;
   padding: 1em 2em;
   text-align: center;
