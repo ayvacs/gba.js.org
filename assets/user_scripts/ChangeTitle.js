@@ -13,7 +13,7 @@ var json_obj = JSON.parse(
   )
 );
 
-var games = json_obj[0];
+var games = json_obj;
 
 // Get Games Dictionary //
 
