@@ -1,10 +1,3 @@
-<!--
-
-GBA ONLINE;  GBA.JS.ORG;  "Online GameBoy Advance Emulator"
-Copyright (C) 2021 FROGWEEZER
-
--->
-
 <div align="center">
   <img src="https://raw.githubusercontent.com/frogweezer/gba.js.org/gh-pages/assets/images/readme-card.png">
 
