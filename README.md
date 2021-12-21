@@ -1,3 +1,8 @@
+<!--
+// (c) 2021-present Frogweezer
+// This code is licensed under the MIT license (see LICENSE.md for details)
+-->
+
 <div align="center">
   <img src="https://raw.githubusercontent.com/frogweezer/gba.js.org/gh-pages/assets/images/readme-card.png">
 
