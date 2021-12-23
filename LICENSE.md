@@ -3,7 +3,7 @@
 <h3>gba.js.org</h3>
 <sup>MIT License</sup>
 <br>
-<sup>Copyright © 2021-2022 FROGWEEZER. - All rights reserved.</sup>
+<sup>Copyright © 2021-present FROGWEEZER. - All rights reserved.</sup>
 <br> <br>
 <sup>Last Revised: December 20th, 2021</sup>
 
