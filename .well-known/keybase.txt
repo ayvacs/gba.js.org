@@ -1,0 +1,56 @@
+==================================================================
+https://keybase.io/nwts
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://gba.js.org
+  * I am nwts (https://keybase.io/nwts) on keybase.
+  * I have a public key ASD7UdKFfCqVFTw0P-V8HjNAKpItQi20knQZNtq5o4CjwQo
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "0120fb51d2857c2a95153c343fe57c1e33402a922d422db492741936dab9a380a3c10a",
+      "host": "keybase.io",
+      "kid": "0120fb51d2857c2a95153c343fe57c1e33402a922d422db492741936dab9a380a3c10a",
+      "uid": "24dfb319679affe17a41b51183949719",
+      "username": "nwts"
+    },
+    "merkle_root": {
+      "ctime": 1640827343,
+      "hash": "9e2c9a9976cced505c25880f5df92e727a8e6a9495e0c9dd3d771bd190b3b95bde857a1ed010362561939d9e44cf36e7cd9e606e1dea3a8900e9f1d10cea91d8",
+      "hash_meta": "526f1111c0172ac9f010cce89ea074bea9c29c81c413008e901cd3f50b0fb835",
+      "seqno": 21529341
+    },
+    "service": {
+      "entropy": "5p8gHJy7w5fm+IXSVvAFajtm",
+      "hostname": "gba.js.org",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 2
+  },
+  "client": {
+    "name": "keybase.io go client",
+    "version": "5.9.0"
+  },
+  "ctime": 1640827374,
+  "expire_in": 504576000,
+  "prev": "8416903aed66bc4a35d0eaa167866f6e4b69f67df189d161e87954ceec3480ab",
+  "seqno": 8,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEg+1HShXwqlRU8ND/lfB4zQCqSLUIttJJ0GTbauaOAo8EKp3BheWxvYWTESpcCCMQghBaQOu1mvEo10OqhZ4Zvbktp9n3xidFh6HlUzuw0gKvEIDiUuSKOuPLqLsTd6oM1syp16vZV2uaGWZH/L2IcQE5rAgHCo3NpZ8RAk3nfJflJbuzFrty3u5sji8/HDxG1qa9bxTH+H4A4I3U4l0LR9SPn0X9LiAZTsOznoZx0UxHr2pPta4fj2nvRDKhzaWdfdHlwZSCkaGFzaIKkdHlwZQildmFsdWXEID8qtz/dN91FG3pukLaUqBAHc0jDxchLby/kHdcj5FaSo3RhZ80CAqd2ZXJzaW9uAQ==
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/nwts
+
+==================================================================
