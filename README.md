@@ -1,10 +1,10 @@
 <!--
-// (c) 2021-present Frogweezer
+// (c) 2021-present ayvacs
 // This code is licensed under the MIT license (see LICENSE.md for details)
 -->
 
 <div align="center">
-  <img src="https://raw.githubusercontent.com/frogweezer/gba.js.org/gh-pages/assets/images/readme-card.png">
+  <img src="https://raw.githubusercontent.com/ayvacs/gba.js.org/gh-pages/assets/images/readme-card.png">
 
   <h1 align="center">GBA Online</h1>
   <p align="center">A simple, fast, online emulator for the GameBoy Advance</p>
@@ -12,16 +12,16 @@
   <p align="center"><a target="_blank" href="https://gba.js.org">🔗 gba.js.org</a></p>
 
   <p align="center">
-    <img alt="Github License" src="https://img.shields.io/github/license/frogweezer/gba.js.org?style=for-the-badge">
-    <img alt="Github commit activity" src="https://img.shields.io/github/commit-activity/m/frogweezer/gba.js.org?style=for-the-badge">
-    <img alt="Github release (latest by date)" src="https://img.shields.io/github/v/release/frogweezer/gba.js.org?style=for-the-badge">
+    <img alt="Github License" src="https://img.shields.io/github/license/ayvacs/gba.js.org?style=for-the-badge">
+    <img alt="Github commit activity" src="https://img.shields.io/github/commit-activity/m/ayvacs/gba.js.org?style=for-the-badge">
+    <img alt="Github release (latest by date)" src="https://img.shields.io/github/v/release/ayvacs/gba.js.org?style=for-the-badge">
   </p>
 
   <p align="center">
     🌎
-    <a target="_blank" href="https://github.com/frogweezer/gba.js.org/blob/gh-pages/README.md"><b>English</b></a>,
-    <a target="_blank" href="https://github.com/frogweezer/gba.js.org/blob/gh-pages/README.es.md"><b>Español</b></a>,
-    <a target="_blank" href="https://github.com/frogweezer/gba.js.org/blob/gh-pages/README.fr.md"><b>Français</b></a>
+    <a target="_blank" href="https://github.com/ayvacs/gba.js.org/blob/gh-pages/README.md"><b>English</b></a>,
+    <a target="_blank" href="https://github.com/ayvacs/gba.js.org/blob/gh-pages/README.es.md"><b>Español</b></a>,
+    <a target="_blank" href="https://github.com/ayvacs/gba.js.org/blob/gh-pages/README.fr.md"><b>Français</b></a>
   </p>
 </div>
 
@@ -54,7 +54,7 @@ You can pin the app to your taskbar, and it fits in perfectly with macOS.
 
 ### Hosting Locally
 
-If you want to download a past version and host it locally, check out the [GitHub releases page](https://github.com/frogweezer/gba.js.org/releases).
+If you want to download a past version and host it locally, check out the [GitHub releases page](https://github.com/ayvacs/gba.js.org/releases).
 
 ## Performance
 
@@ -180,12 +180,12 @@ Thank you for your contributions :)
 
 ## License
 
-<img width="150" height="150" src="https://raw.githubusercontent.com/frogweezer/gba.js.org/gh-pages/assets/images/macos-11x/apple-touch-icon.png" alt="logo">
+<img width="150" height="150" src="https://raw.githubusercontent.com/ayvacs/gba.js.org/gh-pages/assets/images/macos-11x/apple-touch-icon.png" alt="logo">
 <br>
 <h3>gba.js.org</h3>
 <sup>MIT License</sup>
 <br>
-<sup>Copyright © 2021-2022 FROGWEEZER. - All rights reserved.</sup>
+<sup>Copyright © 2021-2022 AYVACS. - All rights reserved.</sup>
 <br> <br>
 <sup>Last Revised: December 20th, 2021</sup>
 

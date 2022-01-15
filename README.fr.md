@@ -1,7 +1,7 @@
 <!--
 
 GBA ONLINE;  GBA.JS.ORG;  "Online GameBoy Advance Emulator"
-Copyright (C) 2021 FROGWEEZER
+Copyright (C) 2021 AYVACS
 
 -->
 
@@ -16,7 +16,7 @@ Last Updated: 12/12/21
 ----
 
 <div align="center">
-  <img src="https://raw.githubusercontent.com/frogweezer/gba.js.org/gh-pages/assets/images/readme-card.png">
+  <img src="https://raw.githubusercontent.com/ayvacs/gba.js.org/gh-pages/assets/images/readme-card.png">
 
   <h1 align="center">GBA Online</h1>
   <p align="center">Un émulateur en ligne simple et rapide pour la GameBoy Advance</p>
@@ -24,18 +24,18 @@ Last Updated: 12/12/21
   <p align="center"><a target="_blank" href="https://gba.js.org">🔗 gba.js.org</a></p>
 
   <p align="center">
-    <img alt="Github License" src="https://img.shields.io/github/license/frogweezer/gba.js.org?style=for-the-badge">
-    <img alt="Github commit activity" src="https://img.shields.io/github/commit-activity/m/frogweezer/gba.js.org?style=for-the-badge">
-    <img alt="Github release (latest by date)" src="https://img.shields.io/github/v/release/frogweezer/gba.js.org?style=for-the-badge">
+    <img alt="Github License" src="https://img.shields.io/github/license/ayvacs/gba.js.org?style=for-the-badge">
+    <img alt="Github commit activity" src="https://img.shields.io/github/commit-activity/m/ayvacs/gba.js.org?style=for-the-badge">
+    <img alt="Github release (latest by date)" src="https://img.shields.io/github/v/release/ayvacs/gba.js.org?style=for-the-badge">
   </p>
 
   <b align="center">Langues de documentation</b>
 
   <p align="center">
     🌎
-    <a target="_blank" href="https://github.com/frogweezer/gba.js.org/blob/gh-pages/README.md"><b>English</b></a>,
-    <a target="_blank" href="https://github.com/frogweezer/gba.js.org/blob/gh-pages/README.es.md"><b>Español</b></a>,
-    <a target="_blank" href="https://github.com/frogweezer/gba.js.org/blob/gh-pages/README.fr.md"><b>Français</b></a>
+    <a target="_blank" href="https://github.com/ayvacs/gba.js.org/blob/gh-pages/README.md"><b>English</b></a>,
+    <a target="_blank" href="https://github.com/ayvacs/gba.js.org/blob/gh-pages/README.es.md"><b>Español</b></a>,
+    <a target="_blank" href="https://github.com/ayvacs/gba.js.org/blob/gh-pages/README.fr.md"><b>Français</b></a>
   </p>
 </div>
 
@@ -51,7 +51,7 @@ Last Updated: 12/12/21
 
 GBA Online est disponible sans téléchargement sur <a href="https://gba.js.org">gba.js.org</a> !
 
-Si vous souhaitez télécharger une version antérieure et l'héberger localement, consultez la [page des versions GitHub](https://github.com/frogweezer/gba.js.org/releases).
+Si vous souhaitez télécharger une version antérieure et l'héberger localement, consultez la [page des versions GitHub](https://github.com/ayvacs/gba.js.org/releases).
 
 ## Performance
 
@@ -143,7 +143,7 @@ Utilisation de [IodineGBA](https://github.com/taisel/IodineGBA)
 
 ## License
 
-[GNU GENERAL PUBLIC LICENSE  Version 3, 29 June 2007](https://github.com/frogweezer/gba.js.org/blob/gh-pages/LICENSE)
+[GNU GENERAL PUBLIC LICENSE  Version 3, 29 June 2007](https://github.com/ayvacs/gba.js.org/blob/gh-pages/LICENSE)
 
 ```
 GNU GENERAL PUBLIC LICENSE
@@ -800,7 +800,7 @@ Also add information on how to contact you by electronic and paper mail.
 If the program does terminal interaction, make it output a short
 notice like this when it starts in an interactive mode:
 
-GBAONLINE  Copyright (C) 2021 FROGWEEZER
+GBAONLINE  Copyright (C) 2021 AYVACS
 This program comes with ABSOLUTELY NO WARRANTY; for details type `show w'.
 This is free software, and you are welcome to redistribute it
 under certain conditions; type `show c' for details.

@@ -1,7 +1,7 @@
 <!--
 
 GBA ONLINE;  GBA.JS.ORG;  "Online GameBoy Advance Emulator"
-Copyright (C) 2021 FROGWEEZER
+Copyright (C) 2021 AYVACS
 
 -->
 

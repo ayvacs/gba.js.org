@@ -1,9 +1,9 @@
-<img width="150" height="150" src="https://raw.githubusercontent.com/frogweezer/gba.js.org/gh-pages/assets/images/macos-11x/apple-touch-icon.png" alt="logo">
+<img width="150" height="150" src="https://raw.githubusercontent.com/ayvacs/gba.js.org/gh-pages/assets/images/macos-11x/apple-touch-icon.png" alt="logo">
 <br>
 <h3>gba.js.org</h3>
 <sup>MIT License</sup>
 <br>
-<sup>Copyright © 2021-present FROGWEEZER. - All rights reserved.</sup>
+<sup>Copyright © 2021-present AYVACS. - All rights reserved.</sup>
 <br> <br>
 <sup>Last Revised: December 20th, 2021</sup>
 
