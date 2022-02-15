@@ -9,7 +9,7 @@
  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 function iodineGBAWorkerShim() {
-	this.playStatus = null;
+    this.playStatus = null;
     this.gfx = null;
     this.audio = null;
     this.speed = null;
@@ -28,7 +28,7 @@ function iodineGBAWorkerShim() {
     this.initialize();
 }
 var tempvar = document.getElementsByTagName("script");
-iodineGBAWorkerShim.prototype.filepath = tempvar[tempvar.length-1].src;
+iodineGBAWorkerShim.prototype.filepath = tempvar[tempvar.length - 1].src;
 iodineGBAWorkerShim.prototype.initialize = function () {
     var parentObj = this;
     var loc = this.filepath.split("/");
@@ -41,11 +41,11 @@ iodineGBAWorkerShim.prototype.initialize = function () {
 }
 iodineGBAWorkerShim.prototype.sendMessageSingle = function (eventCode) {
     eventCode = eventCode | 0;
-    this.worker.postMessage({messageID:eventCode});
+    this.worker.postMessage({ messageID: eventCode });
 }
 iodineGBAWorkerShim.prototype.sendMessageDouble = function (eventCode, eventData) {
     eventCode = eventCode | 0;
-    this.worker.postMessage({messageID:eventCode, payload:eventData});
+    this.worker.postMessage({ messageID: eventCode, payload: eventData });
 }
 iodineGBAWorkerShim.prototype.play = function () {
     this.sendMessageSingle(0);
@@ -69,14 +69,14 @@ iodineGBAWorkerShim.prototype.timerCallback = function (timestamp) {
     }
 }
 iodineGBAWorkerShim.prototype.attachPlayStatusHandler = function (playStatus) {
-	this.playStatus = playStatus;
+    this.playStatus = playStatus;
     this.sendMessageSingle(23);
 }
 iodineGBAWorkerShim.prototype.issuePlayStatus = function (isPlaying) {
     isPlaying = isPlaying | 0;
-	if (this.playStatus) {
-		this.playStatus(isPlaying | 0);
-	}
+    if (this.playStatus) {
+        this.playStatus(isPlaying | 0);
+    }
 }
 iodineGBAWorkerShim.prototype.attachGraphicsFrameHandler = function (gfx) {
     this.gfx = gfx;
@@ -174,9 +174,9 @@ iodineGBAWorkerShim.prototype.decodeMessage = function (data) {
             break;
         case 7:
             this.speedPush(+data.speed);
-			break;
-		default:
-			this.issuePlayStatus(data.playing | 0);
+            break;
+        default:
+            this.issuePlayStatus(data.playing | 0);
     }
 }
 iodineGBAWorkerShim.prototype.audioInitialize = function (channels, sampleRate, bufferLimit, audioBuffer, audioCounters) {
@@ -192,7 +192,7 @@ iodineGBAWorkerShim.prototype.audioInitialize = function (channels, sampleRate, 
         }, function () {
             //Get the remaining sample count:
             parentObj.audioPostHeartBeat();
-        },function () {
+        }, function () {
             //Disable audio in the callback here:
             parentObj.disableAudio();
         });
@@ -316,9 +316,9 @@ iodineGBAWorkerShim.prototype.saveImportRequest = function (saveID) {
         this.saveImport(saveID, function (saveData) {
             parentObj.sendMessageDouble(20, saveData);
         },
-        function () {
-            parentObj.sendMessageSingle(21);
-        });
+            function () {
+                parentObj.sendMessageSingle(21);
+            });
     }
 }
 iodineGBAWorkerShim.prototype.saveExportRequest = function (saveID, saveData) {

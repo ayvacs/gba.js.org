@@ -475,11 +475,11 @@ GameBoyAdvanceSound.prototype.CGBFolder = function () {
 }
 GameBoyAdvanceSound.prototype.mixerOutputLevelCache = function () {
     this.mixerOutputCacheLeft = Math.min(Math.max((((this.AGBDirectSoundALeftCanPlay) ? (this.AGBDirectSoundAFolded | 0) : 0) +
-    ((this.AGBDirectSoundBLeftCanPlay) ? (this.AGBDirectSoundBFolded | 0) : 0) +
-    (this.CGBMixerOutputCacheLeftFolded | 0) + (this.mixerSoundBIAS | 0)) | 0, 0) | 0, 0x3FF) & this.PWMBitDepthMask;
+        ((this.AGBDirectSoundBLeftCanPlay) ? (this.AGBDirectSoundBFolded | 0) : 0) +
+        (this.CGBMixerOutputCacheLeftFolded | 0) + (this.mixerSoundBIAS | 0)) | 0, 0) | 0, 0x3FF) & this.PWMBitDepthMask;
     this.mixerOutputCacheRight = Math.min(Math.max((((this.AGBDirectSoundARightCanPlay) ? (this.AGBDirectSoundAFolded | 0) : 0) +
-    ((this.AGBDirectSoundBRightCanPlay) ? (this.AGBDirectSoundBFolded | 0) : 0) +
-    (this.CGBMixerOutputCacheRightFolded | 0) + (this.mixerSoundBIAS | 0)) | 0, 0) | 0, 0x3FF) & this.PWMBitDepthMask;
+        ((this.AGBDirectSoundBRightCanPlay) ? (this.AGBDirectSoundBFolded | 0) : 0) +
+        (this.CGBMixerOutputCacheRightFolded | 0) + (this.mixerSoundBIAS | 0)) | 0, 0) | 0, 0x3FF) & this.PWMBitDepthMask;
 }
 GameBoyAdvanceSound.prototype.setNR52 = function (data) {
     data = data | 0;
@@ -549,8 +549,8 @@ GameBoyAdvanceSound.prototype.writeSOUND1CNT32 = function (data) {
 }
 GameBoyAdvanceSound.prototype.readSOUND1CNT32 = function () {
     return this.channel1.readSOUND1CNT8_0() |
-    (this.channel1.readSOUND1CNT8_2() << 16) |
-    (this.channel1.readSOUND1CNT8_3() << 24);
+        (this.channel1.readSOUND1CNT8_2() << 16) |
+        (this.channel1.readSOUND1CNT8_3() << 24);
 }
 GameBoyAdvanceSound.prototype.writeSOUND1CNTX8_0 = function (data) {
     //NR13:

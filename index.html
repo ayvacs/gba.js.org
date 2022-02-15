@@ -5,241 +5,248 @@
 
 <!DOCTYPE html>
 <html>
+
 <head>
-  <script src="assets/particles/scripts/particles@2.0.0.min.js"></script>
-  <script src="assets/particles/scripts/load.js"></script>
+    <script src="assets/particles/scripts/particles@2.0.0.min.js"></script>
+    <script src="assets/particles/scripts/load.js"></script>
 
-  <link rel="stylesheet" href="assets/user_css/index.css">
-  <link rel="stylesheet" href="assets/user_css/fonts.css">
-  <link rel="stylesheet" href="assets/user_css/collapsible.css">
-  <link rel="stylesheet" href="assets/user_css/particles-js.css">
+    <link rel="stylesheet" href="assets/user_css/index.css">
+    <link rel="stylesheet" href="assets/user_css/fonts.css">
+    <link rel="stylesheet" href="assets/user_css/collapsible.css">
+    <link rel="stylesheet" href="assets/user_css/particles-js.css">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Merriweather+Sans&display=swap">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Merriweather+Sans&display=swap">
 
-  <link href="assets/images/macos-11x/Icon-MacOS-512x512@2x.png" type="image/png" rel="shortcut icon">
-  <link href="assets/images/macos-11x/apple-touch-icon.png" type="image/png" rel="apple-touch-icon">
+    <link href="assets/images/macos-11x/Icon-MacOS-512x512@2x.png" type="image/png" rel="shortcut icon">
+    <link href="assets/images/macos-11x/apple-touch-icon.png" type="image/png" rel="apple-touch-icon">
 
-  <meta charset="UTF-8">
-  <meta name="google-site-verification" content="EQgtqgYpirWekvBNi5Vi9re6ruqv6WL0MYnzG9b9-lc" />
+    <meta charset="UTF-8">
+    <meta name="google-site-verification" content="EQgtqgYpirWekvBNi5Vi9re6ruqv6WL0MYnzG9b9-lc" />
 
 
-  <!-- Primary Meta Tags -->
-  <title>GBA Online</title>
-  <meta name="title" content="GBA Online">
-  <meta name="description" content="A free, online, and lightweight GameBoy Advance emulator.">
+    <!-- Primary Meta Tags -->
+    <title>GBA Online</title>
+    <meta name="title" content="GBA Online">
+    <meta name="description" content="A free, online, and lightweight GameBoy Advance emulator.">
 
-  <!-- Open Graph / Facebook -->
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://metatags.io/">
-  <meta property="og:title" content="GBA Online">
-  <meta property="og:description" content="A free, online, and lightweight GameBoy Advance emulator.">
-  <meta property="og:image" content="https://raw.githubusercontent.com/ayvacs/gba.js.org/gh-pages/assets/images/repo-card.png">
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://metatags.io/">
+    <meta property="og:title" content="GBA Online">
+    <meta property="og:description" content="A free, online, and lightweight GameBoy Advance emulator.">
+    <meta property="og:image"
+        content="https://raw.githubusercontent.com/ayvacs/gba.js.org/gh-pages/assets/images/repo-card.png">
 
-  <!-- Twitter -->
-  <meta property="twitter:card" content="summary_large_image">
-  <meta property="twitter:url" content="https://metatags.io/">
-  <meta property="twitter:title" content="GBA Online">
-  <meta property="twitter:description" content="A free, online, and lightweight GameBoy Advance emulator.">
-  <meta property="twitter:image" content="https://raw.githubusercontent.com/ayvacs/gba.js.org/gh-pages/assets/images/repo-card.png">
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://metatags.io/">
+    <meta property="twitter:title" content="GBA Online">
+    <meta property="twitter:description" content="A free, online, and lightweight GameBoy Advance emulator.">
+    <meta property="twitter:image"
+        content="https://raw.githubusercontent.com/ayvacs/gba.js.org/gh-pages/assets/images/repo-card.png">
 </head>
+
 <body>
-  <div id="particles-js"></div>  <!-- Add Particles -->
+    <div id="particles-js"></div> <!-- Add Particles -->
 
 
-  <br>
-  <img id="repo-card" src="assets/images/repo-card.png" height="300px">
-  <br><br>
-
-  <p>Welcome to <b>GBA Online</b>, a modern GameBoy Advance emulator for the web.</p>
-
-  <p style="font-size:25px;">
     <br>
-    Created by <b>
-      <a style="font-size:25px;" href="https://github.com/ayvacs">@ayvacs</a>
-    </b>
-  </p>
+    <img id="repo-card" src="assets/images/repo-card.png" height="300px">
+    <br><br>
 
-  <button type="collapsible-button" class="collapsible-collapsible">
-    Keybinds
-  </button>
-  <div class="collapsible-content">
-    <p class="collapsible-text">
-      <img src="assets/images/controls-gba-diagram.png" width="100%"></img>
+    <p>Welcome to <b>GBA Online</b>, a modern GameBoy Advance emulator for the web.</p>
 
-      <u>Emulator Keybinds</u>                      <br><br>
-      <b>Reset Game:</b> R                              <br>
-      <b>Play/Pause:</b> P
+    <p style="font-size:25px;">
+        <br>
+        Created by <b>
+            <a style="font-size:25px;" href="https://github.com/ayvacs">@ayvacs</a>
+        </b>
     </p>
-  </div><br>
 
-  <button type="collapsible-button" class="collapsible-collapsible">
-    Source Code
-  </button>
-  <div class="collapsible-content">
-    <p class="collapsible-text">
-      View the source code on <a href="https://github.com/ayvacs/gba.js.org">GitHub</a>!<br>
+    <button type="collapsible-button" class="collapsible-collapsible">
+        Keybinds
+    </button>
+    <div class="collapsible-content">
+        <p class="collapsible-text">
+            <img src="assets/images/controls-gba-diagram.png" width="100%"></img>
 
-      <p class="collapsible-text"><b>Author:</b> <a href="https://github.com/ayvacs">@ayvacs</a></p>
-    </p>
-  </div><br>
+            <u>Emulator Keybinds</u> <br><br>
+            <b>Reset Game:</b> R <br>
+            <b>Play/Pause:</b> P
+        </p>
+    </div><br>
 
-  <br> <hr> <br>
+    <button type="collapsible-button" class="collapsible-collapsible">
+        Source Code
+    </button>
+    <div class="collapsible-content">
+        <p class="collapsible-text">
+            View the source code on <a href="https://github.com/ayvacs/gba.js.org">GitHub</a>!<br>
 
-  <h1>Select a Game</h1>
+        <p class="collapsible-text"><b>Author:</b> <a href="https://github.com/ayvacs">@ayvacs</a></p>
+        </p>
+    </div><br>
 
-  <a href="./player.html#advancewars">Advance Wars</a><br>
-  <a href="./player.html#advancewars2">Advance Wars 2</a><br>
-  <a href="./player.html#aladdin">Aladdin</a><br>
-  <a href="./player.html#alienhominid">Alien Hominid</a><br>
-  <a href="./player.html#bomberman_max2blue">Bomberman Max 2 - Blue Advance</a><br>
-  <a href="./player.html#bomberman_tournament">Bomberman Tournament</a><br>
-  <a href="./player.html#bubblebobble">Bubble Bobble: Old and New</a><br>
-  <a href="./player.html#croket1">Croket! - Yume no Banker Survival!</a><br>
-  <a href="./player.html#croket2">Croket! 2 - Yami no Bank to Banqueen</a><br>
-  <a href="./player.html#croket3">Croket! 3 - Granu Oukoku no Nazo</a><br>
-  <a href="./player.html#croket4">Croket! 4 - Bank no Mori no Mamorigami</a><br>
-  <a href="./player.html#digimon_racing">Digimon Racing</a><br>
-  <a href="./player.html#dbz_supersonic">Dragon Ball Z - Supersonic Warriors</a><br>
-  <a href="./player.html#drilldozer">Drill Dozer</a><br>
-  <a href="./player.html#earthwormjim">Earthworm Jim</a><br>
-  <a href="./player.html#earthwormjim2">Earthworm Jim 2</a><br>
-  <a href="./player.html#ff1and2">Final Fantasy 1 & 2 Advance</a><br>
-  <a href="./player.html#ff4S">Final Fantasy IV Advance (Sound Restoration Mod)</a><br>
-  <a href="./player.html#ff6">Final Fantasy VI Advance</a><br>
-  <a href="./player.html#final_fantasy_tactics">Final Fantasy Tactics Advance</a><br>
-  <a href="./player.html#fire_emblem">Fire Emblem</a><br>
-  <a href="./player.html#frogger1">Frogger Advance - The Great Quest</a><br>
-  <a href="./player.html#frogger2">Frogger's Adventures - Temple of the Frog</a><br>
-  <a href="./player.html#frogger3">Frogger's Adventures 2 - The Lost Wand</a><br>
-  <a href="./player.html#fzero_gp">F-Zero - GP Legend</a><br>
-  <a href="./player.html#fzero_max">F-Zero - Maximum Velocity</a><br>
-  <a href="./player.html#gamewatch4">Game & Watch Gallery 4</a><br>
-  <a href="./player.html#goldensun">Golden Sun</a><br>
-  <a href="./player.html#gunstar_super_heroes">Gunstar Super Heroes</a><br>
-  <a href="./player.html#hamtaro_heartbreak">Hamtaro - Ham-Ham Heartbreak</a><br>
-  <a href="./player.html#iridion">Iridion 3D</a><br>
-  <a href="./player.html#kirbymirror">Kirby & The Amazing Mirror</a><br>
-  <a href="./player.html#kirbynightmare">Kirby: Nightmare in Dreamland</a><br>
-  <a href="./player.html#superstar">Mario & Luigi: Superstar Saga</a><br>
-  <a href="./player.html#mariokart">Mario Kart: Super Circuit</a><br>
-  <a href="./player.html#marioparty">Mario Party Advance</a><br>
-  <a href="./player.html#mariopinball">Mario Pinball Land</a><br>
-  <a href="./player.html#megamanbass">Megaman & Bass</a><br>
-  <a href="./player.html#megaman_battle1">Megaman Battle Network 1</a><br>
-  <a href="./player.html#megaman_battle2">Megaman Battle Network 2</a><br>
-  <a href="./player.html#megaman_battle3_blue">Megaman Battle Network 3 Blue</a><br>
-  <a href="./player.html#megaman_battle4_blue">Megaman Battle Network 4 Blue Moon</a><br>
-  <a href="./player.html#megaman_battle4_red">Megaman Battle Network 4 Red Sun</a><br>
-  <a href="./player.html#megaman_battle5">Megaman Battle Network 5 Team Protoman</a><br>
-  <a href="./player.html#megaman_battle6">Megaman Battle Network 6 Cybeast Falzar</a><br>
-  <a href="./player.html#megaman_zero1">Megaman Zero</a><br>
-  <a href="./player.html#megaman_zero2">Megaman Zero 2</a><br>
-  <a href="./player.html#megaman_zero3">Megaman Zero 3</a><br>
-  <a href="./player.html#megaman_zero4">Megaman Zero 4</a><br>
-  <a href="./player.html#metalslug">Metal Slug Advance</a><br>
-  <a href="./player.html#metroid_fusion">Metriod Fusion</a><br>
-  <a href="./player.html#momotarou_dentetsu">Momotarou Dentetsu G Gold Deck wo Tsukure!</a><br>
-  <a href="./player.html#monopoly">Monopoly</a><br>
-  <a href="./player.html#monster_force">Monster Force</a><br>
-  <a href="./player.html#mortal_kombat">Mortal Kombat Advance</a><br>
-  <a href="./player.html#onepiece">One Piece</a><br>
-  <a href="./player.html#pacman_world">Pacman World</a><br>
-  <a href="./player.html#pacman_world2">Pacman World 2</a><br>
-  <a href="./player.html#pokemonemerald">Pokemon Emerald</a><br>
-  <a href="./player.html#pokemongreen">Pokemon Leaf Green</a><br>
-  <a href="./player.html#pokemonred">Pokemon Fire Red</a><br>
-  <a href="./player.html#mysteryred">Pokemon Mystery Dungeon Red</a><br>
-  <a href="./player.html#pokemonruby">Pokemon Ruby</a><br>
-  <a href="./player.html#pokemonsapphire">Pokemon Sapphire</a><br>
-  <a href="./player.html#gba_video_pokemon_1">Pokemon Video Show Pak 1</a><br>
-  <a href="./player.html#gba_video_pokemon_2">Pokemon Video Show Pak 2</a><br>
-  <a href="./player.html#gba_video_pokemon_3">Pokemon Video Show Pak 3</a><br>
-  <a href="./player.html#gba_video_pokemon_4">Pokemon Video Show Pak 4</a><br>
-  <a href="./player.html#puyopop">Puyo Pop</a><br>
-  <a href="./player.html#sonic_advance">Sonic Advance</a><br>
-  <a href="./player.html#sonic_advance2">Sonic Advance 2</a><br>
-  <a href="./player.html#sonic_advance3">Sonic Advance 3</a><br>
-  <a href="./player.html#sonicbattle">Sonic Battle</a><br>
-  <a href="./player.html#sonicpinball">Sonic Pinball</a><br>
-  <a href="./player.html#spyro_adventure">Spyro Adventure</a><br>
-  <a href="./player.html#spyro_ice">Spyro: Season of Ice</a><br>
-  <a href="./player.html#spyro_flame">Spyro 2: Season of Flame</a><br>
-  <a href="./player.html#supermarioadvance">Super Mario Advance</a><br>
-  <a href="./player.html#supermarioadvance2">Super Mario Advance 2</a><br>
-  <a href="./player.html#supermarioadvance3">Super Mario Advance 3</a><br>
-  <a href="./player.html#supermarioadvance4">Super Mario Advance 4</a><br>
-  <a href="./player.html#supermonkeyballjr">Super Monkey Ball Jr</a><br>
-  <a href="./player.html#super_street_fighter_2_turbo_revival">Super Street Fighter II: Turbo Revival</a><br>
-  <a href="./player.html#super_street_fighter_3_alpha">Super Street Fighter III: Alpha</a><br>
-  <a href="./player.html#tales_of_phantasia">Tales of Phantasia</a><br>
-  <a href="./player.html#tak2_staff_of_dreams">Tak 2: The Staff of Dreams</a><br>
-  <a href="./player.html#tmnt">Teenage Mutant Ninja Turtles</a><br>
-  <a href="./player.html#tetris_worlds">Tetris Worlds</a><br>
-  <a href="./player.html#sims_bustin_out">The Sims: Bustin' Out</a><br>
-  <a href="./player.html#sims2">The Sims 2</a><br>
-  <a href="./player.html#simpsons">The Simpsons: Road Rage</a><br>
-  <a href="./player.html#turok_evolution">Turok Evolution</a><br>
-  <a href="./player.html#ty2">Ty the Tasmanian Tiger 2 - Bush Rescue</a><br>
-  <a href="./player.html#ty3">Ty the Tasmanian Tiger 3 - Night of the Quinkan</a><br>
-  <a href="./player.html#warioland4">Wario Land 4</a><br>
-  <a href="./player.html#wario_ware">Wario Ware Inc</a><br>
-  <a href="./player.html#zelda_past">The Legend of Zelda: A Link to the Past</a><br>
-  <a href="./player.html#zelda_minish">The Legend of Zelda: The Minish Cap</a><br>
+    <br>
+    <hr> <br>
 
-  <br> <hr> <br>
+    <h1>Select a Game</h1>
 
-  <button type="collapsible-button" class="collapsible-collapsible">
-    Debug Files
-  </button>
-  <div class="collapsible-content">
-    <p class="collapsible-text">
-      <h3>AGB_BUTTON_TEST</h3>
-      <a href="./player.html#-DEBUG-AGB-buttontest">AGB-buttontest</a><br>
+    <a href="./player.html#advancewars">Advance Wars</a><br>
+    <a href="./player.html#advancewars2">Advance Wars 2</a><br>
+    <a href="./player.html#aladdin">Aladdin</a><br>
+    <a href="./player.html#alienhominid">Alien Hominid</a><br>
+    <a href="./player.html#bomberman_max2blue">Bomberman Max 2 - Blue Advance</a><br>
+    <a href="./player.html#bomberman_tournament">Bomberman Tournament</a><br>
+    <a href="./player.html#bubblebobble">Bubble Bobble: Old and New</a><br>
+    <a href="./player.html#croket1">Croket! - Yume no Banker Survival!</a><br>
+    <a href="./player.html#croket2">Croket! 2 - Yami no Bank to Banqueen</a><br>
+    <a href="./player.html#croket3">Croket! 3 - Granu Oukoku no Nazo</a><br>
+    <a href="./player.html#croket4">Croket! 4 - Bank no Mori no Mamorigami</a><br>
+    <a href="./player.html#digimon_racing">Digimon Racing</a><br>
+    <a href="./player.html#dbz_supersonic">Dragon Ball Z - Supersonic Warriors</a><br>
+    <a href="./player.html#drilldozer">Drill Dozer</a><br>
+    <a href="./player.html#earthwormjim">Earthworm Jim</a><br>
+    <a href="./player.html#earthwormjim2">Earthworm Jim 2</a><br>
+    <a href="./player.html#ff1and2">Final Fantasy 1 & 2 Advance</a><br>
+    <a href="./player.html#ff4S">Final Fantasy IV Advance (Sound Restoration Mod)</a><br>
+    <a href="./player.html#ff6">Final Fantasy VI Advance</a><br>
+    <a href="./player.html#final_fantasy_tactics">Final Fantasy Tactics Advance</a><br>
+    <a href="./player.html#fire_emblem">Fire Emblem</a><br>
+    <a href="./player.html#frogger1">Frogger Advance - The Great Quest</a><br>
+    <a href="./player.html#frogger2">Frogger's Adventures - Temple of the Frog</a><br>
+    <a href="./player.html#frogger3">Frogger's Adventures 2 - The Lost Wand</a><br>
+    <a href="./player.html#fzero_gp">F-Zero - GP Legend</a><br>
+    <a href="./player.html#fzero_max">F-Zero - Maximum Velocity</a><br>
+    <a href="./player.html#gamewatch4">Game & Watch Gallery 4</a><br>
+    <a href="./player.html#goldensun">Golden Sun</a><br>
+    <a href="./player.html#gunstar_super_heroes">Gunstar Super Heroes</a><br>
+    <a href="./player.html#hamtaro_heartbreak">Hamtaro - Ham-Ham Heartbreak</a><br>
+    <a href="./player.html#iridion">Iridion 3D</a><br>
+    <a href="./player.html#kirbymirror">Kirby & The Amazing Mirror</a><br>
+    <a href="./player.html#kirbynightmare">Kirby: Nightmare in Dreamland</a><br>
+    <a href="./player.html#superstar">Mario & Luigi: Superstar Saga</a><br>
+    <a href="./player.html#mariokart">Mario Kart: Super Circuit</a><br>
+    <a href="./player.html#marioparty">Mario Party Advance</a><br>
+    <a href="./player.html#mariopinball">Mario Pinball Land</a><br>
+    <a href="./player.html#megamanbass">Megaman & Bass</a><br>
+    <a href="./player.html#megaman_battle1">Megaman Battle Network 1</a><br>
+    <a href="./player.html#megaman_battle2">Megaman Battle Network 2</a><br>
+    <a href="./player.html#megaman_battle3_blue">Megaman Battle Network 3 Blue</a><br>
+    <a href="./player.html#megaman_battle4_blue">Megaman Battle Network 4 Blue Moon</a><br>
+    <a href="./player.html#megaman_battle4_red">Megaman Battle Network 4 Red Sun</a><br>
+    <a href="./player.html#megaman_battle5">Megaman Battle Network 5 Team Protoman</a><br>
+    <a href="./player.html#megaman_battle6">Megaman Battle Network 6 Cybeast Falzar</a><br>
+    <a href="./player.html#megaman_zero1">Megaman Zero</a><br>
+    <a href="./player.html#megaman_zero2">Megaman Zero 2</a><br>
+    <a href="./player.html#megaman_zero3">Megaman Zero 3</a><br>
+    <a href="./player.html#megaman_zero4">Megaman Zero 4</a><br>
+    <a href="./player.html#metalslug">Metal Slug Advance</a><br>
+    <a href="./player.html#metroid_fusion">Metriod Fusion</a><br>
+    <a href="./player.html#momotarou_dentetsu">Momotarou Dentetsu G Gold Deck wo Tsukure!</a><br>
+    <a href="./player.html#monopoly">Monopoly</a><br>
+    <a href="./player.html#monster_force">Monster Force</a><br>
+    <a href="./player.html#mortal_kombat">Mortal Kombat Advance</a><br>
+    <a href="./player.html#onepiece">One Piece</a><br>
+    <a href="./player.html#pacman_world">Pacman World</a><br>
+    <a href="./player.html#pacman_world2">Pacman World 2</a><br>
+    <a href="./player.html#pokemonemerald">Pokemon Emerald</a><br>
+    <a href="./player.html#pokemongreen">Pokemon Leaf Green</a><br>
+    <a href="./player.html#pokemonred">Pokemon Fire Red</a><br>
+    <a href="./player.html#mysteryred">Pokemon Mystery Dungeon Red</a><br>
+    <a href="./player.html#pokemonruby">Pokemon Ruby</a><br>
+    <a href="./player.html#pokemonsapphire">Pokemon Sapphire</a><br>
+    <a href="./player.html#gba_video_pokemon_1">Pokemon Video Show Pak 1</a><br>
+    <a href="./player.html#gba_video_pokemon_2">Pokemon Video Show Pak 2</a><br>
+    <a href="./player.html#gba_video_pokemon_3">Pokemon Video Show Pak 3</a><br>
+    <a href="./player.html#gba_video_pokemon_4">Pokemon Video Show Pak 4</a><br>
+    <a href="./player.html#puyopop">Puyo Pop</a><br>
+    <a href="./player.html#sonic_advance">Sonic Advance</a><br>
+    <a href="./player.html#sonic_advance2">Sonic Advance 2</a><br>
+    <a href="./player.html#sonic_advance3">Sonic Advance 3</a><br>
+    <a href="./player.html#sonicbattle">Sonic Battle</a><br>
+    <a href="./player.html#sonicpinball">Sonic Pinball</a><br>
+    <a href="./player.html#spyro_adventure">Spyro Adventure</a><br>
+    <a href="./player.html#spyro_ice">Spyro: Season of Ice</a><br>
+    <a href="./player.html#spyro_flame">Spyro 2: Season of Flame</a><br>
+    <a href="./player.html#supermarioadvance">Super Mario Advance</a><br>
+    <a href="./player.html#supermarioadvance2">Super Mario Advance 2</a><br>
+    <a href="./player.html#supermarioadvance3">Super Mario Advance 3</a><br>
+    <a href="./player.html#supermarioadvance4">Super Mario Advance 4</a><br>
+    <a href="./player.html#supermonkeyballjr">Super Monkey Ball Jr</a><br>
+    <a href="./player.html#super_street_fighter_2_turbo_revival">Super Street Fighter II: Turbo Revival</a><br>
+    <a href="./player.html#super_street_fighter_3_alpha">Super Street Fighter III: Alpha</a><br>
+    <a href="./player.html#tales_of_phantasia">Tales of Phantasia</a><br>
+    <a href="./player.html#tak2_staff_of_dreams">Tak 2: The Staff of Dreams</a><br>
+    <a href="./player.html#tmnt">Teenage Mutant Ninja Turtles</a><br>
+    <a href="./player.html#tetris_worlds">Tetris Worlds</a><br>
+    <a href="./player.html#sims_bustin_out">The Sims: Bustin' Out</a><br>
+    <a href="./player.html#sims2">The Sims 2</a><br>
+    <a href="./player.html#simpsons">The Simpsons: Road Rage</a><br>
+    <a href="./player.html#turok_evolution">Turok Evolution</a><br>
+    <a href="./player.html#ty2">Ty the Tasmanian Tiger 2 - Bush Rescue</a><br>
+    <a href="./player.html#ty3">Ty the Tasmanian Tiger 3 - Night of the Quinkan</a><br>
+    <a href="./player.html#warioland4">Wario Land 4</a><br>
+    <a href="./player.html#wario_ware">Wario Ware Inc</a><br>
+    <a href="./player.html#zelda_past">The Legend of Zelda: A Link to the Past</a><br>
+    <a href="./player.html#zelda_minish">The Legend of Zelda: The Minish Cap</a><br>
 
-      <h3>GBA_FRAME_TEST</h3>
-      <a href="./player.html#-DEBUG-gbaframetest">gbaframetest</a><br>
+    <br>
+    <hr> <br>
 
-      <h3>GBA_SUITE</h3>
-      <a href="./player.html#-DEBUG-suite">suite</a><br>
+    <button type="collapsible-button" class="collapsible-collapsible">
+        Debug Files
+    </button>
+    <div class="collapsible-content">
+        <p class="collapsible-text">
+        <h3>AGB_BUTTON_TEST</h3>
+        <a href="./player.html#-DEBUG-AGB-buttontest">AGB-buttontest</a><br>
 
-      <h3>GAME_BOY_ADVANCE_TEST</h3>
-      <a href="./player.html#-DEBUG-arm">arm</a><br>
-      <a href="./player.html#-DEBUG-bios">bios</a><br>
-      <a href="./player.html#-DEBUG-flash64">flash64</a><br>
-      <a href="./player.html#-DEBUG-flash128">flash128</a><br>
-      <a href="./player.html#-DEBUG-hello">hello</a><br>
-      <a href="./player.html#-DEBUG-memory">memory</a><br>
-      <a href="./player.html#-DEBUG-nes">nes</a><br>
-      <a href="./player.html#-DEBUG-none">none</a><br>
-      <a href="./player.html#-DEBUG-shades">shades</a><br>
-      <a href="./player.html#-DEBUG-sram">sram</a><br>
-      <a href="./player.html#-DEBUG-stripes">stripes</a><br>
-      <a href="./player.html#-DEBUG-thumb">thumb</a><br>
-    </p>
-  </div><br>
+        <h3>GBA_FRAME_TEST</h3>
+        <a href="./player.html#-DEBUG-gbaframetest">gbaframetest</a><br>
+
+        <h3>GBA_SUITE</h3>
+        <a href="./player.html#-DEBUG-suite">suite</a><br>
+
+        <h3>GAME_BOY_ADVANCE_TEST</h3>
+        <a href="./player.html#-DEBUG-arm">arm</a><br>
+        <a href="./player.html#-DEBUG-bios">bios</a><br>
+        <a href="./player.html#-DEBUG-flash64">flash64</a><br>
+        <a href="./player.html#-DEBUG-flash128">flash128</a><br>
+        <a href="./player.html#-DEBUG-hello">hello</a><br>
+        <a href="./player.html#-DEBUG-memory">memory</a><br>
+        <a href="./player.html#-DEBUG-nes">nes</a><br>
+        <a href="./player.html#-DEBUG-none">none</a><br>
+        <a href="./player.html#-DEBUG-shades">shades</a><br>
+        <a href="./player.html#-DEBUG-sram">sram</a><br>
+        <a href="./player.html#-DEBUG-stripes">stripes</a><br>
+        <a href="./player.html#-DEBUG-thumb">thumb</a><br>
+        </p>
+    </div><br>
 
 
 
 
-  <br><br><br><br><br>
+    <br><br><br><br><br>
 
-  <script>
-    var coll = document.getElementsByClassName("collapsible-collapsible");
-    var i;
+    <script>
+        var coll = document.getElementsByClassName("collapsible-collapsible");
+        var i;
 
-    for (i = 0; i < coll.length; i++) {
-      coll[i].addEventListener("click", function() {
-        this.classList.toggle("active");
-        var content = this.nextElementSibling;
-        if (content.style.maxHeight){
-          content.style.maxHeight = null;
-        } else {
-          content.style.maxHeight = content.scrollHeight + "px";
+        for (i = 0; i < coll.length; i++) {
+            coll[i].addEventListener("click", function () {
+                this.classList.toggle("active");
+                var content = this.nextElementSibling;
+                if (content.style.maxHeight) {
+                    content.style.maxHeight = null;
+                } else {
+                    content.style.maxHeight = content.scrollHeight + "px";
+                }
+            });
         }
-      });
-    }
-  </script>
+    </script>
 </body>
+
 </html>

@@ -16,7 +16,7 @@ function GameBoyAdvanceChannel4Synth(sound) {
     this.envelopeVolume = 0;
     this.FrequencyPeriod = 32;
     this.lastSampleLookup = 0;
-    this.BitRange =  0x7FFF;
+    this.BitRange = 0x7FFF;
     this.VolumeShifter = 15;
     this.currentVolume = 0;
     this.consecutive = true;
@@ -101,7 +101,7 @@ GameBoyAdvanceChannel4Synth.prototype.disabled = function () {
     this.nr43 = 0;
     this.FrequencyPeriod = 32;
     this.lastSampleLookup = 0;
-    this.BitRange =  0x7FFF;
+    this.BitRange = 0x7FFF;
     this.VolumeShifter = 15;
     this.currentVolume = 0;
     this.noiseSampleTable = this.LSFR15Table;

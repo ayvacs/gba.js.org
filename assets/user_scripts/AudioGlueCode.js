@@ -27,7 +27,7 @@ GlueCodeMixer.prototype.bufferAmount = 44100;
 GlueCodeMixer.prototype.channelCount = 2;
 GlueCodeMixer.prototype.initializeBuffer = function () {
     this.buffer = new AudioSimpleBuffer(this.channelCount,
-                                         this.bufferAmount);
+        this.bufferAmount);
 }
 GlueCodeMixer.prototype.appendInput = function (inUnit) {
     if (this.audio) {
@@ -113,10 +113,10 @@ GlueCodeMixerInput.prototype.initialize = function (channelCount, sampleRate, bu
     this.errorCallback = errorCallback;
     var oldBuffer = this.buffer;
     this.buffer = new AudioBufferWrapper(this.channelCount,
-                                         this.mixer.channelCount,
-                                         this.bufferAmount,
-                                         this.sampleRate,
-                                         this.mixer.sampleRate);
+        this.mixer.channelCount,
+        this.bufferAmount,
+        this.sampleRate,
+        this.mixer.sampleRate);
     if (oldBuffer) {
         //If re-using same mixer input node, copy old buffer contents into the new buffer:
         this.buffer.copyOld(oldBuffer);
@@ -157,10 +157,10 @@ GlueCodeMixerInput.prototype.setBufferSpace = function (bufferAmount) {
     this.buffer.setBufferSpace(bufferAmount);
 }
 function AudioBufferWrapper(channelCount,
-                            mixerChannelCount,
-                            bufferAmount,
-                            sampleRate,
-                            mixerSampleRate) {
+    mixerChannelCount,
+    bufferAmount,
+    sampleRate,
+    mixerSampleRate) {
     this.channelCount = channelCount;
     this.mixerChannelCount = mixerChannelCount;
     this.bufferAmount = bufferAmount;
@@ -197,7 +197,7 @@ AudioBufferWrapper.prototype.copyOld = function (oldBuffer) {
     }
 }
 AudioBufferWrapper.prototype.push = function (buffer, start, end) {
-    var length  = Math.min(buffer.length, end);
+    var length = Math.min(buffer.length, end);
     if (this.channelCount < this.mixerChannelCount) {
         for (; start < length && this.inputOffset < this.inBufferSize;) {
             for (var index = this.channelCount; index < this.mixerChannelCount; ++index) {

@@ -13,17 +13,17 @@ function GameBoyAdvanceOBJRenderer(gfx) {
 }
 GameBoyAdvanceOBJRenderer.prototype.lookupXSize = [
     //Square:
-    8,  16, 32, 64,
+    8, 16, 32, 64,
     //Vertical Rectangle:
     16, 32, 32, 64,
     //Horizontal Rectangle:
-    8,   8, 16, 32
+    8, 8, 16, 32
 ];
 GameBoyAdvanceOBJRenderer.prototype.lookupYSize = [
     //Square:
-    8,  16, 32, 64,
+    8, 16, 32, 64,
     //Vertical Rectangle:
-    8,   8, 16, 32,
+    8, 8, 16, 32,
     //Horizontal Rectangle:
     16, 32, 32, 64
 ];
@@ -185,42 +185,42 @@ GameBoyAdvanceOBJRenderer.prototype.initializeOAMTable = function () {
 if (typeof TypedObject == "object" && typeof TypedObject.StructType == "object") {
     GameBoyAdvanceOBJRenderer.prototype.makeOAMAttributeTable = function () {
         return new TypedObject.StructType({
-                                          ycoord:TypedObject.int32,
-                                          matrix2D:TypedObject.int32,
-                                          doubleSizeOrDisabled:TypedObject.int32,
-                                          mode:TypedObject.int32,
-                                          mosaic:TypedObject.int32,
-                                          monolithicPalette:TypedObject.int32,
-                                          shape:TypedObject.int32,
-                                          xcoord:TypedObject.int32,
-                                          matrixParameters:TypedObject.int32,
-                                          horizontalFlip:TypedObject.int32,
-                                          verticalFlip:TypedObject.int32,
-                                          size:TypedObject.int32,
-                                          tileNumber:TypedObject.int32,
-                                          priority:TypedObject.int32,
-                                          paletteNumber:TypedObject.int32
-                                          });
+            ycoord: TypedObject.int32,
+            matrix2D: TypedObject.int32,
+            doubleSizeOrDisabled: TypedObject.int32,
+            mode: TypedObject.int32,
+            mosaic: TypedObject.int32,
+            monolithicPalette: TypedObject.int32,
+            shape: TypedObject.int32,
+            xcoord: TypedObject.int32,
+            matrixParameters: TypedObject.int32,
+            horizontalFlip: TypedObject.int32,
+            verticalFlip: TypedObject.int32,
+            size: TypedObject.int32,
+            tileNumber: TypedObject.int32,
+            priority: TypedObject.int32,
+            paletteNumber: TypedObject.int32
+        });
     }
 }
 else {
     GameBoyAdvanceOBJRenderer.prototype.makeOAMAttributeTable = function () {
         return {
-        ycoord:0,
-        matrix2D:0,
-        doubleSizeOrDisabled:0,
-        mode:0,
-        mosaic:0,
-        monolithicPalette:0,
-        shape:0,
-        xcoord:0,
-        matrixParameters:0,
-        horizontalFlip:0,
-        verticalFlip:0,
-        size:0,
-        tileNumber:0,
-        priority:0,
-        paletteNumber:0
+            ycoord: 0,
+            matrix2D: 0,
+            doubleSizeOrDisabled: 0,
+            mode: 0,
+            mosaic: 0,
+            monolithicPalette: 0,
+            shape: 0,
+            xcoord: 0,
+            matrixParameters: 0,
+            horizontalFlip: 0,
+            verticalFlip: 0,
+            size: 0,
+            tileNumber: 0,
+            priority: 0,
+            paletteNumber: 0
         };
     }
 }
@@ -868,7 +868,7 @@ if (__LITTLE_ENDIAN__) {
         data = data | 0;
         var OAMTable = this.OAMTable[address >> 2];
         switch (address & 0x3) {
-                //Attrib 0:
+            //Attrib 0:
             case 0:
                 OAMTable.ycoord = data & 0xFF;
                 OAMTable.matrix2D = data & 0x100;
@@ -878,7 +878,7 @@ if (__LITTLE_ENDIAN__) {
                 OAMTable.monolithicPalette = data & 0x2000;
                 OAMTable.shape = data >> 14;
                 break;
-                //Attrib 1:
+            //Attrib 1:
             case 1:
                 OAMTable.xcoord = data & 0x1FF;
                 OAMTable.matrixParameters = (data >> 7) & 0x7C;
@@ -886,13 +886,13 @@ if (__LITTLE_ENDIAN__) {
                 OAMTable.verticalFlip = data & 0x2000;
                 OAMTable.size = data >> 14;
                 break;
-                //Attrib 2:
+            //Attrib 2:
             case 2:
                 OAMTable.tileNumber = data & 0x3FF;
                 OAMTable.priority = (data >> 10) & 0x3;
                 OAMTable.paletteNumber = (data >> 8) & 0xF0;
                 break;
-                //Scaling/Rotation Parameter:
+            //Scaling/Rotation Parameter:
             default:
                 this.OBJMatrixParameters[address >> 2] = (data << 16) >> 16;
         }
@@ -944,7 +944,7 @@ else {
         address = address & 0x1FF;
         var OAMTable = this.OAMTable[address >> 2];
         switch (address & 0x3) {
-                //Attrib 0:
+            //Attrib 0:
             case 0:
                 OAMTable.ycoord = data & 0xFF;
                 OAMTable.matrix2D = data & 0x100;
@@ -954,7 +954,7 @@ else {
                 OAMTable.monolithicPalette = data & 0x2000;
                 OAMTable.shape = data >> 14;
                 break;
-                //Attrib 1:
+            //Attrib 1:
             case 1:
                 OAMTable.xcoord = data & 0x1FF;
                 OAMTable.matrixParameters = (data >> 7) & 0x7C;
@@ -962,13 +962,13 @@ else {
                 OAMTable.verticalFlip = data & 0x2000;
                 OAMTable.size = data >> 14;
                 break;
-                //Attrib 2:
+            //Attrib 2:
             case 2:
                 OAMTable.tileNumber = data & 0x3FF;
                 OAMTable.priority = (data >> 10) & 0x3;
                 OAMTable.paletteNumber = (data >> 8) & 0xF0;
                 break;
-                //Scaling/Rotation Parameter:
+            //Scaling/Rotation Parameter:
             default:
                 this.OBJMatrixParameters[address >> 2] = (data << 16) >> 16;
         }
@@ -1019,6 +1019,6 @@ else {
     GameBoyAdvanceOBJRenderer.prototype.readOAM32 = function (address) {
         address &= 0xFF;
         address <<= 2;
-        return this.OAMRAM[address] | (this.OAMRAM[address | 1] << 8) | (this.OAMRAM[address | 2] << 16)  | (this.OAMRAM[address | 3] << 24);
+        return this.OAMRAM[address] | (this.OAMRAM[address | 1] << 8) | (this.OAMRAM[address | 2] << 16) | (this.OAMRAM[address | 3] << 24);
     }
 }

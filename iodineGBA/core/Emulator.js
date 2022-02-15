@@ -10,15 +10,15 @@
  */
 function GameBoyAdvanceEmulator() {
     this.settings = {
-        SKIPBoot:false,                   //Skip the BIOS boot screen.
-        audioBufferUnderrunLimit:100,     //Audio buffer minimum span amount over x milliseconds.
-        audioBufferDynamicLimit:32,       //Audio buffer dynamic minimum span amount over x milliseconds.
-        audioBufferSize:300,              //Audio buffer maximum span amount over x milliseconds.
-        emulatorSpeed:1.0,                //Speed multiplier of the emulator.
-        metricCollectionMinimum:500,      //How many milliseconds of cycling to count before determining speed.
-        dynamicSpeed:false,               //Whether to actively change the target speed for best user experience.
-        overclockBlockLimit:200,          //Whether to throttle clocks in audio adjustment.
-        offthreadGfxEnabled:true          //Whether to allow offthread graphics rendering if support is present.
+        SKIPBoot: false,                   //Skip the BIOS boot screen.
+        audioBufferUnderrunLimit: 100,     //Audio buffer minimum span amount over x milliseconds.
+        audioBufferDynamicLimit: 32,       //Audio buffer dynamic minimum span amount over x milliseconds.
+        audioBufferSize: 300,              //Audio buffer maximum span amount over x milliseconds.
+        emulatorSpeed: 1.0,                //Speed multiplier of the emulator.
+        metricCollectionMinimum: 500,      //How many milliseconds of cycling to count before determining speed.
+        dynamicSpeed: false,               //Whether to actively change the target speed for best user experience.
+        overclockBlockLimit: 200,          //Whether to throttle clocks in audio adjustment.
+        offthreadGfxEnabled: true          //Whether to allow offthread graphics rendering if support is present.
     };
     this.audioFound = 0;                      //Do we have audio output sink found yet?
     this.emulatorStatus = 0x10;               //{paused, saves loaded, fault found, loaded}
@@ -41,20 +41,20 @@ function GameBoyAdvanceEmulator() {
 GameBoyAdvanceEmulator.prototype.generateCoreExposed = function () {
     var parentObj = this;
     this.coreExposed = {
-        outputAudio:function (l, r) {
+        outputAudio: function (l, r) {
             parentObj.outputAudio(l, r);
         },
-        graphicsHandle:null,
-        appendStartIterationSync:function (callback) {
+        graphicsHandle: null,
+        appendStartIterationSync: function (callback) {
             parentObj.startCallbacks.push(callback);
         },
-        appendEndIterationSync:function (callback) {
+        appendEndIterationSync: function (callback) {
             parentObj.endCallbacks.push(callback);
         },
-        appendTerminationSync:function (callback) {
+        appendTerminationSync: function (callback) {
             parentObj.terminationCallbacks.push(callback);
         },
-        offthreadGfxEnabled:function () {
+        offthreadGfxEnabled: function () {
             return !!parentObj.settings.offthreadGfxEnabled;
         }
     }
@@ -226,8 +226,8 @@ GameBoyAdvanceEmulator.prototype.importSave = function () {
                             parentObj.emulatorStatus = parentObj.emulatorStatus | 0x4;
                         }
                     }
-                }, function (){parentObj.emulatorStatus = parentObj.emulatorStatus | 0x4;});
-            }, function (){parentObj.emulatorStatus = parentObj.emulatorStatus | 0x4;});
+                }, function () { parentObj.emulatorStatus = parentObj.emulatorStatus | 0x4; });
+            }, function () { parentObj.emulatorStatus = parentObj.emulatorStatus | 0x4; });
             return;
         }
     }
@@ -356,12 +356,12 @@ GameBoyAdvanceEmulator.prototype.enableAudio = function () {
         //Attempt to enable audio:
         var parentObj = this;
         this.audio.initialize(2, (this.clocksPerSecond | 0) / (this.audioResamplerFirstPassFactor | 0), Math.max((+this.clocksPerMilliSecond) * (this.settings.audioBufferSize | 0) / (this.audioResamplerFirstPassFactor | 0), 4) | 0, function () {
-                //Not needed
-            }, function () {
-                //We manually check at the start of each timer interval, so not needed here.
-            }, function () {
-                //Disable audio in the callback here:
-                parentObj.disableAudio();
+            //Not needed
+        }, function () {
+            //We manually check at the start of each timer interval, so not needed here.
+        }, function () {
+            //Disable audio in the callback here:
+            parentObj.disableAudio();
         });
         this.audio.register();
     }

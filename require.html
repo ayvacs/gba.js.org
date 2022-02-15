@@ -5,20 +5,23 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
 </head>
+
 <body>
-  <script>
-    fetch('assets/user_data/GamesList.json')
-      .then(response => response.json())
-      .then(jsonResponse => console.log(jsonResponse))
+    <script>
+        fetch('assets/user_data/GamesList.json')
+            .then(response => response.json())
+            .then(jsonResponse => console.log(jsonResponse))
        // outputs a javascript object from the parsed json
 
-  </script>
+    </script>
 
 </body>
+
 </html>

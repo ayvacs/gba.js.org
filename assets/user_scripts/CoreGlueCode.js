@@ -134,27 +134,27 @@ var games = {
 
 
 var IodineGUI = {
-    Iodine:null,
-    Blitter:null,
-    coreTimerID:null,
+    Iodine: null,
+    Blitter: null,
+    coreTimerID: null,
     GUITimerID: null,
-    toMap:null,
-    toMapIndice:0,
-    suspended:false,
-    isPlaying:false,
-    startTime:(+(new Date()).getTime()),
-    mixerInput:null,
-    currentSpeed:[false,0],
-    defaults:{
-        timerRate:8,
-        sound:true,
-        volume:1,
-        skipBoot:false,
-        toggleSmoothScaling:true,
-        toggleDynamicSpeed:false,
-        toggleOffthreadGraphics:true,
-        toggleOffthreadCPU:(navigator.userAgent.indexOf("AppleWebKit") == -1 || (navigator.userAgent.indexOf("Windows NT 10.0") != -1 && navigator.userAgent.indexOf("Trident") == -1)),
-        keyZonesGBA:[
+    toMap: null,
+    toMapIndice: 0,
+    suspended: false,
+    isPlaying: false,
+    startTime: (+(new Date()).getTime()),
+    mixerInput: null,
+    currentSpeed: [false, 0],
+    defaults: {
+        timerRate: 8,
+        sound: true,
+        volume: 1,
+        skipBoot: false,
+        toggleSmoothScaling: true,
+        toggleDynamicSpeed: false,
+        toggleOffthreadGraphics: true,
+        toggleOffthreadCPU: (navigator.userAgent.indexOf("AppleWebKit") == -1 || (navigator.userAgent.indexOf("Windows NT 10.0") != -1 && navigator.userAgent.indexOf("Trident") == -1)),
+        keyZonesGBA: [
             //Use this to control the GBA key mapping:
             //A:
             68,
@@ -177,7 +177,7 @@ var IodineGUI = {
             //L:
             65
         ],
-        keyZonesControl:[
+        keyZonesControl: [
             //Use this to control the emulator function key mapping:
             //Volume Down:
             55,
@@ -203,8 +203,8 @@ window.onload = function () {
     registerDefaultSettings();
     //Initialize Iodine:
     registerIodineHandler();
-	//Initialize the timer:
-	calculateTiming();
+    //Initialize the timer:
+    calculateTiming();
     //Initialize the graphics:
     registerBlitterHandler();
     //Initialize the audio:
@@ -215,11 +215,11 @@ window.onload = function () {
     registerGUIEvents();
     //Register GUI settings.
     registerGUISettings();
-	if (!games[location.hash.substr(1)]) {
-		alert("Invalid game request!");
-		return;
-	}
-	//Download the BIOS:
+    if (!games[location.hash.substr(1)]) {
+        alert("Invalid game request!");
+        return;
+    }
+    //Download the BIOS:
     downloadBIOS();
 }
 function downloadBIOS() {
@@ -256,9 +256,9 @@ function registerIodineHandler() {
             //In order for save on page unload, this needs to be done:
             addEvent("beforeunload", window, registerBeforeUnloadHandler);
         }
-		else {
-			throw null;
-		}
+        else {
+            throw null;
+        }
     }
     catch (e) {
         //Otherwise just run on-thread:
@@ -273,31 +273,31 @@ function registerBeforeUnloadHandler(e) {
     return "iodineGBA needs to process your save data, leaving now may result in not saving current data.";
 }
 function initTimer() {
-	IodineGUI.Iodine.setIntervalRate(+IodineGUI.defaults.timerRate);
+    IodineGUI.Iodine.setIntervalRate(+IodineGUI.defaults.timerRate);
     IodineGUI.coreTimerID = setInterval(function () {
         IodineGUI.Iodine.timerCallback(((+(new Date()).getTime()) - (+IodineGUI.startTime)) >>> 0);
     }, IodineGUI.defaults.timerRate | 0);
 }
 function calculateTiming() {
-	IodineGUI.Iodine.setIntervalRate(+IodineGUI.defaults.timerRate);
+    IodineGUI.Iodine.setIntervalRate(+IodineGUI.defaults.timerRate);
 }
 function startTimer() {
-	IodineGUI.coreTimerID = setInterval(function () {
+    IodineGUI.coreTimerID = setInterval(function () {
         IodineGUI.Iodine.timerCallback(((+(new Date()).getTime()) - (+IodineGUI.startTime)) >>> 0);
     }, IodineGUI.defaults.timerRate | 0);
 }
 function updateTimer(newRate) {
-	newRate = newRate | 0;
-	if ((newRate | 0) != (IodineGUI.defaults.timerRate | 0)) {
-		IodineGUI.defaults.timerRate = newRate | 0;
-		IodineGUI.Iodine.setIntervalRate(+IodineGUI.defaults.timerRate);
-		if (IodineGUI.isPlaying) {
-			if (IodineGUI.coreTimerID) {
-				clearInterval(IodineGUI.coreTimerID);
-			}
-			initTimer();
-		}
-	}
+    newRate = newRate | 0;
+    if ((newRate | 0) != (IodineGUI.defaults.timerRate | 0)) {
+        IodineGUI.defaults.timerRate = newRate | 0;
+        IodineGUI.Iodine.setIntervalRate(+IodineGUI.defaults.timerRate);
+        if (IodineGUI.isPlaying) {
+            if (IodineGUI.coreTimerID) {
+                clearInterval(IodineGUI.coreTimerID);
+            }
+            initTimer();
+        }
+    }
 }
 function registerBlitterHandler() {
     IodineGUI.Blitter = new GfxGlueCode(240, 160);

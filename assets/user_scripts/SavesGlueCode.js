@@ -150,7 +150,7 @@ function decodeBlob(blobData) {
                             blobLength = ((blobData.charCodeAt(index + 3) & 0xFF) << 24) | ((blobData.charCodeAt(index + 2) & 0xFF) << 16) | ((blobData.charCodeAt(index + 1) & 0xFF) << 8) | (blobData.charCodeAt(index) & 0xFF);
                             index += 4;
                             if (index + blobLength <= length) {
-                                blobProperties.blobs[blobsCount].blobContent =  blobData.substring(index, index + blobLength);
+                                blobProperties.blobs[blobsCount].blobContent = blobData.substring(index, index + blobLength);
                                 index += blobLength;
                             }
                             else {

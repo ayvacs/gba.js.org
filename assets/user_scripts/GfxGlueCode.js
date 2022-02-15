@@ -21,7 +21,7 @@ function GfxGlueCode(width, height) {
 }
 GfxGlueCode.prototype.initializeVSync = function () {
     window.requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame ||
-    window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
+        window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
     var parentObj = this;
     if (!window.requestAnimationFrame) {
         //Fallback timer eventing:

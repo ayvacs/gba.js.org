@@ -36,7 +36,7 @@ GameBoyAdvanceWindowRenderer.prototype.renderScanLine = function (line, toRender
     //Check if we"re doing windowing for the current line:
     if (this.checkYRange(line | 0)) {
         //Windowing is active for the current line:
-        var right =  this.WINXCoordRight | 0;
+        var right = this.WINXCoordRight | 0;
         var left = this.WINXCoordLeft | 0;
         if ((left | 0) <= (right | 0)) {
             //Windowing is left to right like expected:

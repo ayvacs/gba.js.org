@@ -256,7 +256,7 @@ GameBoyAdvanceDMA1.prototype.enableDMAChannel = function (enabled) {
                 default:
                     //Shadow copy the word count:
                     this.wordCountShadow = this.wordCount | 0;
-                    
+
             }
             //Shadow copy the source address:
             this.sourceShadow = this.source | 0;
@@ -457,15 +457,15 @@ GameBoyAdvanceDMA1.prototype.incrementDMAAddresses = function (source, destinati
 GameBoyAdvanceDMA1.prototype.nextEventTime = function () {
     var clocks = 0x7FFFFFFF;
     switch (this.enabled | 0) {
-            //V_BLANK
+        //V_BLANK
         case 0x2:
             clocks = this.gfxState.nextVBlankEventTime() | 0;
             break;
-            //H_BLANK:
+        //H_BLANK:
         case 0x4:
             clocks = this.gfxState.nextHBlankDMAEventTime() | 0;
             break;
-            //FIFO_A:
+        //FIFO_A:
         case 0x8:
             clocks = this.sound.nextFIFOAEventTime() | 0;
     }

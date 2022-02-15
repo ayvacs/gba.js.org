@@ -456,15 +456,15 @@ GameBoyAdvanceDMA2.prototype.incrementDMAAddresses = function (source, destinati
 GameBoyAdvanceDMA2.prototype.nextEventTime = function () {
     var clocks = 0x7FFFFFFF;
     switch (this.enabled | 0) {
-            //V_BLANK
+        //V_BLANK
         case 0x2:
             clocks = this.gfxState.nextVBlankEventTime() | 0;
             break;
-            //H_BLANK:
+        //H_BLANK:
         case 0x4:
             clocks = this.gfxState.nextHBlankDMAEventTime() | 0;
             break;
-            //FIFO_B:
+        //FIFO_B:
         case 0x10:
             clocks = this.sound.nextFIFOBEventTime() | 0;
     }

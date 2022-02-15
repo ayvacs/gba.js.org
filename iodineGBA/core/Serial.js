@@ -52,9 +52,9 @@ GameBoyAdvanceSerial.prototype.initialize = function () {
     this.serialBitsShifted = 0;
 }
 GameBoyAdvanceSerial.prototype.SIOMultiplayerBaudRate = [
-      9600,
-     38400,
-     57600,
+    9600,
+    38400,
+    57600,
     115200
 ];
 GameBoyAdvanceSerial.prototype.addClocks = function (clocks) {
@@ -289,7 +289,7 @@ GameBoyAdvanceSerial.prototype.writeSIOCNT1 = function (data) {
 }
 GameBoyAdvanceSerial.prototype.readSIOCNT1 = function () {
     return (0x80 | this.SIOCNT_IRQ | (this.SIOCNT_MODE << 4) | ((this.SIOCNT_UART_RECV_ENABLE) ? 0x8 : 0) |
-    ((this.SIOCNT_UART_SEND_ENABLE) ? 0x4 : 0) | ((this.SIOCNT_UART_PARITY_ENABLE) ? 0x2 : 0) | ((this.SIOCNT_UART_FIFO_ENABLE) ? 0x2 : 0));
+        ((this.SIOCNT_UART_SEND_ENABLE) ? 0x4 : 0) | ((this.SIOCNT_UART_PARITY_ENABLE) ? 0x2 : 0) | ((this.SIOCNT_UART_FIFO_ENABLE) ? 0x2 : 0));
 }
 GameBoyAdvanceSerial.prototype.writeSIODATA8_0 = function (data) {
     data = data | 0;

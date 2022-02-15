@@ -13,7 +13,7 @@ var gfxCounters = null;
 function iodineGBAWorkerGfxShim() {
     this.gfx = null;
     gfxBuffers = [getSharedUint8Array(160 * 240 * 3),
-      getSharedUint8Array(160 * 240 * 3)];
+    getSharedUint8Array(160 * 240 * 3)];
     gfxCounters = getSharedInt32Array(3);
     this.Iodine = new GameBoyAdvanceEmulator();
 }

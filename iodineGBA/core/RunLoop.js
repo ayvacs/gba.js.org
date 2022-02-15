@@ -135,7 +135,7 @@ GameBoyAdvanceIO.prototype.runARM = function () {
                         break;
                     case 0x4:
                     case 0x6:
-                        //DMA Handle State
+                    //DMA Handle State
                     case 0xC:
                     case 0xE:
                         //DMA Inside Halt State
@@ -179,7 +179,7 @@ GameBoyAdvanceIO.prototype.runTHUMB = function () {
                         break;
                     case 0x5:
                     case 0x7:
-                        //DMA Handle State
+                    //DMA Handle State
                     case 0xD:
                     case 0xF:
                         //DMA Inside Halt State

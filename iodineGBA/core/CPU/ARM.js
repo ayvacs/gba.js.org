@@ -556,8 +556,8 @@ ARMInstructionSet.prototype.ADC = function () {
     var operand2 = this.operand2OP_DataProcessing1() | 0;
     //Perform Addition w/ Carry:
     //Update destination register:
-	operand1 = ((operand1 | 0) + (operand2 | 0)) | 0;
-	operand1 = ((operand1 | 0) + (this.branchFlags.getCarry() >>> 31)) | 0;
+    operand1 = ((operand1 | 0) + (operand2 | 0)) | 0;
+    operand1 = ((operand1 | 0) + (this.branchFlags.getCarry() >>> 31)) | 0;
     this.guard12OffsetRegisterWrite(operand1 | 0);
 }
 ARMInstructionSet.prototype.ADC2 = function () {
@@ -567,8 +567,8 @@ ARMInstructionSet.prototype.ADC2 = function () {
     var operand2 = this.operand2OP_DataProcessing3() | 0;
     //Perform Addition w/ Carry:
     //Update destination register:
-	operand1 = ((operand1 | 0) + (operand2 | 0)) | 0;
-	operand1 = ((operand1 | 0) + (this.branchFlags.getCarry() >>> 31)) | 0;
+    operand1 = ((operand1 | 0) + (operand2 | 0)) | 0;
+    operand1 = ((operand1 | 0) + (this.branchFlags.getCarry() >>> 31)) | 0;
     this.guard12OffsetRegisterWrite2(operand1 | 0);
 }
 ARMInstructionSet.prototype.ADCS = function () {
@@ -590,8 +590,8 @@ ARMInstructionSet.prototype.SBC = function () {
     var operand2 = this.operand2OP_DataProcessing1() | 0;
     //Perform Subtraction w/ Carry:
     //Update destination register:
-	operand1 = ((operand1 | 0) - (operand2 | 0)) | 0;
-	operand1 = ((operand1 | 0) - (this.branchFlags.getCarryReverse() >>> 31)) | 0;
+    operand1 = ((operand1 | 0) - (operand2 | 0)) | 0;
+    operand1 = ((operand1 | 0) - (this.branchFlags.getCarryReverse() >>> 31)) | 0;
     this.guard12OffsetRegisterWrite(operand1 | 0);
 }
 ARMInstructionSet.prototype.SBC2 = function () {
@@ -601,8 +601,8 @@ ARMInstructionSet.prototype.SBC2 = function () {
     var operand2 = this.operand2OP_DataProcessing3() | 0;
     //Perform Subtraction w/ Carry:
     //Update destination register:
-	operand1 = ((operand1 | 0) - (operand2 | 0)) | 0;
-	operand1 = ((operand1 | 0) - (this.branchFlags.getCarryReverse() >>> 31)) | 0;
+    operand1 = ((operand1 | 0) - (operand2 | 0)) | 0;
+    operand1 = ((operand1 | 0) - (this.branchFlags.getCarryReverse() >>> 31)) | 0;
     this.guard12OffsetRegisterWrite2(operand1 | 0);
 }
 ARMInstructionSet.prototype.SBCS = function () {
@@ -624,8 +624,8 @@ ARMInstructionSet.prototype.RSC = function () {
     var operand2 = this.operand2OP_DataProcessing1() | 0;
     //Perform Reverse Subtraction w/ Carry:
     //Update destination register:
-	operand1 = ((operand2 | 0) - (operand1 | 0)) | 0;
-	operand1 = ((operand1 | 0) - (this.branchFlags.getCarryReverse() >>> 31)) | 0;
+    operand1 = ((operand2 | 0) - (operand1 | 0)) | 0;
+    operand1 = ((operand1 | 0) - (this.branchFlags.getCarryReverse() >>> 31)) | 0;
     this.guard12OffsetRegisterWrite(operand1 | 0);
 }
 ARMInstructionSet.prototype.RSC2 = function () {
@@ -635,8 +635,8 @@ ARMInstructionSet.prototype.RSC2 = function () {
     var operand2 = this.operand2OP_DataProcessing3() | 0;
     //Perform Reverse Subtraction w/ Carry:
     //Update destination register:
-	operand1 = ((operand2 | 0) - (operand1 | 0)) | 0;
-	operand1 = ((operand1 | 0) - (this.branchFlags.getCarryReverse() >>> 31)) | 0;
+    operand1 = ((operand2 | 0) - (operand1 | 0)) | 0;
+    operand1 = ((operand1 | 0) - (this.branchFlags.getCarryReverse() >>> 31)) | 0;
     this.guard12OffsetRegisterWrite2(operand1 | 0);
 }
 ARMInstructionSet.prototype.RSCS = function () {
@@ -1382,7 +1382,7 @@ ARMInstructionSet.prototype.STMIB = function () {
         //Updating the address bus away from PC fetch:
         this.wait.NonSequentialBroadcast();
         //Push register(s) into memory:
-        for (var rListPosition = 0; rListPosition < 0x10;  rListPosition = ((rListPosition | 0) + 1) | 0) {
+        for (var rListPosition = 0; rListPosition < 0x10; rListPosition = ((rListPosition | 0) + 1) | 0) {
             if ((this.execute & (1 << rListPosition)) != 0) {
                 //Push a register into memory:
                 currentAddress = ((currentAddress | 0) + 4) | 0;
@@ -1403,7 +1403,7 @@ ARMInstructionSet.prototype.STMIBW = function () {
         this.wait.NonSequentialBroadcast();
         //Push register(s) into memory:
         var count = 0;
-        for (var rListPosition = 0; rListPosition < 0x10;  rListPosition = ((rListPosition | 0) + 1) | 0) {
+        for (var rListPosition = 0; rListPosition < 0x10; rListPosition = ((rListPosition | 0) + 1) | 0) {
             if ((this.execute & (1 << rListPosition)) != 0) {
                 //Push a register into memory:
                 currentAddress = ((currentAddress | 0) + 4) | 0;
@@ -1574,7 +1574,7 @@ ARMInstructionSet.prototype.STMIBG = function () {
         //Updating the address bus away from PC fetch:
         this.wait.NonSequentialBroadcast();
         //Push register(s) into memory:
-        for (var rListPosition = 0; rListPosition < 0x10;  rListPosition = ((rListPosition | 0) + 1) | 0) {
+        for (var rListPosition = 0; rListPosition < 0x10; rListPosition = ((rListPosition | 0) + 1) | 0) {
             if ((this.execute & (1 << rListPosition)) != 0) {
                 //Push a register into memory:
                 currentAddress = ((currentAddress | 0) + 4) | 0;
@@ -1595,7 +1595,7 @@ ARMInstructionSet.prototype.STMIBWG = function () {
         this.wait.NonSequentialBroadcast();
         //Push register(s) into memory:
         var count = 0;
-        for (var rListPosition = 0; rListPosition < 0x10;  rListPosition = ((rListPosition | 0) + 1) | 0) {
+        for (var rListPosition = 0; rListPosition < 0x10; rListPosition = ((rListPosition | 0) + 1) | 0) {
             if ((this.execute & (1 << rListPosition)) != 0) {
                 //Push a register into memory:
                 currentAddress = ((currentAddress | 0) + 4) | 0;
@@ -1669,7 +1669,7 @@ ARMInstructionSet.prototype.LDMIA = function () {
     this.wait.NonSequentialBroadcast();
     if ((this.execute & 0xFFFF) > 0) {
         //Load register(s) from memory:
-        for (var rListPosition = 0; rListPosition < 0x10;  rListPosition = ((rListPosition | 0) + 1) | 0) {
+        for (var rListPosition = 0; rListPosition < 0x10; rListPosition = ((rListPosition | 0) + 1) | 0) {
             if ((this.execute & (1 << rListPosition)) != 0) {
                 //Load a register from memory:
                 this.guardRegisterWriteLDM(rListPosition | 0, this.memory.memoryRead32(currentAddress | 0) | 0);
@@ -1693,7 +1693,7 @@ ARMInstructionSet.prototype.LDMIAW = function () {
     this.wait.NonSequentialBroadcast();
     if ((this.execute & 0xFFFF) > 0) {
         //Load register(s) from memory:
-        for (var rListPosition = 0; rListPosition < 0x10;  rListPosition = ((rListPosition | 0) + 1) | 0) {
+        for (var rListPosition = 0; rListPosition < 0x10; rListPosition = ((rListPosition | 0) + 1) | 0) {
             if ((this.execute & (1 << rListPosition)) != 0) {
                 //Load a register from memory:
                 this.guardRegisterWriteLDM(rListPosition | 0, this.memory.memoryRead32(currentAddress | 0) | 0);
@@ -1751,7 +1751,7 @@ ARMInstructionSet.prototype.LDMDAW = function () {
         currentAddress = this.getNegativeOffsetStartAddress(currentAddress | 0) | 0;
         var writebackAddress = currentAddress | 0;
         //Load register(s) from memory:
-        for (var rListPosition = 0; rListPosition < 0x10;  rListPosition = ((rListPosition | 0) + 1) | 0) {
+        for (var rListPosition = 0; rListPosition < 0x10; rListPosition = ((rListPosition | 0) + 1) | 0) {
             if ((this.execute & (1 << rListPosition)) != 0) {
                 //Load a register from memory:
                 currentAddress = ((currentAddress | 0) + 4) | 0;
@@ -1780,7 +1780,7 @@ ARMInstructionSet.prototype.LDMIB = function () {
     this.wait.NonSequentialBroadcast();
     if ((this.execute & 0xFFFF) > 0) {
         //Load register(s) from memory:
-        for (var rListPosition = 0; rListPosition < 0x10;  rListPosition = ((rListPosition | 0) + 1) | 0) {
+        for (var rListPosition = 0; rListPosition < 0x10; rListPosition = ((rListPosition | 0) + 1) | 0) {
             if ((this.execute & (1 << rListPosition)) != 0) {
                 //Load a register from memory:
                 currentAddress = ((currentAddress | 0) + 4) | 0;
@@ -1805,7 +1805,7 @@ ARMInstructionSet.prototype.LDMIBW = function () {
     this.wait.NonSequentialBroadcast();
     if ((this.execute & 0xFFFF) > 0) {
         //Load register(s) from memory:
-        for (var rListPosition = 0; rListPosition < 0x10;  rListPosition = ((rListPosition | 0) + 1) | 0) {
+        for (var rListPosition = 0; rListPosition < 0x10; rListPosition = ((rListPosition | 0) + 1) | 0) {
             if ((this.execute & (1 << rListPosition)) != 0) {
                 //Load a register from memory:
                 currentAddress = ((currentAddress | 0) + 4) | 0;
@@ -1862,7 +1862,7 @@ ARMInstructionSet.prototype.LDMDBW = function () {
         currentAddress = this.getNegativeOffsetStartAddress(currentAddress | 0) | 0;
         var writebackAddress = currentAddress | 0;
         //Load register(s) from memory:
-        for (var rListPosition = 0; rListPosition < 0x10;  rListPosition = ((rListPosition | 0) + 1) | 0) {
+        for (var rListPosition = 0; rListPosition < 0x10; rListPosition = ((rListPosition | 0) + 1) | 0) {
             if ((this.execute & (1 << rListPosition)) != 0) {
                 //Load a register from memory:
                 this.guardRegisterWriteLDM(rListPosition | 0, this.memory.memoryRead32(currentAddress | 0) | 0);
@@ -1891,7 +1891,7 @@ ARMInstructionSet.prototype.LDMIAG = function () {
     this.wait.NonSequentialBroadcast();
     if ((this.execute & 0xFFFF) > 0) {
         //Load register(s) from memory:
-        for (var rListPosition = 0; rListPosition < 0x10;  rListPosition = ((rListPosition | 0) + 1) | 0) {
+        for (var rListPosition = 0; rListPosition < 0x10; rListPosition = ((rListPosition | 0) + 1) | 0) {
             if ((this.execute & (1 << rListPosition)) != 0) {
                 //Load a register from memory:
                 this.guardUserRegisterWriteLDM(rListPosition | 0, this.memory.memoryRead32(currentAddress | 0) | 0);
@@ -1915,7 +1915,7 @@ ARMInstructionSet.prototype.LDMIAWG = function () {
     this.wait.NonSequentialBroadcast();
     if ((this.execute & 0xFFFF) > 0) {
         //Load register(s) from memory:
-        for (var rListPosition = 0; rListPosition < 0x10;  rListPosition = ((rListPosition | 0) + 1) | 0) {
+        for (var rListPosition = 0; rListPosition < 0x10; rListPosition = ((rListPosition | 0) + 1) | 0) {
             if ((this.execute & (1 << rListPosition)) != 0) {
                 //Load a register from memory:
                 this.guardUserRegisterWriteLDM(rListPosition | 0, this.memory.memoryRead32(currentAddress | 0) | 0);
@@ -1971,7 +1971,7 @@ ARMInstructionSet.prototype.LDMDAWG = function () {
         currentAddress = this.getNegativeOffsetStartAddress(currentAddress | 0) | 0;
         var writebackAddress = currentAddress | 0;
         //Load register(s) from memory:
-        for (var rListPosition = 0; rListPosition < 0x10;  rListPosition = ((rListPosition | 0) + 1) | 0) {
+        for (var rListPosition = 0; rListPosition < 0x10; rListPosition = ((rListPosition | 0) + 1) | 0) {
             if ((this.execute & (1 << rListPosition)) != 0) {
                 //Load a register from memory:
                 currentAddress = ((currentAddress | 0) + 4) | 0;
@@ -2000,7 +2000,7 @@ ARMInstructionSet.prototype.LDMIBG = function () {
     this.wait.NonSequentialBroadcast();
     if ((this.execute & 0xFFFF) > 0) {
         //Load register(s) from memory:
-        for (var rListPosition = 0; rListPosition < 0x10;  rListPosition = ((rListPosition | 0) + 1) | 0) {
+        for (var rListPosition = 0; rListPosition < 0x10; rListPosition = ((rListPosition | 0) + 1) | 0) {
             if ((this.execute & (1 << rListPosition)) != 0) {
                 //Load a register from memory:
                 currentAddress = ((currentAddress | 0) + 4) | 0;
@@ -2025,7 +2025,7 @@ ARMInstructionSet.prototype.LDMIBWG = function () {
     this.wait.NonSequentialBroadcast();
     if ((this.execute & 0xFFFF) > 0) {
         //Load register(s) from memory:
-        for (var rListPosition = 0; rListPosition < 0x10;  rListPosition = ((rListPosition | 0) + 1) | 0) {
+        for (var rListPosition = 0; rListPosition < 0x10; rListPosition = ((rListPosition | 0) + 1) | 0) {
             if ((this.execute & (1 << rListPosition)) != 0) {
                 //Load a register from memory:
                 currentAddress = ((currentAddress | 0) + 4) | 0;
@@ -2082,7 +2082,7 @@ ARMInstructionSet.prototype.LDMDBWG = function () {
         currentAddress = this.getNegativeOffsetStartAddress(currentAddress | 0) | 0;
         var writebackAddress = currentAddress | 0;
         //Load register(s) from memory:
-        for (var rListPosition = 0; rListPosition < 0x10;  rListPosition = ((rListPosition | 0) + 1) | 0) {
+        for (var rListPosition = 0; rListPosition < 0x10; rListPosition = ((rListPosition | 0) + 1) | 0) {
             if ((this.execute & (1 << rListPosition)) != 0) {
                 //Load a register from memory:
                 this.guardUserRegisterWriteLDM(rListPosition | 0, this.memory.memoryRead32(currentAddress | 0) | 0);
@@ -2718,116 +2718,116 @@ ARMInstructionSet.prototype.rs = function () {
 }
 function compileARMInstructionDecodeMap() {
     var pseudoCodes = [
-                       "LDRH",
-                       "MOVS2",
-                       "MUL",
-                       "MSR",
-                       "LDRSH",
-                       "MVN2",
-                       "SMLAL",
-                       "RSCS",
-                       "CMPS",
-                       "MRS",
-                       "RSBS2",
-                       "ADDS",
-                       "SUBS",
-                       "RSB",
-                       "SUBS2",
-                       "MULS",
-                       "SMLALS",
-                       "STRB",
-                       "CMNS2",
-                       "UMLALS",
-                       "ORR2",
-                       "BX",
-                       "RSBS",
-                       "LDRSB",
-                       "LoadStoreMultiple",
-                       "ANDS2",
-                       "BIC",
-                       "ADD2",
-                       "SBC2",
-                       "AND",
-                       "TSTS2",
-                       "MOV2",
-                       "MOVS",
-                       "EOR",
-                       "ORRS2",
-                       "RSC",
-                       "LDR2",
-                       "SMULLS",
-                       "LDRSB2",
-                       "LDRB4",
-                       "BL",
-                       "LDRB3",
-                       "SBCS2",
-                       "MVNS2",
-                       "MLAS",
-                       "MVN",
-                       "BICS2",
-                       "UMLAL",
-                       "CMPS2",
-                       "LDRB",
-                       "RSC2",
-                       "ADC2",
-                       "LDRSH2",
-                       "ORR",
-                       "ADDS2",
-                       "EOR2",
-                       "STR3",
-                       "UMULL",
-                       "ADD",
-                       "LDRH2",
-                       "STRB4",
-                       "LDR4",
-                       "EORS",
-                       "ORRS",
-                       "BICS",
-                       "SMULL",
-                       "EORS2",
-                       "B",
-                       "STR",
-                       "STRH",
-                       "TEQS",
-                       "STR2",
-                       "STRH2",
-                       "AND2",
-                       "SUB",
-                       "MVNS",
-                       "ADC",
-                       "ADCS",
-                       "MOV",
-                       "CMNS",
-                       "ADCS2",
-                       "TSTS",
-                       "RSCS2",
-                       "ANDS",
-                       "STRB3",
-                       "SBC",
-                       "STR4",
-                       "LDR",
-                       "LDR3",
-                       "SUB2",
-                       "STRB2",
-                       "SWP",
-                       "TEQS2",
-                       "UMULLS",
-                       "BIC2",
-                       "MLA",
-                       "SWI",
-                       "LDRB2",
-                       "SBCS",
-                       "RSB2",
-                       "SWPB",
-                       "STRT",
-                       "LDRT",
-                       "STRBT",
-                       "LDRBT",
-                       "STRT2",
-                       "LDRT2",
-                       "STRBT2",
-                       "LDRBT2"
-                       ];
+        "LDRH",
+        "MOVS2",
+        "MUL",
+        "MSR",
+        "LDRSH",
+        "MVN2",
+        "SMLAL",
+        "RSCS",
+        "CMPS",
+        "MRS",
+        "RSBS2",
+        "ADDS",
+        "SUBS",
+        "RSB",
+        "SUBS2",
+        "MULS",
+        "SMLALS",
+        "STRB",
+        "CMNS2",
+        "UMLALS",
+        "ORR2",
+        "BX",
+        "RSBS",
+        "LDRSB",
+        "LoadStoreMultiple",
+        "ANDS2",
+        "BIC",
+        "ADD2",
+        "SBC2",
+        "AND",
+        "TSTS2",
+        "MOV2",
+        "MOVS",
+        "EOR",
+        "ORRS2",
+        "RSC",
+        "LDR2",
+        "SMULLS",
+        "LDRSB2",
+        "LDRB4",
+        "BL",
+        "LDRB3",
+        "SBCS2",
+        "MVNS2",
+        "MLAS",
+        "MVN",
+        "BICS2",
+        "UMLAL",
+        "CMPS2",
+        "LDRB",
+        "RSC2",
+        "ADC2",
+        "LDRSH2",
+        "ORR",
+        "ADDS2",
+        "EOR2",
+        "STR3",
+        "UMULL",
+        "ADD",
+        "LDRH2",
+        "STRB4",
+        "LDR4",
+        "EORS",
+        "ORRS",
+        "BICS",
+        "SMULL",
+        "EORS2",
+        "B",
+        "STR",
+        "STRH",
+        "TEQS",
+        "STR2",
+        "STRH2",
+        "AND2",
+        "SUB",
+        "MVNS",
+        "ADC",
+        "ADCS",
+        "MOV",
+        "CMNS",
+        "ADCS2",
+        "TSTS",
+        "RSCS2",
+        "ANDS",
+        "STRB3",
+        "SBC",
+        "STR4",
+        "LDR",
+        "LDR3",
+        "SUB2",
+        "STRB2",
+        "SWP",
+        "TEQS2",
+        "UMULLS",
+        "BIC2",
+        "MLA",
+        "SWI",
+        "LDRB2",
+        "SBCS",
+        "RSB2",
+        "SWPB",
+        "STRT",
+        "LDRT",
+        "STRBT",
+        "LDRBT",
+        "STRT2",
+        "LDRT2",
+        "STRBT2",
+        "LDRBT2"
+    ];
     function compileARMInstructionDecodeOpcodeMap(codeMap) {
         var opcodeIndice = 0;
         var instructionMap = getUint8Array(4096);
@@ -2862,15 +2862,15 @@ function compileARMInstructionDecodeMap() {
         }
         function generateStoreLoadInstructionSector1() {
             var instrMap = [
-                            "STR2",
-                            "LDR2",
-                            "STRT2",
-                            "LDRT2",
-                            "STRB2",
-                            "LDRB2",
-                            "STRBT2",
-                            "LDRBT2"
-                            ];
+                "STR2",
+                "LDR2",
+                "STRT2",
+                "LDRT2",
+                "STRB2",
+                "LDRB2",
+                "STRBT2",
+                "LDRBT2"
+            ];
             for (var instrIndex = 0; instrIndex < 0x10; ++instrIndex) {
                 for (var dataIndex = 0; dataIndex < 0x10; ++dataIndex) {
                     if ((dataIndex & 0x1) == 0) {
@@ -2884,11 +2884,11 @@ function compileARMInstructionDecodeMap() {
         }
         function generateStoreLoadInstructionSector2() {
             var instrMap = [
-                            "STR3",
-                            "LDR3",
-                            "STRB3",
-                            "LDRB3"
-                            ];
+                "STR3",
+                "LDR3",
+                "STRB3",
+                "LDRB3"
+            ];
             for (var instrIndex = 0; instrIndex < 0x10; ++instrIndex) {
                 for (var dataIndex = 0; dataIndex < 0x10; ++dataIndex) {
                     if ((dataIndex & 0x1) == 0) {
@@ -2902,612 +2902,612 @@ function compileARMInstructionDecodeMap() {
         }
         //0
         generateMap1([
-                      "AND",
-                      "AND2",
-                      "AND",
-                      "AND2",
-                      "AND",
-                      "AND2",
-                      "AND",
-                      "AND2",
-                      "AND",
-                      "MUL",
-                      "AND",
-                      "STRH",
-                      "AND",
-                      "UNDEFINED",
-                      "AND",
-                      "UNDEFINED"
-                      ]);
+            "AND",
+            "AND2",
+            "AND",
+            "AND2",
+            "AND",
+            "AND2",
+            "AND",
+            "AND2",
+            "AND",
+            "MUL",
+            "AND",
+            "STRH",
+            "AND",
+            "UNDEFINED",
+            "AND",
+            "UNDEFINED"
+        ]);
         //1
         generateMap1([
-                      "ANDS",
-                      "ANDS2",
-                      "ANDS",
-                      "ANDS2",
-                      "ANDS",
-                      "ANDS2",
-                      "ANDS",
-                      "ANDS2",
-                      "ANDS",
-                      "MULS",
-                      "ANDS",
-                      "LDRH",
-                      "ANDS",
-                      "LDRSB",
-                      "ANDS",
-                      "LDRSH"
-                      ]);
+            "ANDS",
+            "ANDS2",
+            "ANDS",
+            "ANDS2",
+            "ANDS",
+            "ANDS2",
+            "ANDS",
+            "ANDS2",
+            "ANDS",
+            "MULS",
+            "ANDS",
+            "LDRH",
+            "ANDS",
+            "LDRSB",
+            "ANDS",
+            "LDRSH"
+        ]);
         //2
         generateMap1([
-                      "EOR",
-                      "EOR2",
-                      "EOR",
-                      "EOR2",
-                      "EOR",
-                      "EOR2",
-                      "EOR",
-                      "EOR2",
-                      "EOR",
-                      "MLA",
-                      "EOR",
-                      "STRH",
-                      "EOR",
-                      "UNDEFINED",
-                      "EOR",
-                      "UNDEFINED"
-                      ]);
+            "EOR",
+            "EOR2",
+            "EOR",
+            "EOR2",
+            "EOR",
+            "EOR2",
+            "EOR",
+            "EOR2",
+            "EOR",
+            "MLA",
+            "EOR",
+            "STRH",
+            "EOR",
+            "UNDEFINED",
+            "EOR",
+            "UNDEFINED"
+        ]);
         //3
         generateMap1([
-                      "EORS",
-                      "EORS2",
-                      "EORS",
-                      "EORS2",
-                      "EORS",
-                      "EORS2",
-                      "EORS",
-                      "EORS2",
-                      "EORS",
-                      "MLAS",
-                      "EORS",
-                      "LDRH",
-                      "EORS",
-                      "LDRSB",
-                      "EORS",
-                      "LDRSH"
-                      ]);
+            "EORS",
+            "EORS2",
+            "EORS",
+            "EORS2",
+            "EORS",
+            "EORS2",
+            "EORS",
+            "EORS2",
+            "EORS",
+            "MLAS",
+            "EORS",
+            "LDRH",
+            "EORS",
+            "LDRSB",
+            "EORS",
+            "LDRSH"
+        ]);
         //4
         generateMap1([
-                      "SUB",
-                      "SUB2",
-                      "SUB",
-                      "SUB2",
-                      "SUB",
-                      "SUB2",
-                      "SUB",
-                      "SUB2",
-                      "SUB",
-                      "UNDEFINED",
-                      "SUB",
-                      "STRH",
-                      "SUB",
-                      "UNDEFINED",
-                      "SUB",
-                      "UNDEFINED"
-                      ]);
+            "SUB",
+            "SUB2",
+            "SUB",
+            "SUB2",
+            "SUB",
+            "SUB2",
+            "SUB",
+            "SUB2",
+            "SUB",
+            "UNDEFINED",
+            "SUB",
+            "STRH",
+            "SUB",
+            "UNDEFINED",
+            "SUB",
+            "UNDEFINED"
+        ]);
         //5
         generateMap1([
-                      "SUBS",
-                      "SUBS2",
-                      "SUBS",
-                      "SUBS2",
-                      "SUBS",
-                      "SUBS2",
-                      "SUBS",
-                      "SUBS2",
-                      "SUBS",
-                      "UNDEFINED",
-                      "SUBS",
-                      "LDRH",
-                      "SUBS",
-                      "LDRSB",
-                      "SUBS",
-                      "LDRSH"
-                      ]);
+            "SUBS",
+            "SUBS2",
+            "SUBS",
+            "SUBS2",
+            "SUBS",
+            "SUBS2",
+            "SUBS",
+            "SUBS2",
+            "SUBS",
+            "UNDEFINED",
+            "SUBS",
+            "LDRH",
+            "SUBS",
+            "LDRSB",
+            "SUBS",
+            "LDRSH"
+        ]);
         //6
         generateMap1([
-                      "RSB",
-                      "RSB2",
-                      "RSB",
-                      "RSB2",
-                      "RSB",
-                      "RSB2",
-                      "RSB",
-                      "RSB2",
-                      "RSB",
-                      "UNDEFINED",
-                      "RSB",
-                      "STRH",
-                      "RSB",
-                      "UNDEFINED",
-                      "RSB",
-                      "UNDEFINED"
-                      ]);
+            "RSB",
+            "RSB2",
+            "RSB",
+            "RSB2",
+            "RSB",
+            "RSB2",
+            "RSB",
+            "RSB2",
+            "RSB",
+            "UNDEFINED",
+            "RSB",
+            "STRH",
+            "RSB",
+            "UNDEFINED",
+            "RSB",
+            "UNDEFINED"
+        ]);
         //7
         generateMap1([
-                      "RSBS",
-                      "RSBS2",
-                      "RSBS",
-                      "RSBS2",
-                      "RSBS",
-                      "RSBS2",
-                      "RSBS",
-                      "RSBS2",
-                      "RSBS",
-                      "UNDEFINED",
-                      "RSBS",
-                      "LDRH",
-                      "RSBS",
-                      "LDRSB",
-                      "RSBS",
-                      "LDRSH"
-                      ]);
+            "RSBS",
+            "RSBS2",
+            "RSBS",
+            "RSBS2",
+            "RSBS",
+            "RSBS2",
+            "RSBS",
+            "RSBS2",
+            "RSBS",
+            "UNDEFINED",
+            "RSBS",
+            "LDRH",
+            "RSBS",
+            "LDRSB",
+            "RSBS",
+            "LDRSH"
+        ]);
         //8
         generateMap1([
-                      "ADD",
-                      "ADD2",
-                      "ADD",
-                      "ADD2",
-                      "ADD",
-                      "ADD2",
-                      "ADD",
-                      "ADD2",
-                      "ADD",
-                      "UMULL",
-                      "ADD",
-                      "STRH",
-                      "ADD",
-                      "UNDEFINED",
-                      "ADD",
-                      "UNDEFINED"
-                      ]);
+            "ADD",
+            "ADD2",
+            "ADD",
+            "ADD2",
+            "ADD",
+            "ADD2",
+            "ADD",
+            "ADD2",
+            "ADD",
+            "UMULL",
+            "ADD",
+            "STRH",
+            "ADD",
+            "UNDEFINED",
+            "ADD",
+            "UNDEFINED"
+        ]);
         //9
         generateMap1([
-                      "ADDS",
-                      "ADDS2",
-                      "ADDS",
-                      "ADDS2",
-                      "ADDS",
-                      "ADDS2",
-                      "ADDS",
-                      "ADDS2",
-                      "ADDS",
-                      "UMULLS",
-                      "ADDS",
-                      "LDRH",
-                      "ADDS",
-                      "LDRSB",
-                      "ADDS",
-                      "LDRSH"
-                      ]);
+            "ADDS",
+            "ADDS2",
+            "ADDS",
+            "ADDS2",
+            "ADDS",
+            "ADDS2",
+            "ADDS",
+            "ADDS2",
+            "ADDS",
+            "UMULLS",
+            "ADDS",
+            "LDRH",
+            "ADDS",
+            "LDRSB",
+            "ADDS",
+            "LDRSH"
+        ]);
         //A
         generateMap1([
-                      "ADC",
-                      "ADC2",
-                      "ADC",
-                      "ADC2",
-                      "ADC",
-                      "ADC2",
-                      "ADC",
-                      "ADC2",
-                      "ADC",
-                      "UMLAL",
-                      "ADC",
-                      "STRH",
-                      "ADC",
-                      "UNDEFINED",
-                      "ADC",
-                      "UNDEFINED"
-                      ]);
+            "ADC",
+            "ADC2",
+            "ADC",
+            "ADC2",
+            "ADC",
+            "ADC2",
+            "ADC",
+            "ADC2",
+            "ADC",
+            "UMLAL",
+            "ADC",
+            "STRH",
+            "ADC",
+            "UNDEFINED",
+            "ADC",
+            "UNDEFINED"
+        ]);
         //B
         generateMap1([
-                      "ADCS",
-                      "ADCS2",
-                      "ADCS",
-                      "ADCS2",
-                      "ADCS",
-                      "ADCS2",
-                      "ADCS",
-                      "ADCS2",
-                      "ADCS",
-                      "UMLALS",
-                      "ADCS",
-                      "LDRH",
-                      "ADCS",
-                      "LDRSB",
-                      "ADCS",
-                      "LDRSH"
-                      ]);
+            "ADCS",
+            "ADCS2",
+            "ADCS",
+            "ADCS2",
+            "ADCS",
+            "ADCS2",
+            "ADCS",
+            "ADCS2",
+            "ADCS",
+            "UMLALS",
+            "ADCS",
+            "LDRH",
+            "ADCS",
+            "LDRSB",
+            "ADCS",
+            "LDRSH"
+        ]);
         //C
         generateMap1([
-                      "SBC",
-                      "SBC2",
-                      "SBC",
-                      "SBC2",
-                      "SBC",
-                      "SBC2",
-                      "SBC",
-                      "SBC2",
-                      "SBC",
-                      "SMULL",
-                      "SBC",
-                      "STRH",
-                      "SBC",
-                      "UNDEFINED",
-                      "SBC",
-                      "UNDEFINED"
-                      ]);
+            "SBC",
+            "SBC2",
+            "SBC",
+            "SBC2",
+            "SBC",
+            "SBC2",
+            "SBC",
+            "SBC2",
+            "SBC",
+            "SMULL",
+            "SBC",
+            "STRH",
+            "SBC",
+            "UNDEFINED",
+            "SBC",
+            "UNDEFINED"
+        ]);
         //D
         generateMap1([
-                      "SBCS",
-                      "SBCS2",
-                      "SBCS",
-                      "SBCS2",
-                      "SBCS",
-                      "SBCS2",
-                      "SBCS",
-                      "SBCS2",
-                      "SBCS",
-                      "SMULLS",
-                      "SBCS",
-                      "LDRH",
-                      "SBCS",
-                      "LDRSB",
-                      "SBCS",
-                      "LDRSH"
-                      ]);
+            "SBCS",
+            "SBCS2",
+            "SBCS",
+            "SBCS2",
+            "SBCS",
+            "SBCS2",
+            "SBCS",
+            "SBCS2",
+            "SBCS",
+            "SMULLS",
+            "SBCS",
+            "LDRH",
+            "SBCS",
+            "LDRSB",
+            "SBCS",
+            "LDRSH"
+        ]);
         //E
         generateMap1([
-                      "RSC",
-                      "RSC2",
-                      "RSC",
-                      "RSC2",
-                      "RSC",
-                      "RSC2",
-                      "RSC",
-                      "RSC2",
-                      "RSC",
-                      "SMLAL",
-                      "RSC",
-                      "STRH",
-                      "RSC",
-                      "UNDEFINED",
-                      "RSC",
-                      "UNDEFINED"
-                      ]);
+            "RSC",
+            "RSC2",
+            "RSC",
+            "RSC2",
+            "RSC",
+            "RSC2",
+            "RSC",
+            "RSC2",
+            "RSC",
+            "SMLAL",
+            "RSC",
+            "STRH",
+            "RSC",
+            "UNDEFINED",
+            "RSC",
+            "UNDEFINED"
+        ]);
         //F
         generateMap1([
-                      "RSCS",
-                      "RSCS2",
-                      "RSCS",
-                      "RSCS2",
-                      "RSCS",
-                      "RSCS2",
-                      "RSCS",
-                      "RSCS2",
-                      "RSCS",
-                      "SMLALS",
-                      "RSCS",
-                      "LDRH",
-                      "RSCS",
-                      "LDRSB",
-                      "RSCS",
-                      "LDRSH"
-                      ]);
+            "RSCS",
+            "RSCS2",
+            "RSCS",
+            "RSCS2",
+            "RSCS",
+            "RSCS2",
+            "RSCS",
+            "RSCS2",
+            "RSCS",
+            "SMLALS",
+            "RSCS",
+            "LDRH",
+            "RSCS",
+            "LDRSB",
+            "RSCS",
+            "LDRSH"
+        ]);
         //10
         generateMap1([
-                      "MRS",
-                      "UNDEFINED",
-                      "UNDEFINED",
-                      "UNDEFINED",
-                      "UNDEFINED",
-                      "UNDEFINED",
-                      "UNDEFINED",
-                      "UNDEFINED",
-                      "UNDEFINED",
-                      "SWP",
-                      "UNDEFINED",
-                      "STRH2",
-                      "UNDEFINED",
-                      "UNDEFINED",
-                      "UNDEFINED",
-                      "UNDEFINED"
-                      ]);
+            "MRS",
+            "UNDEFINED",
+            "UNDEFINED",
+            "UNDEFINED",
+            "UNDEFINED",
+            "UNDEFINED",
+            "UNDEFINED",
+            "UNDEFINED",
+            "UNDEFINED",
+            "SWP",
+            "UNDEFINED",
+            "STRH2",
+            "UNDEFINED",
+            "UNDEFINED",
+            "UNDEFINED",
+            "UNDEFINED"
+        ]);
         //11
         generateMap1([
-                      "TSTS",
-                      "TSTS2",
-                      "TSTS",
-                      "TSTS2",
-                      "TSTS",
-                      "TSTS2",
-                      "TSTS",
-                      "TSTS2",
-                      "TSTS",
-                      "UNDEFINED",
-                      "TSTS",
-                      "LDRH2",
-                      "TSTS",
-                      "LDRSB2",
-                      "TSTS",
-                      "LDRSH2"
-                      ]);
+            "TSTS",
+            "TSTS2",
+            "TSTS",
+            "TSTS2",
+            "TSTS",
+            "TSTS2",
+            "TSTS",
+            "TSTS2",
+            "TSTS",
+            "UNDEFINED",
+            "TSTS",
+            "LDRH2",
+            "TSTS",
+            "LDRSB2",
+            "TSTS",
+            "LDRSH2"
+        ]);
         //12
         generateMap1([
-                      "MSR",
-                      "BX",
-                      "UNDEFINED",
-                      "UNDEFINED",
-                      "UNDEFINED",
-                      "UNDEFINED",
-                      "UNDEFINED",
-                      "UNDEFINED",
-                      "UNDEFINED",
-                      "UNDEFINED",
-                      "UNDEFINED",
-                      "STRH2",
-                      "UNDEFINED",
-                      "UNDEFINED",
-                      "UNDEFINED",
-                      "UNDEFINED"
-                      ]);
+            "MSR",
+            "BX",
+            "UNDEFINED",
+            "UNDEFINED",
+            "UNDEFINED",
+            "UNDEFINED",
+            "UNDEFINED",
+            "UNDEFINED",
+            "UNDEFINED",
+            "UNDEFINED",
+            "UNDEFINED",
+            "STRH2",
+            "UNDEFINED",
+            "UNDEFINED",
+            "UNDEFINED",
+            "UNDEFINED"
+        ]);
         //13
         generateMap1([
-                      "TEQS",
-                      "TEQS2",
-                      "TEQS",
-                      "TEQS2",
-                      "TEQS",
-                      "TEQS2",
-                      "TEQS",
-                      "TEQS2",
-                      "TEQS",
-                      "UNDEFINED",
-                      "TEQS",
-                      "LDRH2",
-                      "TEQS",
-                      "LDRSB2",
-                      "TEQS",
-                      "LDRSH2"
-                      ]);
+            "TEQS",
+            "TEQS2",
+            "TEQS",
+            "TEQS2",
+            "TEQS",
+            "TEQS2",
+            "TEQS",
+            "TEQS2",
+            "TEQS",
+            "UNDEFINED",
+            "TEQS",
+            "LDRH2",
+            "TEQS",
+            "LDRSB2",
+            "TEQS",
+            "LDRSH2"
+        ]);
         //14
         generateMap1([
-                      "MRS",
-                      "UNDEFINED",
-                      "UNDEFINED",
-                      "UNDEFINED",
-                      "UNDEFINED",
-                      "UNDEFINED",
-                      "UNDEFINED",
-                      "UNDEFINED",
-                      "UNDEFINED",
-                      "SWPB",
-                      "UNDEFINED",
-                      "STRH2",
-                      "UNDEFINED",
-                      "UNDEFINED",
-                      "UNDEFINED",
-                      "UNDEFINED"
-                      ]);
+            "MRS",
+            "UNDEFINED",
+            "UNDEFINED",
+            "UNDEFINED",
+            "UNDEFINED",
+            "UNDEFINED",
+            "UNDEFINED",
+            "UNDEFINED",
+            "UNDEFINED",
+            "SWPB",
+            "UNDEFINED",
+            "STRH2",
+            "UNDEFINED",
+            "UNDEFINED",
+            "UNDEFINED",
+            "UNDEFINED"
+        ]);
         //15
         generateMap1([
-                      "CMPS",
-                      "CMPS2",
-                      "CMPS",
-                      "CMPS2",
-                      "CMPS",
-                      "CMPS2",
-                      "CMPS",
-                      "CMPS2",
-                      "CMPS",
-                      "UNDEFINED",
-                      "CMPS",
-                      "LDRH2",
-                      "CMPS",
-                      "LDRSB2",
-                      "CMPS",
-                      "LDRSH2"
-                      ]);
+            "CMPS",
+            "CMPS2",
+            "CMPS",
+            "CMPS2",
+            "CMPS",
+            "CMPS2",
+            "CMPS",
+            "CMPS2",
+            "CMPS",
+            "UNDEFINED",
+            "CMPS",
+            "LDRH2",
+            "CMPS",
+            "LDRSB2",
+            "CMPS",
+            "LDRSH2"
+        ]);
         //16
         generateMap1([
-                      "MSR",
-                      "UNDEFINED",
-                      "UNDEFINED",
-                      "UNDEFINED",
-                      "UNDEFINED",
-                      "UNDEFINED",
-                      "UNDEFINED",
-                      "UNDEFINED",
-                      "UNDEFINED",
-                      "UNDEFINED",
-                      "UNDEFINED",
-                      "STRH2",
-                      "UNDEFINED",
-                      "UNDEFINED",
-                      "UNDEFINED",
-                      "UNDEFINED"
-                      ]);
+            "MSR",
+            "UNDEFINED",
+            "UNDEFINED",
+            "UNDEFINED",
+            "UNDEFINED",
+            "UNDEFINED",
+            "UNDEFINED",
+            "UNDEFINED",
+            "UNDEFINED",
+            "UNDEFINED",
+            "UNDEFINED",
+            "STRH2",
+            "UNDEFINED",
+            "UNDEFINED",
+            "UNDEFINED",
+            "UNDEFINED"
+        ]);
         //17
         generateMap1([
-                      "CMNS",
-                      "CMNS2",
-                      "CMNS",
-                      "CMNS2",
-                      "CMNS",
-                      "CMNS2",
-                      "CMNS",
-                      "CMNS2",
-                      "CMNS",
-                      "UNDEFINED",
-                      "CMNS",
-                      "LDRH2",
-                      "CMNS",
-                      "LDRSB2",
-                      "CMNS",
-                      "LDRSH2"
-                      ]);
+            "CMNS",
+            "CMNS2",
+            "CMNS",
+            "CMNS2",
+            "CMNS",
+            "CMNS2",
+            "CMNS",
+            "CMNS2",
+            "CMNS",
+            "UNDEFINED",
+            "CMNS",
+            "LDRH2",
+            "CMNS",
+            "LDRSB2",
+            "CMNS",
+            "LDRSH2"
+        ]);
         //18
         generateMap1([
-                      "ORR",
-                      "ORR2",
-                      "ORR",
-                      "ORR2",
-                      "ORR",
-                      "ORR2",
-                      "ORR",
-                      "ORR2",
-                      "ORR",
-                      "UNDEFINED",
-                      "ORR",
-                      "STRH2",
-                      "ORR",
-                      "UNDEFINED",
-                      "ORR",
-                      "UNDEFINED"
-                      ]);
+            "ORR",
+            "ORR2",
+            "ORR",
+            "ORR2",
+            "ORR",
+            "ORR2",
+            "ORR",
+            "ORR2",
+            "ORR",
+            "UNDEFINED",
+            "ORR",
+            "STRH2",
+            "ORR",
+            "UNDEFINED",
+            "ORR",
+            "UNDEFINED"
+        ]);
         //19
         generateMap1([
-                      "ORRS",
-                      "ORRS2",
-                      "ORRS",
-                      "ORRS2",
-                      "ORRS",
-                      "ORRS2",
-                      "ORRS",
-                      "ORRS2",
-                      "ORRS",
-                      "UNDEFINED",
-                      "ORRS",
-                      "LDRH2",
-                      "ORRS",
-                      "LDRSB2",
-                      "ORRS",
-                      "LDRSH2"
-                      ]);
+            "ORRS",
+            "ORRS2",
+            "ORRS",
+            "ORRS2",
+            "ORRS",
+            "ORRS2",
+            "ORRS",
+            "ORRS2",
+            "ORRS",
+            "UNDEFINED",
+            "ORRS",
+            "LDRH2",
+            "ORRS",
+            "LDRSB2",
+            "ORRS",
+            "LDRSH2"
+        ]);
         //1A
         generateMap1([
-                      "MOV",
-                      "MOV2",
-                      "MOV",
-                      "MOV2",
-                      "MOV",
-                      "MOV2",
-                      "MOV",
-                      "MOV2",
-                      "MOV",
-                      "UNDEFINED",
-                      "MOV",
-                      "STRH2",
-                      "MOV",
-                      "UNDEFINED",
-                      "MOV",
-                      "UNDEFINED"
-                      ]);
+            "MOV",
+            "MOV2",
+            "MOV",
+            "MOV2",
+            "MOV",
+            "MOV2",
+            "MOV",
+            "MOV2",
+            "MOV",
+            "UNDEFINED",
+            "MOV",
+            "STRH2",
+            "MOV",
+            "UNDEFINED",
+            "MOV",
+            "UNDEFINED"
+        ]);
         //1B
         generateMap1([
-                      "MOVS",
-                      "MOVS2",
-                      "MOVS",
-                      "MOVS2",
-                      "MOVS",
-                      "MOVS2",
-                      "MOVS",
-                      "MOVS2",
-                      "MOVS",
-                      "UNDEFINED",
-                      "MOVS",
-                      "LDRH2",
-                      "MOVS",
-                      "LDRSB2",
-                      "MOVS",
-                      "LDRSH2"
-                      ]);
+            "MOVS",
+            "MOVS2",
+            "MOVS",
+            "MOVS2",
+            "MOVS",
+            "MOVS2",
+            "MOVS",
+            "MOVS2",
+            "MOVS",
+            "UNDEFINED",
+            "MOVS",
+            "LDRH2",
+            "MOVS",
+            "LDRSB2",
+            "MOVS",
+            "LDRSH2"
+        ]);
         //1C
         generateMap1([
-                      "BIC",
-                      "BIC2",
-                      "BIC",
-                      "BIC2",
-                      "BIC",
-                      "BIC2",
-                      "BIC",
-                      "BIC2",
-                      "BIC",
-                      "UNDEFINED",
-                      "BIC",
-                      "STRH2",
-                      "BIC",
-                      "UNDEFINED",
-                      "BIC",
-                      "UNDEFINED"
-                      ]);
+            "BIC",
+            "BIC2",
+            "BIC",
+            "BIC2",
+            "BIC",
+            "BIC2",
+            "BIC",
+            "BIC2",
+            "BIC",
+            "UNDEFINED",
+            "BIC",
+            "STRH2",
+            "BIC",
+            "UNDEFINED",
+            "BIC",
+            "UNDEFINED"
+        ]);
         //1D
         generateMap1([
-                      "BICS",
-                      "BICS2",
-                      "BICS",
-                      "BICS2",
-                      "BICS",
-                      "BICS2",
-                      "BICS",
-                      "BICS2",
-                      "BICS",
-                      "UNDEFINED",
-                      "BICS",
-                      "LDRH2",
-                      "BICS",
-                      "LDRSB2",
-                      "BICS",
-                      "LDRSH2"
-                      ]);
+            "BICS",
+            "BICS2",
+            "BICS",
+            "BICS2",
+            "BICS",
+            "BICS2",
+            "BICS",
+            "BICS2",
+            "BICS",
+            "UNDEFINED",
+            "BICS",
+            "LDRH2",
+            "BICS",
+            "LDRSB2",
+            "BICS",
+            "LDRSH2"
+        ]);
         //1E
         generateMap1([
-                      "MVN",
-                      "MVN2",
-                      "MVN",
-                      "MVN2",
-                      "MVN",
-                      "MVN2",
-                      "MVN",
-                      "MVN2",
-                      "MVN",
-                      "UNDEFINED",
-                      "MVN",
-                      "STRH2",
-                      "MVN",
-                      "UNDEFINED",
-                      "MVN",
-                      "UNDEFINED"
-                      ]);
+            "MVN",
+            "MVN2",
+            "MVN",
+            "MVN2",
+            "MVN",
+            "MVN2",
+            "MVN",
+            "MVN2",
+            "MVN",
+            "UNDEFINED",
+            "MVN",
+            "STRH2",
+            "MVN",
+            "UNDEFINED",
+            "MVN",
+            "UNDEFINED"
+        ]);
         //1F
         generateMap1([
-                      "MVNS",
-                      "MVNS2",
-                      "MVNS",
-                      "MVNS2",
-                      "MVNS",
-                      "MVNS2",
-                      "MVNS",
-                      "MVNS2",
-                      "MVNS",
-                      "UNDEFINED",
-                      "MVNS",
-                      "LDRH2",
-                      "MVNS",
-                      "LDRSB2",
-                      "MVNS",
-                      "LDRSH2"
-                      ]);
+            "MVNS",
+            "MVNS2",
+            "MVNS",
+            "MVNS2",
+            "MVNS",
+            "MVNS2",
+            "MVNS",
+            "MVNS2",
+            "MVNS",
+            "UNDEFINED",
+            "MVNS",
+            "LDRH2",
+            "MVNS",
+            "LDRSB2",
+            "MVNS",
+            "LDRSH2"
+        ]);
         //20
         generateMap2("AND");
         //21

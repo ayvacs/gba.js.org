@@ -8,107 +8,107 @@
 
  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
- function getGameBoyAdvanceGraphicsRenderer(coreExposed, skippingBIOS) {
-     if (!coreExposed.offthreadGfxEnabled() || typeof SharedArrayBuffer != "function" || typeof Atomics != "object") {
-         return new GameBoyAdvanceGraphicsRenderer(coreExposed, skippingBIOS);
-     }
-     else {
-         try {
-			 //Some browsers don"t allow webworkers via file:///
-			 return new GameBoyAdvanceGraphicsRendererShim(coreExposed, skippingBIOS);
-		 }
-		 catch (error) {
-			 return new GameBoyAdvanceGraphicsRenderer(coreExposed, skippingBIOS);
-		 }
-     }
- }
- function GameBoyAdvanceGraphicsRendererShim(coreExposed, skippingBIOS) {
-     this.coreExposed = coreExposed;
-     this.initializeWorker(skippingBIOS);
-     this.appendAtomicSync();
-     this.initializeBuffers();
-     this.shareStaticBuffers();
-     this.shareDynamicBuffers();
- }
- GameBoyAdvanceGraphicsRendererShim.prototype.initializeWorker = function (skippingBIOS) {
-     skippingBIOS = !!skippingBIOS;
-     //Apparently running on localhost is nearly impossible for webworkers in a cross-browser manner:
-     var loc = location.href;
-     var loc = loc.split("/");
-     loc = loc.slice(0, loc.length - 1).join("/");
-     try {
-         if (typeof WorkerGlobalScope === "undefined" || !(self instanceof WorkerGlobalScope)) {
-             //Use the catch block:
-             throw null;
-         }
-         //Firefox:
-         var loc2 = loc + "/graphics/Worker.js";
-         this.worker = new Worker(loc2);
-     }
-     catch (e) {
-         //Google Chrome:
-         var loc3 = loc + "/iodineGBA/core/graphics/Worker.js";
-         this.worker = new Worker(loc3);
-     }
-     this.worker.postMessage({
-         messageID:1,
-         skippingBIOS:!!skippingBIOS
-     });
- }
- GameBoyAdvanceGraphicsRendererShim.prototype.initializeBuffers = function () {
-     //Graphics Buffers:
-     this.gfxCommandBufferLength = 0x80000;
-     this.gfxCommandBufferMask = ((this.gfxCommandBufferLength | 0) - 1) | 0;
-     this.gfxCommandBuffer = getSharedInt32Array(this.gfxCommandBufferLength | 0);
-     this.gfxCommandCounters = getSharedInt32Array(3);
-     this.gfxLineCounter = getSharedInt32Array(1);
-     this.start = 0;
-     this.end = 0;
-     this.linesPassed = 0;
-     this.OAMRAM = getUint8Array(0x400);
-     this.OAMRAM16 = getUint16View(this.OAMRAM);
-     this.OAMRAM32 = getInt32View(this.OAMRAM);
-     this.paletteRAM = getUint8Array(0x400);
-     this.VRAM = getUint8Array(0x18000);
-     this.VRAM16 = getUint16View(this.VRAM);
-     this.VRAM32 = getInt32View(this.VRAM);
-     this.paletteRAM16 = getUint16View(this.paletteRAM);
-     this.paletteRAM32 = getInt32View(this.paletteRAM);
- }
- GameBoyAdvanceGraphicsRendererShim.prototype.increaseCommandBufferCapacity = function () {
-     //Tell the other thread to break for receiving the new buffer:
-     Atomics.store(this.gfxCommandCounters, 2, 1);
-     //Double the size to the next power of 2:
-     this.gfxCommandBufferLength = this.gfxCommandBufferLength << 1;
-     this.gfxCommandBufferMask = ((this.gfxCommandBufferLength | 0) - 1) | 0;
-     this.gfxCommandBuffer = getSharedInt32Array(this.gfxCommandBufferLength | 0);
-     this.gfxCommandCounters = getSharedInt32Array(3);
-     this.start = 0;
-     this.end = 0;
-     //Share our new buffers:
-     this.shareDynamicBuffers();
- }
- GameBoyAdvanceGraphicsRendererShim.prototype.appendAtomicSync = function () {
-     //Command buffer counters get synchronized with emulator runtime head/end for efficiency:
-     var parentObj = this;
-     this.coreExposed.appendStartIterationSync(function () {
-         parentObj.synchronizeReader();
-     });
-     this.coreExposed.appendEndIterationSync(function () {
-         parentObj.synchronizeWriter();
-     });
-     this.coreExposed.appendTerminationSync(function () {
-         //Core instance being replaced, kill the worker thread:
-         parentObj.worker.terminate();
-     });
- }
+function getGameBoyAdvanceGraphicsRenderer(coreExposed, skippingBIOS) {
+    if (!coreExposed.offthreadGfxEnabled() || typeof SharedArrayBuffer != "function" || typeof Atomics != "object") {
+        return new GameBoyAdvanceGraphicsRenderer(coreExposed, skippingBIOS);
+    }
+    else {
+        try {
+            //Some browsers don"t allow webworkers via file:///
+            return new GameBoyAdvanceGraphicsRendererShim(coreExposed, skippingBIOS);
+        }
+        catch (error) {
+            return new GameBoyAdvanceGraphicsRenderer(coreExposed, skippingBIOS);
+        }
+    }
+}
+function GameBoyAdvanceGraphicsRendererShim(coreExposed, skippingBIOS) {
+    this.coreExposed = coreExposed;
+    this.initializeWorker(skippingBIOS);
+    this.appendAtomicSync();
+    this.initializeBuffers();
+    this.shareStaticBuffers();
+    this.shareDynamicBuffers();
+}
+GameBoyAdvanceGraphicsRendererShim.prototype.initializeWorker = function (skippingBIOS) {
+    skippingBIOS = !!skippingBIOS;
+    //Apparently running on localhost is nearly impossible for webworkers in a cross-browser manner:
+    var loc = location.href;
+    var loc = loc.split("/");
+    loc = loc.slice(0, loc.length - 1).join("/");
+    try {
+        if (typeof WorkerGlobalScope === "undefined" || !(self instanceof WorkerGlobalScope)) {
+            //Use the catch block:
+            throw null;
+        }
+        //Firefox:
+        var loc2 = loc + "/graphics/Worker.js";
+        this.worker = new Worker(loc2);
+    }
+    catch (e) {
+        //Google Chrome:
+        var loc3 = loc + "/iodineGBA/core/graphics/Worker.js";
+        this.worker = new Worker(loc3);
+    }
+    this.worker.postMessage({
+        messageID: 1,
+        skippingBIOS: !!skippingBIOS
+    });
+}
+GameBoyAdvanceGraphicsRendererShim.prototype.initializeBuffers = function () {
+    //Graphics Buffers:
+    this.gfxCommandBufferLength = 0x80000;
+    this.gfxCommandBufferMask = ((this.gfxCommandBufferLength | 0) - 1) | 0;
+    this.gfxCommandBuffer = getSharedInt32Array(this.gfxCommandBufferLength | 0);
+    this.gfxCommandCounters = getSharedInt32Array(3);
+    this.gfxLineCounter = getSharedInt32Array(1);
+    this.start = 0;
+    this.end = 0;
+    this.linesPassed = 0;
+    this.OAMRAM = getUint8Array(0x400);
+    this.OAMRAM16 = getUint16View(this.OAMRAM);
+    this.OAMRAM32 = getInt32View(this.OAMRAM);
+    this.paletteRAM = getUint8Array(0x400);
+    this.VRAM = getUint8Array(0x18000);
+    this.VRAM16 = getUint16View(this.VRAM);
+    this.VRAM32 = getInt32View(this.VRAM);
+    this.paletteRAM16 = getUint16View(this.paletteRAM);
+    this.paletteRAM32 = getInt32View(this.paletteRAM);
+}
+GameBoyAdvanceGraphicsRendererShim.prototype.increaseCommandBufferCapacity = function () {
+    //Tell the other thread to break for receiving the new buffer:
+    Atomics.store(this.gfxCommandCounters, 2, 1);
+    //Double the size to the next power of 2:
+    this.gfxCommandBufferLength = this.gfxCommandBufferLength << 1;
+    this.gfxCommandBufferMask = ((this.gfxCommandBufferLength | 0) - 1) | 0;
+    this.gfxCommandBuffer = getSharedInt32Array(this.gfxCommandBufferLength | 0);
+    this.gfxCommandCounters = getSharedInt32Array(3);
+    this.start = 0;
+    this.end = 0;
+    //Share our new buffers:
+    this.shareDynamicBuffers();
+}
+GameBoyAdvanceGraphicsRendererShim.prototype.appendAtomicSync = function () {
+    //Command buffer counters get synchronized with emulator runtime head/end for efficiency:
+    var parentObj = this;
+    this.coreExposed.appendStartIterationSync(function () {
+        parentObj.synchronizeReader();
+    });
+    this.coreExposed.appendEndIterationSync(function () {
+        parentObj.synchronizeWriter();
+    });
+    this.coreExposed.appendTerminationSync(function () {
+        //Core instance being replaced, kill the worker thread:
+        parentObj.worker.terminate();
+    });
+}
 GameBoyAdvanceGraphicsRendererShim.prototype.shareStaticBuffers = function () {
     try {
         this.worker.postMessage({
-            messageID:0,
-            gfxBuffers:gfxBuffers,
-            gfxCounters:gfxCounters,
-            gfxLineCounter:this.gfxLineCounter
+            messageID: 0,
+            gfxBuffers: gfxBuffers,
+            gfxCounters: gfxCounters,
+            gfxLineCounter: this.gfxLineCounter
         }, [
             gfxBuffers[0].buffer,
             gfxBuffers[1].buffer,
@@ -118,33 +118,33 @@ GameBoyAdvanceGraphicsRendererShim.prototype.shareStaticBuffers = function () {
     }
     catch (e) {
         this.worker.postMessage({
-            messageID:0,
-            gfxBuffers:gfxBuffers,
-            gfxCounters:gfxCounters,
-            gfxLineCounter:this.gfxLineCounter
+            messageID: 0,
+            gfxBuffers: gfxBuffers,
+            gfxCounters: gfxCounters,
+            gfxLineCounter: this.gfxLineCounter
         });
     }
 }
 GameBoyAdvanceGraphicsRendererShim.prototype.shareDynamicBuffers = function () {
     try {
         this.worker.postMessage({
-            messageID:2,
-            gfxCommandBuffer:this.gfxCommandBuffer,
-            gfxCommandCounters:this.gfxCommandCounters
-            }, [
+            messageID: 2,
+            gfxCommandBuffer: this.gfxCommandBuffer,
+            gfxCommandCounters: this.gfxCommandCounters
+        }, [
             this.gfxCommandBuffer.buffer,
             this.gfxCommandCounters.buffer
         ]);
     }
     catch (e) {
         this.worker.postMessage({
-            messageID:2,
-            gfxCommandBuffer:this.gfxCommandBuffer,
-            gfxCommandCounters:this.gfxCommandCounters
+            messageID: 2,
+            gfxCommandBuffer: this.gfxCommandBuffer,
+            gfxCommandCounters: this.gfxCommandCounters
         });
     }
-     //Wake up the producer "GPU" thread:
-     Atomics.notify(gfxCounters, 2, 1);
+    //Wake up the producer "GPU" thread:
+    Atomics.notify(gfxCounters, 2, 1);
 }
 GameBoyAdvanceGraphicsRendererShim.prototype.pushCommand = function (command, data) {
     command = command | 0;
@@ -767,12 +767,12 @@ GameBoyAdvanceGraphicsRendererShim.prototype.writeBLDY8 = function (data) {
 }
 if (__LITTLE_ENDIAN__) {
     GameBoyAdvanceGraphicsRendererShim.prototype.writeVRAM8 =
-    GameBoyAdvanceGraphicsRendererShim.prototype.writeVRAM16 = function (address, data) {
-        address = address | 0;
-        data = data | 0;
-        this.VRAM16[address & 0xFFFF] = data & 0xFFFF;
-        this.pushVRAM16(address | 0, data | 0);
-    }
+        GameBoyAdvanceGraphicsRendererShim.prototype.writeVRAM16 = function (address, data) {
+            address = address | 0;
+            data = data | 0;
+            this.VRAM16[address & 0xFFFF] = data & 0xFFFF;
+            this.pushVRAM16(address | 0, data | 0);
+        }
     GameBoyAdvanceGraphicsRendererShim.prototype.writeVRAM32 = function (address, data) {
         address = address | 0;
         data = data | 0;
@@ -830,13 +830,13 @@ if (__LITTLE_ENDIAN__) {
 }
 else {
     GameBoyAdvanceGraphicsRendererShim.prototype.writeVRAM8 =
-    GameBoyAdvanceGraphicsRendererShim.prototype.writeVRAM16 = function (address, data) {
-        address <<= 1;
-        address &= 0x1FFFE;
-        this.VRAM[address] = data & 0xFF;
-        this.VRAM[address + 1] = (data >> 8) & 0xFF;
-        this.pushVRAM16(address, data);
-    }
+        GameBoyAdvanceGraphicsRendererShim.prototype.writeVRAM16 = function (address, data) {
+            address <<= 1;
+            address &= 0x1FFFE;
+            this.VRAM[address] = data & 0xFF;
+            this.VRAM[address + 1] = (data >> 8) & 0xFF;
+            this.pushVRAM16(address, data);
+        }
     GameBoyAdvanceGraphicsRendererShim.prototype.writeVRAM32 = function (address, data) {
         address <<= 2;
         address &= 0x1FFFC;
@@ -876,7 +876,7 @@ else {
     }
     GameBoyAdvanceGraphicsRendererShim.prototype.readPalette32 = function (address) {
         address &= 0x3FC;
-        return this.paletteRAM[address] | (this.paletteRAM[address | 1] << 8) | (this.paletteRAM[address | 2] << 16)  | (this.paletteRAM[address | 3] << 24);
+        return this.paletteRAM[address] | (this.paletteRAM[address | 1] << 8) | (this.paletteRAM[address | 2] << 16) | (this.paletteRAM[address | 3] << 24);
     }
     GameBoyAdvanceGraphicsRendererShim.prototype.writeOAM16 = function (address, data) {
         address &= 0x1FF;
@@ -902,7 +902,7 @@ else {
     GameBoyAdvanceGraphicsRendererShim.prototype.readOAM32 = function (address) {
         address &= 0xFF;
         address <<= 2;
-        return this.OAMRAM[address] | (this.OAMRAM[address | 1] << 8) | (this.OAMRAM[address | 2] << 16)  | (this.OAMRAM[address | 3] << 24);
+        return this.OAMRAM[address] | (this.OAMRAM[address | 1] << 8) | (this.OAMRAM[address | 2] << 16) | (this.OAMRAM[address | 3] << 24);
     }
 }
 GameBoyAdvanceGraphicsRendererShim.prototype.readVRAM8 = function (address) {

@@ -90,30 +90,30 @@ GameBoyAdvanceEEPROMChip.prototype.write16 = function (data) {
     data = data & 0x1;
     //Writes only work in DMA:
     switch (this.mode | 0) {
-            //Idle Mode:
+        //Idle Mode:
         case 0:
             this.mode = data | 0;
             break;
-            //Select Mode:
+        //Select Mode:
         case 0x1:
             this.selectMode(data | 0);
             break;
-            //Address Mode (Write):
+        //Address Mode (Write):
         case 0x2:
-            //Address Mode (Read):
+        //Address Mode (Read):
         case 0x3:
             this.addressMode(data | 0);
             break;
-            //Write Mode:
+        //Write Mode:
         case 0x4:
             this.writeMode(data | 0);
             break;
-            //Ending bit of addressing:
+        //Ending bit of addressing:
         case 0x5:
         case 0x6:
             this.endAddressing();
             break;
-            //Read Mode:
+        //Read Mode:
         default:
             this.resetMode();
     }
