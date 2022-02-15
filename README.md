@@ -107,8 +107,6 @@ Thank you for your contributions :)
 │ ├ particles
 │ │ └ scripts
 │ ├ user_css
-│ ├ user_data
-│ │ └  GamesList.json
 │ └ user_scripts
 │   └  XAudioJS
 ├ binaries
