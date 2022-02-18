@@ -7,9 +7,6 @@
 <html>
 
 <head>
-    <script src="assets/particles/scripts/particles@2.0.0.min.js"></script>
-    <script src="assets/particles/scripts/load.js"></script>
-
     <link rel="stylesheet" href="assets/user_css/index.css">
     <link rel="stylesheet" href="assets/user_css/fonts.css">
     <link rel="stylesheet" href="assets/user_css/collapsible.css">
@@ -36,16 +33,16 @@
     <meta property="og:url" content="https://metatags.io/">
     <meta property="og:title" content="GBA Online">
     <meta property="og:description" content="A free, online, and lightweight GameBoy Advance emulator.">
-    <meta property="og:image"
-        content="https://raw.githubusercontent.com/ayvacs/gba.js.org/gh-pages/assets/images/repo-card.png">
+    <meta property="og:image" content="https://raw.githubusercontent.com/ayvacs/gba.js.org/gh-pages/assets/images/repo-card.png">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://metatags.io/">
     <meta property="twitter:title" content="GBA Online">
     <meta property="twitter:description" content="A free, online, and lightweight GameBoy Advance emulator.">
-    <meta property="twitter:image"
-        content="https://raw.githubusercontent.com/ayvacs/gba.js.org/gh-pages/assets/images/repo-card.png">
+    <meta property="twitter:image" content="https://raw.githubusercontent.com/ayvacs/gba.js.org/gh-pages/assets/images/repo-card.png">
+
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -54,7 +51,7 @@
 
     <br>
     <img id="repo-card" src="assets/images/repo-card.png" height="300px">
-    <p style="font-size:20px">v1.3.4; Various bug fixes and improvements</p>
+    <p id="version-card" style="font-size:20px"></p>
 
     <p>Welcome to <b>GBA Online</b>, a modern GameBoy Advance emulator for the web.</p>
 
@@ -243,6 +240,15 @@
                 }
             });
         }
+    </script>
+
+    <script src="assets/particles/scripts/particles@2.0.0.min.js"></script>
+    <script src="assets/particles/scripts/load.js"></script>
+    <script>
+        $.get("assets/user_data/version.json", function (data) {
+            var ver = data.id + ": " + data.desc;
+            document.getElementById("version-card").innerHTML = ver;
+        });
     </script>
 </body>
 

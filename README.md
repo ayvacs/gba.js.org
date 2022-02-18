@@ -12,16 +12,9 @@
   <p align="center"><a target="_blank" href="https://gba.js.org">🔗 gba.js.org</a></p>
 
   <p align="center">
-    <img alt="Github License" src="https://img.shields.io/github/license/ayvacs/gba.js.org?style=for-the-badge">
+    <img alt="Github License" src="https://img.shields.io/badge/LICENSE-MIT-blue?style=for-the-badge">
     <img alt="Github commit activity" src="https://img.shields.io/github/commit-activity/m/ayvacs/gba.js.org?style=for-the-badge">
     <img alt="Github release (latest by date)" src="https://img.shields.io/github/v/release/ayvacs/gba.js.org?style=for-the-badge">
-  </p>
-
-  <p align="center">
-    🌎
-    <a target="_blank" href="https://github.com/ayvacs/gba.js.org/blob/gh-pages/README.md"><b>English</b></a>,
-    <a target="_blank" href="https://github.com/ayvacs/gba.js.org/blob/gh-pages/README.es.md"><b>Español</b></a>,
-    <a target="_blank" href="https://github.com/ayvacs/gba.js.org/blob/gh-pages/README.fr.md"><b>Français</b></a>
   </p>
 </div>
 
@@ -60,8 +53,8 @@ If you want to download a past version and host it locally, check out the [GitHu
 
 Supported platforms:
 
-* **MacOS**
-* Windows *(partial support)*
+* macOS
+* Windows
 * iOS
 
 ### Known to work well in:
@@ -75,64 +68,6 @@ Supported platforms:
 **Mobile:**
 
 * iOS Safari on iOS 15.1.1+
-
-### Poor performance, or failed to run:
-
-**Windows / MacOS:**
-
-* Firefox 28+
-* Opera
-* Safari 5.1.4 and below
-* Internet Explorer
-
-## If you want to contribute:
-
-1. Fork the project with GitHub
-2. Make any local changes you want
-3. Create a **pull request** to merge the repos
-
-Thank you for your contributions :)
-
-## Project Structure
-
-```
-📁 gba.js.org
-│
-├ _layouts
-├ .git
-│
-├ about
-├ assets
-│ ├ images
-│ ├ particles
-│ │ └ scripts
-│ ├ user_css
-│ └ user_scripts
-│   └  XAudioJS
-├ binaries
-├ iodineGBA
-│ ├ core
-│ ├ includes
-│ └ README.md
-├ qr
-│
-├ index.html
-├ player.html
-│
-├ README.es.md
-├ README.fr.md
-├ README.md
-│
-├ CNAME
-├ LICENSE
-└ VERSION
-```
-
-1. The `assets` folder contains project branding and images.
-2. The `binaries` folder contains GameBoy Advance ROMs.
-3. The `iodineGBA` folder contains most of the Iodine emulator.
-4. The `index.html` page is the project's landing page.
-5. The `player.html` page is the emulator page.
 
 ## Libraries
 
