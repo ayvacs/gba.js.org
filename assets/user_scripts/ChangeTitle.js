@@ -132,8 +132,8 @@ if (hashTags.length > 0) {
     } else {
         document.title = title;
     };
-
-    // Add notification
+    
+    /*// Add notification
 
     var t = document.createElement("p");
     t.innerHTML = "Loaded \"" + gameName + "\"";
@@ -146,7 +146,7 @@ if (hashTags.length > 0) {
         setTimeout(function () {
             $("#loadedGameMsg").remove();
         }, 3000);
-    }, 3000);
+    }, 3000);*/
 } else {
     document.title = defaultTitle;
     console.log("No game is currently loaded!");

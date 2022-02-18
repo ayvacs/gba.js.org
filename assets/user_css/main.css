@@ -243,4 +243,6 @@ li.hide {
     top: calc(100% - 70px);
     width: 100%;
     font-size: 24px;
+    padding: 10px;
+    background-color: green;
 }
