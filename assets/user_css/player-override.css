@@ -1,38 +1,38 @@
 body,
 html {
-  font-family: 'Merriweather Sans', sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
-.menu{
-  box-shadow: 0 0 48px 48px rgba(0, 0, 0, 0.1);
-  background: #202124;
+.menu {
+    box-shadow: 0 0 48px 48px rgba(0, 0, 0, 0.1);
+    background: #202124;
 }
 
-li{
-  font-family: 'Merriweather Sans', sans-serif;
-  font-size: 13px;
-  color: #ffffff;
-  background: #202124;
+li {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-size: 13px;
+    color: #ffffff;
+    background: #202124;
 }
 
-#logo-small{
-  position: fixed;
-  left: 92.5%;
-  top: 1.35%;
+#logo-small {
+    position: fixed;
+    left: 92.5%;
+    top: 1.35%;
 }
 
 .message,
 #tempMessage {
-  background: #6cc27d;
-  padding: 1em 2em;
-  text-align: center;
-  color: #fff;
-  bottom: 0px;
-  position: fixed;
-  left: 0px;
-  display: none;
-  font-weight: bold;
-  vertical-align: bottom;
-  font-family: monospace;
-  z-index: 1;
+    background: #6cc27d;
+    padding: 1em 2em;
+    text-align: center;
+    color: #fff;
+    bottom: 0px;
+    position: fixed;
+    left: 0px;
+    display: none;
+    font-weight: bold;
+    vertical-align: bottom;
+    font-family: monospace;
+    z-index: 1;
 }
