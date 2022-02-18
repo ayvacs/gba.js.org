@@ -113,7 +113,8 @@ var games = {
     "-DEBUG-stripes": "stripes",
     "-DEBUG-suite": "suite",
     "-DEBUG-thumb": "thumb"
-}
+};
+
 
 var defaultTitle = document.title;
 var hashTags = location.hash.substr(1); //substr removes the leading #
@@ -121,17 +122,32 @@ var gameName = games[hashTags];
 var startLetter = hashTags.charAt(0);
 
 if (hashTags.length > 0) {
-    var title = gameName + " on GBA Online";
+    console.log("Current game: " + gameName + " [" + hashTags + "]");
 
-    // document.title = defaultTitle + " [" + gameName + "]";
+    // Change page title
+
+    var title = gameName + " on GBA Online";
     if (startLetter === "-") {
         document.title = "[DEBUG] " + title;
     } else {
         document.title = title;
-    }
+    };
 
-    console.log("Current game: " + gameName + " [" + hashTags + "]");
+    // Add notification
+
+    var t = document.createElement("p");
+    t.innerHTML = "Loaded \"" + gameName + "\"";
+    t.id = "loadedGameMsg";
+    document.body.appendChild(t);
+
+    // fade out after 3secs
+    setTimeout(function () {
+        $("#loadedGameMsg").fadeOut();
+        setTimeout(function () {
+            $("#loadedGameMsg").remove();
+        }, 3000);
+    }, 3000);
 } else {
-    document.title = defaultTitle
-    console.log("No game is currently loaded!")
-}
+    document.title = defaultTitle;
+    console.log("No game is currently loaded!");
+};

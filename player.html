@@ -21,75 +21,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Merriweather+Sans&display=swap">
-
-    <!-- Required Scripts -->
-
-    <script src="https://code.jquery.com/jquery-3.6.0.js"
-        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous">
-        </script>
-
-    <!-- Iodine Emu -->
-    <script src="iodineGBA/includes/TypedArrayShim.js"></script>
-    <script src="iodineGBA/core/Cartridge.js"></script>
-    <script src="iodineGBA/core/DMA.js"></script>
-    <script src="iodineGBA/core/Emulator.js"></script>
-    <script src="iodineGBA/core/Graphics.js"></script>
-    <script src="iodineGBA/core/RunLoop.js"></script>
-    <script src="iodineGBA/core/Memory.js"></script>
-    <script src="iodineGBA/core/IRQ.js"></script>
-    <script src="iodineGBA/core/JoyPad.js"></script>
-    <script src="iodineGBA/core/Serial.js"></script>
-    <script src="iodineGBA/core/Sound.js"></script>
-    <script src="iodineGBA/core/Timer.js"></script>
-    <script src="iodineGBA/core/Wait.js"></script>
-    <script src="iodineGBA/core/CPU.js"></script>
-    <script src="iodineGBA/core/Saves.js"></script>
-    <script src="iodineGBA/core/sound/FIFO.js"></script>
-    <script src="iodineGBA/core/sound/Channel1.js"></script>
-    <script src="iodineGBA/core/sound/Channel2.js"></script>
-    <script src="iodineGBA/core/sound/Channel3.js"></script>
-    <script src="iodineGBA/core/sound/Channel4.js"></script>
-    <script src="iodineGBA/core/CPU/ARM.js"></script>
-    <script src="iodineGBA/core/CPU/THUMB.js"></script>
-    <script src="iodineGBA/core/CPU/CPSR.js"></script>
-    <script src="iodineGBA/core/graphics/Renderer.js"></script>
-    <script src="iodineGBA/core/graphics/RendererShim.js"></script>
-    <script src="iodineGBA/core/graphics/RendererProxy.js"></script>
-    <script src="iodineGBA/core/graphics/BGTEXT.js"></script>
-    <script src="iodineGBA/core/graphics/BG2FrameBuffer.js"></script>
-    <script src="iodineGBA/core/graphics/BGMatrix.js"></script>
-    <script src="iodineGBA/core/graphics/AffineBG.js"></script>
-    <script src="iodineGBA/core/graphics/ColorEffects.js"></script>
-    <script src="iodineGBA/core/graphics/Mosaic.js"></script>
-    <script src="iodineGBA/core/graphics/OBJ.js"></script>
-    <script src="iodineGBA/core/graphics/OBJWindow.js"></script>
-    <script src="iodineGBA/core/graphics/Window.js"></script>
-    <script src="iodineGBA/core/graphics/Compositor.js"></script>
-    <script src="iodineGBA/core/memory/DMA0.js"></script>
-    <script src="iodineGBA/core/memory/DMA1.js"></script>
-    <script src="iodineGBA/core/memory/DMA2.js"></script>
-    <script src="iodineGBA/core/memory/DMA3.js"></script>
-    <script src="iodineGBA/core/cartridge/SaveDeterminer.js"></script>
-    <script src="iodineGBA/core/cartridge/SRAM.js"></script>
-    <script src="iodineGBA/core/cartridge/FLASH.js"></script>
-    <script src="iodineGBA/core/cartridge/EEPROM.js"></script>
-    <script src="iodineGBA/core/cartridge/GPIO.js"></script>
-
-    <!-- user scripts -->
-    <script src="assets/user_scripts/AudioGlueCode.js"></script>
-    <script src="assets/user_scripts/base64.js"></script>
-    <script src="assets/user_scripts/GfxGlueCode.js"></script>
-    <script src="assets/user_scripts/GUIGlueCode.js"></script>
-    <script src="assets/user_scripts/JoyPadGlueCode.js"></script>
-    <script src="assets/user_scripts/ROMLoadGlueCode.js"></script>
-    <script src="assets/user_scripts/SavesGlueCode.js"></script>
-    <script src="assets/user_scripts/WorkerGfxGlueCode.js"></script>
-    <script src="assets/user_scripts/WorkerGlueCode.js"></script>
-    <script src="assets/user_scripts/XAudioJS/swfobject.js"></script>
-    <script src="assets/user_scripts/XAudioJS/resampler.js"></script>
-    <script src="assets/user_scripts/XAudioJS/XAudioServer.js"></script>
-    <script src="assets/user_scripts/CoreGlueCode.js"></script>
-    <script src="assets/user_scripts/ChangeTitle.js"></script>
 </head>
 
 <body>
@@ -257,6 +188,75 @@
         </div>
         <span class="message" id="tempMessage"></span>
     </div>
+
+    <!-- Required Scripts -->
+
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous">
+        </script>
+
+    <!-- Iodine Emu -->
+    <script src="iodineGBA/includes/TypedArrayShim.js"></script>
+    <script src="iodineGBA/core/Cartridge.js"></script>
+    <script src="iodineGBA/core/DMA.js"></script>
+    <script src="iodineGBA/core/Emulator.js"></script>
+    <script src="iodineGBA/core/Graphics.js"></script>
+    <script src="iodineGBA/core/RunLoop.js"></script>
+    <script src="iodineGBA/core/Memory.js"></script>
+    <script src="iodineGBA/core/IRQ.js"></script>
+    <script src="iodineGBA/core/JoyPad.js"></script>
+    <script src="iodineGBA/core/Serial.js"></script>
+    <script src="iodineGBA/core/Sound.js"></script>
+    <script src="iodineGBA/core/Timer.js"></script>
+    <script src="iodineGBA/core/Wait.js"></script>
+    <script src="iodineGBA/core/CPU.js"></script>
+    <script src="iodineGBA/core/Saves.js"></script>
+    <script src="iodineGBA/core/sound/FIFO.js"></script>
+    <script src="iodineGBA/core/sound/Channel1.js"></script>
+    <script src="iodineGBA/core/sound/Channel2.js"></script>
+    <script src="iodineGBA/core/sound/Channel3.js"></script>
+    <script src="iodineGBA/core/sound/Channel4.js"></script>
+    <script src="iodineGBA/core/CPU/ARM.js"></script>
+    <script src="iodineGBA/core/CPU/THUMB.js"></script>
+    <script src="iodineGBA/core/CPU/CPSR.js"></script>
+    <script src="iodineGBA/core/graphics/Renderer.js"></script>
+    <script src="iodineGBA/core/graphics/RendererShim.js"></script>
+    <script src="iodineGBA/core/graphics/RendererProxy.js"></script>
+    <script src="iodineGBA/core/graphics/BGTEXT.js"></script>
+    <script src="iodineGBA/core/graphics/BG2FrameBuffer.js"></script>
+    <script src="iodineGBA/core/graphics/BGMatrix.js"></script>
+    <script src="iodineGBA/core/graphics/AffineBG.js"></script>
+    <script src="iodineGBA/core/graphics/ColorEffects.js"></script>
+    <script src="iodineGBA/core/graphics/Mosaic.js"></script>
+    <script src="iodineGBA/core/graphics/OBJ.js"></script>
+    <script src="iodineGBA/core/graphics/OBJWindow.js"></script>
+    <script src="iodineGBA/core/graphics/Window.js"></script>
+    <script src="iodineGBA/core/graphics/Compositor.js"></script>
+    <script src="iodineGBA/core/memory/DMA0.js"></script>
+    <script src="iodineGBA/core/memory/DMA1.js"></script>
+    <script src="iodineGBA/core/memory/DMA2.js"></script>
+    <script src="iodineGBA/core/memory/DMA3.js"></script>
+    <script src="iodineGBA/core/cartridge/SaveDeterminer.js"></script>
+    <script src="iodineGBA/core/cartridge/SRAM.js"></script>
+    <script src="iodineGBA/core/cartridge/FLASH.js"></script>
+    <script src="iodineGBA/core/cartridge/EEPROM.js"></script>
+    <script src="iodineGBA/core/cartridge/GPIO.js"></script>
+
+    <!-- user scripts -->
+    <script src="assets/user_scripts/AudioGlueCode.js"></script>
+    <script src="assets/user_scripts/base64.js"></script>
+    <script src="assets/user_scripts/GfxGlueCode.js"></script>
+    <script src="assets/user_scripts/GUIGlueCode.js"></script>
+    <script src="assets/user_scripts/JoyPadGlueCode.js"></script>
+    <script src="assets/user_scripts/ROMLoadGlueCode.js"></script>
+    <script src="assets/user_scripts/SavesGlueCode.js"></script>
+    <script src="assets/user_scripts/WorkerGfxGlueCode.js"></script>
+    <script src="assets/user_scripts/WorkerGlueCode.js"></script>
+    <script src="assets/user_scripts/XAudioJS/swfobject.js"></script>
+    <script src="assets/user_scripts/XAudioJS/resampler.js"></script>
+    <script src="assets/user_scripts/XAudioJS/XAudioServer.js"></script>
+    <script src="assets/user_scripts/CoreGlueCode.js"></script>
+    <script src="assets/user_scripts/ChangeTitle.js"></script>
 </body>
 
 </html>

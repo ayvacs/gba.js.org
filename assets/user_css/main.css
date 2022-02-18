@@ -21,6 +21,7 @@ html, body {
     user-select: none;
 }
 
+
 /* reset all list items */
 ul{
     list-style: none;
@@ -232,4 +233,14 @@ li.hide {
         flex-grow: 1;
         align-items: center;
     }
+}
+
+#loadedGameMsg {
+    color: black;
+    position: absolute;
+    display: inline-block;
+    text-align: center;
+    top: calc(100% - 70px);
+    width: 100%;
+    font-size: 24px;
 }
