@@ -2,6 +2,7 @@
 
 GBA ONLINE;  GBA.JS.ORG;  "Online GameBoy Advance Emulator"
 Copyright (C) 2021 AYVACS
+Licensed under the MIT License
 
 -->
 
