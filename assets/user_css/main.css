@@ -1,13 +1,23 @@
 /*
+
+GBA ONLINE;  GBA.JS.ORG;  "Online GameBoy Advance Emulator"
+Copyright (C) 2021-present AYVACS
+Licensed under the MIT License (view LICENSE.md for more information) (view LICENSE.md for more information)
+
+*/
+
+
+/*
 |-----------------------------------------
 | Core CSS
 |-----------------------------------------
  */
 
-html, body {
+html,
+body {
     font-family: Open Sans, Arial, sans-serif;
     height: 100%;
-    width:100%;
+    width: 100%;
     margin: 0;
     padding: 0;
     background: #000;
@@ -23,7 +33,8 @@ html, body {
 
 
 /* reset all list items */
-ul{
+
+ul {
     list-style: none;
     padding: 0;
     margin: 0;
@@ -35,12 +46,13 @@ ul{
 }
 
 #main {
-    position:absolute;
+    position: absolute;
     top: 0px;
     left: 0px;
     right: 0px;
     bottom: 0px;
 }
+
 
 /*
 |-----------------------------------------
@@ -76,6 +88,7 @@ canvas.texturePixelated {
     -ms-interpolation-mode: nearest-neighbor;
 }
 
+
 /*
 |-----------------------------------------
 | Messages
@@ -97,43 +110,56 @@ canvas.texturePixelated {
     z-index: 1;
 }
 
+
 /*
 |-----------------------------------------
 | Main Menu
 |-----------------------------------------
  */
 
+
 /* top level menu */
+
 div#menu {
     position: absolute;
     z-index: 1;
     width: 100%;
     height: 0px;
 }
+
 .menu {
     position: fixed;
     display: flex;
     flex-wrap: wrap;
     width: 100%;
     background: #fff;
-    border-bottom: 1px solid rgba(0,0,0,.1);
+    border-bottom: 1px solid rgba(0, 0, 0, .1);
     transition: .3s ease;
-	cursor: pointer;
+    cursor: pointer;
 }
 
+
 /* auto hide menu while playing */
-.playing .menu{opacity: 0;}
-.playing .menu:hover{opacity: 0.9;}
+
+.playing .menu {
+    opacity: 0;
+}
+
+.playing .menu:hover {
+    opacity: 0.9;
+}
+
 
 /* sub level menu */
-.menu ul{
+
+.menu ul {
     visibility: hidden;
     opacity: 0;
     position: absolute;
-    top:100%;
-    left:0;
+    top: 100%;
+    left: 0;
     background-color: rgb(245, 245, 245);
-    box-shadow: 0 5px 10px 0 rgba(0,0,0,.1);
+    box-shadow: 0 5px 10px 0 rgba(0, 0, 0, .1);
     transition: .3s ease;
     z-index: 1;
 }
@@ -142,9 +168,11 @@ li.hide {
     display: none !important;
 }
 
+
 /* bottom level nav */
-.menu ul ul{
-    top:0;
+
+.menu ul ul {
+    top: 0;
     left: 100%;
 }
 
@@ -156,21 +184,24 @@ li.hide {
     padding: .3em 1em !important;
 }
 
-.menu li{
+.menu li {
     white-space: nowrap;
     position: relative;
-    cursor:pointer;
+    cursor: pointer;
 }
 
-.menu li:hover{
+.menu li:hover {
     /*background: rgba(0,0,0,.1);*/
 }
 
+
 /* show sub nav on hover */
-.menu li:hover > ul{
+
+.menu li:hover>ul {
     visibility: visible;
     opacity: 1;
 }
+
 
 /*
 |-----------------------------------------
@@ -178,7 +209,7 @@ li.hide {
 |-----------------------------------------
  */
 
-.touch-controls{
+.touch-controls {
     display: flex;
     padding: 1em;
     position: absolute;
@@ -187,10 +218,10 @@ li.hide {
     right: 0px;
 }
 
-.touch-controls button{
+.touch-controls button {
     display: inline-block;
     -webkit-appearance: none;
-    border:0;
+    border: 0;
     outline: 0;
     background: #fff;
     opacity: 0.7;
@@ -200,31 +231,34 @@ li.hide {
     text-align: center;
     cursor: pointer;
     transition: .1s ease;
-    margin:.5em;
+    margin: .5em;
 }
 
-.touch-controls button:active{
+.touch-controls button:active {
     transform: scale(0.95);
-    box-shadow: 0 0 10px 0 rgba(0,0,0,0.4) inset;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.4) inset;
 }
 
-.touch-dpad, .touch-buttons{
+.touch-dpad,
+.touch-buttons {
     flex-grow: 1;
     text-align: center;
 }
 
-.touch-buttons{
+.touch-buttons {
     align-self: flex-end;
 }
 
-.touch-dpad--up{
+.touch-dpad--up {
     flex-grow: 1;
     width: 100%;
 }
 
+
 /* Only show controls on portrait mode screens */
+
 @media screen and (min-aspect-ratio: 1/1) {
-    .touch-controls{
+    .touch-controls {
         display: none;
     }
     #main {

@@ -1,3 +1,11 @@
+/*
+
+GBA ONLINE;  GBA.JS.ORG;  "Online GameBoy Advance Emulator"
+Copyright (C) 2021-present AYVACS
+Licensed under the MIT License (view LICENSE.md for more information) (view LICENSE.md for more information)
+
+*/
+
 var games = {
     "advancewars": "Advance Wars",
     "advancewars2": "Advance Wars 2",
@@ -132,7 +140,7 @@ if (hashTags.length > 0) {
     } else {
         document.title = title;
     };
-    
+
     /*// Add notification
 
     var t = document.createElement("p");

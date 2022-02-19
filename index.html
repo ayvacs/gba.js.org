@@ -1,8 +1,8 @@
 <!--
 
 GBA ONLINE;  GBA.JS.ORG;  "Online GameBoy Advance Emulator"
-Copyright (C) 2021 AYVACS
-Licensed under the MIT License
+Copyright (C) 2021-present AYVACS
+Licensed under the MIT License (view LICENSE.md for more information) (view LICENSE.md for more information)
 
 -->
 
@@ -11,13 +11,8 @@ Licensed under the MIT License
 
 <head>
     <link rel="stylesheet" href="assets/user_css/index.css">
-    <link rel="stylesheet" href="assets/user_css/fonts.css">
     <link rel="stylesheet" href="assets/user_css/collapsible.css">
     <link rel="stylesheet" href="assets/user_css/particles-js.css">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Merriweather+Sans&display=swap">
 
     <link href="assets/images/macos-11x/Icon-MacOS-512x512@2x.png" type="image/png" rel="shortcut icon">
     <link href="assets/images/macos-11x/apple-touch-icon.png" type="image/png" rel="apple-touch-icon">
@@ -231,9 +226,9 @@ Licensed under the MIT License
                     content.style.maxHeight = null;
                 } else {
                     content.style.maxHeight = content.scrollHeight + "px";
-                }
+                };
             });
-        }
+        };
     </script>
 
     <!-- Fix links while hosting locally -->
@@ -245,13 +240,15 @@ Licensed under the MIT License
             for (var i = 0; i < elems.length; i++) {
                 var elem = elems[i];
                 elem.href = elem.href.replace("player#", "player.html#");
-            }
+            };
         };
     </script>
 
     <!-- Run particles -->
-    <script src="assets/particles/scripts/particles@2.0.0.min.js"></script>
-    <script src="assets/particles/scripts/load.js"></script>
+    <script src="assets/particles/particles@2.0.0.min.js"></script>
+    <script>
+        particlesJS.load("particles-js", "assets/particles/shapes.json");
+    </script>
 </body>
 
 </html>
