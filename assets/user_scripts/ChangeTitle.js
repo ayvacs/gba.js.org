@@ -130,7 +130,7 @@ var gameName = games[hashTags];
 var startLetter = hashTags.charAt(0);
 
 if (hashTags.length > 0) {
-    console.log("Current game: " + gameName + " [" + hashTags + "]");
+    console.log("[PLAYER] Current game: " + gameName + " [" + hashTags + "]");
 
     // Change page title
 
