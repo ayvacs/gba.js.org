@@ -191,7 +191,7 @@ var IodineGUI = {
         ]
     }
 };
-window.onload = function () {
+window.onload = function() {
     //Populate settings:
     registerDefaultSettings();
     //Initialize Iodine:
@@ -215,21 +215,26 @@ window.onload = function () {
     //Download the BIOS:
     downloadBIOS();
 }
+
 function downloadBIOS() {
     downloadFile("binaries/gba_bios.bin", registerBIOS);
 }
+
 function registerBIOS() {
     processDownload(this, attachBIOS);
     downloadROM(location.hash.substr(1));
 }
+
 function downloadROM(gamename) {
     writeRedTemporaryText("Downloading \"" + games[gamename] + ".\"");
     downloadFile("binaries/" + gamename + ".gba", registerROM);
 }
+
 function registerROM() {
     clearTempString();
     processDownload(this, attachROM);
 }
+
 function registerIodineHandler() {
     try {
         /*
@@ -238,26 +243,23 @@ function registerIodineHandler() {
         */
         if (typeof SharedArrayBuffer != "function" || typeof Atomics != "object") {
             throw null;
-        }
-        else if (!IodineGUI.defaults.toggleOffthreadCPU && IodineGUI.defaults.toggleOffthreadGraphics) {
+        } else if (!IodineGUI.defaults.toggleOffthreadCPU && IodineGUI.defaults.toggleOffthreadGraphics) {
             //Try starting Iodine normally, but initialize offthread gfx:
             IodineGUI.Iodine = new iodineGBAWorkerGfxShim();
-        }
-        else if (IodineGUI.defaults.toggleOffthreadGraphics) {
+        } else if (IodineGUI.defaults.toggleOffthreadGraphics) {
             //Try starting Iodine in a webworker:
             IodineGUI.Iodine = new iodineGBAWorkerShim();
             //In order for save on page unload, this needs to be done:
             addEvent("beforeunload", window, registerBeforeUnloadHandler);
-        }
-        else {
+        } else {
             throw null;
         }
-    }
-    catch (e) {
+    } catch (e) {
         //Otherwise just run on-thread:
         IodineGUI.Iodine = new GameBoyAdvanceEmulator();
     }
 }
+
 function registerBeforeUnloadHandler(e) {
     IodineGUI.Iodine.pause();
     if (e.preventDefault) {
@@ -265,20 +267,24 @@ function registerBeforeUnloadHandler(e) {
     }
     return "iodineGBA needs to process your save data, leaving now may result in not saving current data.";
 }
+
 function initTimer() {
     IodineGUI.Iodine.setIntervalRate(+IodineGUI.defaults.timerRate);
-    IodineGUI.coreTimerID = setInterval(function () {
+    IodineGUI.coreTimerID = setInterval(function() {
         IodineGUI.Iodine.timerCallback(((+(new Date()).getTime()) - (+IodineGUI.startTime)) >>> 0);
     }, IodineGUI.defaults.timerRate | 0);
 }
+
 function calculateTiming() {
     IodineGUI.Iodine.setIntervalRate(+IodineGUI.defaults.timerRate);
 }
+
 function startTimer() {
-    IodineGUI.coreTimerID = setInterval(function () {
+    IodineGUI.coreTimerID = setInterval(function() {
         IodineGUI.Iodine.timerCallback(((+(new Date()).getTime()) - (+IodineGUI.startTime)) >>> 0);
     }, IodineGUI.defaults.timerRate | 0);
 }
+
 function updateTimer(newRate) {
     newRate = newRate | 0;
     if ((newRate | 0) != (IodineGUI.defaults.timerRate | 0)) {
@@ -292,17 +298,19 @@ function updateTimer(newRate) {
         }
     }
 }
+
 function registerBlitterHandler() {
     IodineGUI.Blitter = new GfxGlueCode(240, 160);
     IodineGUI.Blitter.attachCanvas(document.getElementById("emulator_target"));
     IodineGUI.Iodine.attachGraphicsFrameHandler(IodineGUI.Blitter);
-    IodineGUI.Blitter.attachGfxPostCallback(function () {
+    IodineGUI.Blitter.attachGfxPostCallback(function() {
         if (IodineGUI.currentSpeed[0]) {
             var speedDOM = document.getElementById("speed");
             speedDOM.textContent = "Speed: " + IodineGUI.currentSpeed[1] + "%";
         }
     });
 }
+
 function registerAudioHandler() {
     var Mixer = new GlueCodeMixer(document.getElementById("play"));
     IodineGUI.mixerInput = new GlueCodeMixerInput(Mixer);
