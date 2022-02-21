@@ -2,7 +2,7 @@
 
 GBA ONLINE;  GBA.JS.ORG;  "Online GameBoy Advance Emulator"
 Copyright (C) 2021-present AYVACS
-Licensed under the MIT License (view LICENSE.md for more information) (view LICENSE.md for more information)
+Licensed under the MIT License (view LICENSE.md for more information)
 
 -->
 
@@ -50,7 +50,7 @@ Licensed under the MIT License (view LICENSE.md for more information) (view LICE
 
     <br><br><br>
     <img id="repo-card" src="assets/images/logo-small.png" height="120px">
-    <p id="version-card" style="font-size:20px">v1.3.7: Various bug fixes and improvements</p>
+    <p id="version-card" style="font-size:20px">v1.3.8: Various bug fixes and improvements</p>
 
     <p>Welcome to <b>GBA Online</b>, a modern GameBoy Advance emulator for the web.</p>
 
@@ -215,11 +215,10 @@ Licensed under the MIT License (view LICENSE.md for more information) (view LICE
 
     <!-- Enable collapsible menus -->
     <script>
-        var coll = document.getElementsByClassName("collapsible-collapsible");
-        var i;
+        var divs = $(".collapsible-collapsible");
 
-        for (i = 0; i < coll.length; i++) {
-            coll[i].addEventListener("click", function() {
+        for (i = 0; i < divs.length; i++) {
+            divs[i].addEventListener("click", function() {
                 this.classList.toggle("active");
                 var content = this.nextElementSibling;
                 if (content.style.maxHeight) {
@@ -235,10 +234,11 @@ Licensed under the MIT License (view LICENSE.md for more information) (view LICE
     <script>
         var url = document.location.hostname;
         if (url == "localhost" || url == "127.0.0.1") {
-            // Locally hosted
-            var elems = document.getElementsByClassName("playerLink");
+            // Locally hosted; change urls from /player to /player.html
+            var elems = $(".playerLink");
             for (var i = 0; i < elems.length; i++) {
                 var elem = elems[i];
+                console.log("[LINKFIX] Fixed \"" + elem.innerHTML + "\"");
                 elem.href = elem.href.replace("player#", "player.html#");
             };
         };

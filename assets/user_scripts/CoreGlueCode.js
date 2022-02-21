@@ -126,6 +126,50 @@ var games = {
     "-DEBUG-thumb": "thumb"
 };
 
+// Change title code
+
+var defaultTitle = document.title;
+var hashTags = location.hash.substr(1); //substr removes the leading #
+var gameName = games[hashTags];
+var startLetter = hashTags.charAt(0);
+
+if (hashTags.length > 0) {
+    console.log("[PLAYER] Current game: " + gameName + " [" + hashTags + "]");
+
+    // Change page title
+
+    var title = gameName + " on GBA Online";
+    var t;
+    if (startLetter === "-") {
+        t = "[DEBUG] " + title;
+    } else {
+        t = title;
+    };
+
+    document.title = t;
+    console.log("[DOCUMENTNAME] " + t);
+
+    /*// Add notification
+
+    var t = document.createElement("p");
+    t.innerHTML = "Loaded \"" + gameName + "\"";
+    t.id = "loadedGameMsg";
+    document.body.appendChild(t);
+
+    // fade out after 3secs
+    setTimeout(function () {
+        $("#loadedGameMsg").fadeOut();
+        setTimeout(function () {
+            $("#loadedGameMsg").remove();
+        }, 3000);
+    }, 3000);*/
+} else {
+    document.title = defaultTitle;
+    console.log("No game is currently loaded!");
+};
+
+// Change title code
+
 var IodineGUI = {
     Iodine: null,
     Blitter: null,
