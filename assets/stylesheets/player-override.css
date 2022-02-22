@@ -25,8 +25,9 @@ li {
 
 #logo-small {
     position: fixed;
-    left: 92.5%;
-    top: 1.35%;
+    height: 13px;
+    top: 12px;
+    /*right: 13px;*/
 }
 
 .message,
@@ -43,4 +44,16 @@ li {
     vertical-align: bottom;
     font-family: monospace;
     z-index: 1;
+}
+
+#loadedGameMsg {
+    color: black;
+    position: absolute;
+    display: inline-block;
+    text-align: center;
+    top: calc(100% - 70px);
+    width: 100%;
+    font-size: 24px;
+    padding: 10px;
+    background-color: green;
 }
