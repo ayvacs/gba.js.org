@@ -86,7 +86,7 @@ GameBoyAdvanceFLASHChip.prototype.write = function (address, data) {
             }
         default:
             this.writeByte(address | 0, data | 0);
-
+            
     }
 }
 GameBoyAdvanceFLASHChip.prototype.writeControlBits = function (address, data) {

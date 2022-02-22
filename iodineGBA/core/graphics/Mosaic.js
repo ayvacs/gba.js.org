@@ -23,7 +23,7 @@ GameBoyAdvanceMosaicRenderer.prototype.renderMosaicHorizontal = function (offset
     offset = offset | 0;
     var currentPixel = 0;
     var mosaicBlur = ((this.BGMosaicHSize | 0) + 1) | 0;
-    if ((mosaicBlur | 0) > 1) {    //Don"t perform a useless loop.
+    if ((mosaicBlur | 0) > 1) {    //Don't perform a useless loop.
         for (var position = 0; (position | 0) < 240; position = ((position | 0) + 1) | 0) {
             if ((((position | 0) % (mosaicBlur | 0)) | 0) == 0) {
                 currentPixel = this.buffer[position | offset] | 0;
@@ -40,7 +40,7 @@ if (__VIEWS_SUPPORTED__) {
         xSize = xSize | 0;
         var currentPixel = 0x3800000;
         var mosaicBlur = ((this.OBJMosaicHSize | 0) + 1) | 0;
-        if ((mosaicBlur | 0) > 1) {    //Don"t perform a useless loop.
+        if ((mosaicBlur | 0) > 1) {    //Don't perform a useless loop.
             for (var position = ((xOffset | 0) % (mosaicBlur | 0)) | 0; (position | 0) < (xSize | 0); position = ((position | 0) + 1) | 0) {
                 if ((((position | 0) % (mosaicBlur | 0)) | 0) == 0) {
                     currentPixel = this.buffer[position | 0x600] | 0;
@@ -56,7 +56,7 @@ else {
         xSize = xSize | 0;
         var currentPixel = 0x3800000;
         var mosaicBlur = ((this.OBJMosaicHSize | 0) + 1) | 0;
-        if ((mosaicBlur | 0) > 1) {    //Don"t perform a useless loop.
+        if ((mosaicBlur | 0) > 1) {    //Don't perform a useless loop.
             for (var position = ((xOffset | 0) % (mosaicBlur | 0)) | 0; (position | 0) < (xSize | 0); position = ((position | 0) + 1) | 0) {
                 if ((((position | 0) % (mosaicBlur | 0)) | 0) == 0) {
                     currentPixel = this.objBuffer[position | 0] | 0;

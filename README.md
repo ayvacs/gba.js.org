@@ -10,7 +10,7 @@ Licensed under the MIT License (view LICENSE.md for more information)
   <img src="https://raw.githubusercontent.com/ayvacs/gba.js.org/gh-pages/assets/images/readme-card.png">
 
   <h1 align="center">GBA Online</h1>
-  <p align="center">A simple, fast, online emulator for the GameBoy Advance</p>
+  <p align="center">Easily emulate GameBoy Advance games for free in your browser.</p>
 
   <p align="center"><a target="_blank" href="https://gba.js.org">🔗 gba.js.org</a></p>
 
@@ -21,58 +21,15 @@ Licensed under the MIT License (view LICENSE.md for more information)
   </p>
 </div>
 
+<br>
+
 ---
 
-**The older, legacy version of GBA Online is deprecated and no longer available on the website. The new version (Iodine) provides a better user interface and performance. The older version of GBA Online will no longer be able to view or download.**
-
-*Supported versions:* 1.x.x
-
-*Deprecated versions:* 0.1.0, 0.1.1, 0.2.0, 0.2.1, 0.2.15, 0.3
-
-## Let's jump into the game
-
-GBA Online is available without a download at [https://gba.js.org](gba.js.org)!
-
-### Web-App
-
-Saving the website as a Web-App is a convenient way to access the site from anywhere.
-
-**You must be using Google Chrome**
-
-1. Navigate to [gba.js.org](https://gba.js.org/)
-2. Click the three dots in the top right → More Tools → Create Shortcut...
-3. Check *Open as Window*
-4. Click *Create*
-
-And you're done! Pin the app to your taskbar and click to access it from anywhere.
-
-You can pin the app to your taskbar, and it fits in perfectly with macOS.
-
-### Hosting Locally
-
-If you want to download a past version and host it locally, check out the [GitHub releases page](https://github.com/ayvacs/gba.js.org/releases).
-
-## Performance
-
-Supported platforms:
-
-* macOS
-* Windows
-* iOS
-
-### Known to work well in:
-
-**Windows / MacOS:**
-
-* Google Chrome 96.0.4664.55+
-* Firefox 4-27
-* MacOS Safari 5.1.5+
-
-**Mobile:**
-
-* iOS Safari on iOS 15.1.1+
+<br>
 
 ## Libraries
+
+<br>
 
 * [IodineGBA](https://github.com/taisel/IodineGBA)
 
@@ -92,7 +49,7 @@ Supported platforms:
 
 * [jsemu2/gba](https://github.com/jsemu2/gba)
 
-*a fork of* [*walsh/gba*](https://github.com/walsh/gba)
+*A web implementation of IodineGBA*
 
 **License:** [Open Source](https://github.com/jsemu2/gba)
 
@@ -114,7 +71,13 @@ Supported platforms:
 
 <br>
 
+---
+
+<br>
+
 ## License
+
+<br>
 
 <img width="150" height="150" src="https://raw.githubusercontent.com/ayvacs/gba.js.org/gh-pages/assets/images/macos-11x/apple-touch-icon.png" alt="logo">
 <br>

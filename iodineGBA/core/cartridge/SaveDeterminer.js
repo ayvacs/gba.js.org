@@ -19,7 +19,7 @@ GameBoyAdvanceSaveDeterminer.prototype.flags = {
     EEPROM: 4
 }
 GameBoyAdvanceSaveDeterminer.prototype.initialize = function () {
-
+    
 }
 GameBoyAdvanceSaveDeterminer.prototype.load = function (save) {
     this.saves = save;

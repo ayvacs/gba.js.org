@@ -58,7 +58,7 @@ var Iodine = new GameBoyAdvanceEmulator();
 var saveImportPool = [];
 //Graphics Buffers:
 var gfxBuffers = [getSharedUint8Array(160 * 240 * 3),
-getSharedUint8Array(160 * 240 * 3)];
+  getSharedUint8Array(160 * 240 * 3)];
 var gfxCounters = getSharedInt32Array(3);
 //Audio Buffers:
 var audioBuffer = null;
@@ -73,10 +73,10 @@ var timerHandle = null;
 var timerRate = 0;
 //Pass the shared array buffers:
 try {
-    postMessage({ messageID: 0, gfxBuffer1: gfxBuffers[0], gfxBuffer2: gfxBuffers[1], gfxCounters: gfxCounters, audioSamplesRemaining: audioSamplesRemaining, timestamp: timestamp }, [gfxBuffers[0].buffer, gfxBuffers[1].buffer, gfxCounters.buffer, audioSamplesRemaining.buffer, timestamp.buffer]);
+    postMessage({messageID:0, gfxBuffer1:gfxBuffers[0], gfxBuffer2:gfxBuffers[1], gfxCounters:gfxCounters, audioSamplesRemaining:audioSamplesRemaining, timestamp:timestamp}, [gfxBuffers[0].buffer, gfxBuffers[1].buffer, gfxCounters.buffer, audioSamplesRemaining.buffer, timestamp.buffer]);
 }
 catch (e) {
-    postMessage({ messageID: 0, gfxBuffer1: gfxBuffers[0], gfxBuffer2: gfxBuffers[1], gfxCounters: gfxCounters, audioSamplesRemaining: audioSamplesRemaining, timestamp: timestamp });
+    postMessage({messageID:0, gfxBuffer1:gfxBuffers[0], gfxBuffer2:gfxBuffers[1], gfxCounters:gfxCounters, audioSamplesRemaining:audioSamplesRemaining, timestamp:timestamp});
 }
 //Event decoding:
 self.onmessage = function (event) {
@@ -158,7 +158,7 @@ self.onmessage = function (event) {
 }
 var graphicsFrameHandler = {
     //Function only called if graphics is THIS thread:
-    copyBuffer: function (swizzledFrame) {
+    copyBuffer:function (swizzledFrame) {
         //Push a frame of graphics to the blitter handle:
         //Load the counter values:
         var start = gfxCounters[0] | 0;                     //Written by the other thread.
@@ -178,7 +178,7 @@ var graphicsFrameHandler = {
 };
 //Shim for our audio api:
 var audioHandler = {
-    initialize: function (channels, sampleRate, bufferLimit, call1, call2, call3) {
+    initialize:function (channels, sampleRate, bufferLimit, call1, call2, call3) {
         //Initialize the audio mixer input:
         channels = channels | 0;
         sampleRate = +sampleRate;
@@ -193,13 +193,13 @@ var audioHandler = {
         audioBuffer = getSharedFloat32Array(audioBufferSize | 0);
         audioCounters = getSharedInt32Array(2);
         try {
-            postMessage({ messageID: 1, channels: channels | 0, sampleRate: +sampleRate, bufferLimit: bufferLimit | 0, audioBuffer: audioBuffer, audioCounters: audioCounters }, [audioBuffer.buffer, audioCounters.buffer]);
+            postMessage({messageID:1, channels:channels | 0, sampleRate:+sampleRate, bufferLimit:bufferLimit | 0, audioBuffer:audioBuffer, audioCounters:audioCounters}, [audioBuffer.buffer, audioCounters.buffer]); 
         }
         catch (e) {
-            postMessage({ messageID: 1, channels: channels | 0, sampleRate: +sampleRate, bufferLimit: bufferLimit | 0, audioBuffer: audioBuffer, audioCounters: audioCounters });
+            postMessage({messageID:1, channels:channels | 0, sampleRate:+sampleRate, bufferLimit:bufferLimit | 0, audioBuffer:audioBuffer, audioCounters:audioCounters});
         }
     },
-    push: function (buffer, startPos, endPos) {
+    push:function (buffer, startPos, endPos) {
         startPos = startPos | 0;
         endPos = endPos | 0;
         //Push audio to the audio mixer input handle:
@@ -225,25 +225,25 @@ var audioHandler = {
         //Atomic store to commit writes to memory:
         Atomics.store(audioCounters, 1, end | 0);
     },
-    register: function () {
+    register:function () {
         //Register into the audio mixer:
-        postMessage({ messageID: 2 });
+        postMessage({messageID:2});
     },
-    unregister: function () {
+    unregister:function () {
         //Unregister from audio mixer:
-        postMessage({ messageID: 3 });
+        postMessage({messageID:3});
     },
-    setBufferSpace: function (spaceContain) {
+    setBufferSpace:function (spaceContain) {
         //Ensure buffering minimum levels for the audio:
-        postMessage({ messageID: 4, audioBufferContainAmount: spaceContain | 0 });
+        postMessage({messageID:4, audioBufferContainAmount:spaceContain | 0});
     },
-    remainingBuffer: function () {
+    remainingBuffer:function () {
         //Report the amount of audio samples in-flight:
         var ringBufferCount = this.remainingBufferShared() | 0;
         var audioSysCount = audioSamplesRemaining[0] | 0;
         return ((ringBufferCount | 0) + (audioSysCount | 0)) | 0;
     },
-    remainingBufferShared: function () {
+    remainingBufferShared:function () {
         //Reported the sample count left in the shared buffer:
         var start = audioCounters[0] | 0;
         var end = audioCounters[1] | 0;
@@ -252,14 +252,14 @@ var audioHandler = {
     }
 };
 function saveImportHandler(saveID, saveCallback, noSaveCallback) {
-    postMessage({ messageID: 5, saveID: saveID });
+    postMessage({messageID:5, saveID:saveID});
     saveImportPool.push([saveCallback, noSaveCallback]);
 }
 function saveExportHandler(saveID, saveData) {
-    postMessage({ messageID: 6, saveID: saveID, saveData: saveData });
+    postMessage({messageID:6, saveID:saveID, saveData:saveData});
 }
 function speedHandler(speed) {
-    postMessage({ messageID: 7, speed: speed });
+    postMessage({messageID:7, speed:speed});
 }
 function processSaveImportSuccess(saveData) {
     saveImportPool.shift()[0](saveData);
@@ -269,7 +269,7 @@ function processSaveImportFail() {
 }
 function playStatusHandler(isPlaying) {
     isPlaying = isPlaying | 0;
-    postMessage({ messageID: 8, playing: (isPlaying | 0) });
+    postMessage({messageID:8, playing:(isPlaying | 0)});
     if ((isPlaying | 0) == 0) {
         if (timerHandle) {
             clearInterval(timerHandle);
@@ -293,7 +293,7 @@ function changeTimer(rate) {
 function initTimer(rate) {
     rate = rate | 0;
     if ((rate | 0) > 0) {
-        timerHandle = setInterval(function () {
+        timerHandle = setInterval(function() {
             Iodine.timerCallback(timestamp[0] >>> 0);
         }, rate | 0);
     }

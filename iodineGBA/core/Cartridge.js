@@ -141,7 +141,7 @@ else {
         address = address | 0;
         var data = 0;
         if ((address | 0) < (this.ROMLength | 0)) {
-            data = this.ROM[address] | (this.ROM[address | 1] << 8) | (this.ROM[address | 2] << 16) | (this.ROM[address | 3] << 24);
+            data = this.ROM[address] | (this.ROM[address | 1] << 8) | (this.ROM[address | 2] << 16)  | (this.ROM[address | 3] << 24);
         }
         return data | 0;
     }

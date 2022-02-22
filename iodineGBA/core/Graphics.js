@@ -46,7 +46,7 @@ GameBoyAdvanceGraphics.prototype.clockLCDState = function () {
     }
 }
 GameBoyAdvanceGraphics.prototype.clockScanLine = function () {
-    if (!this.renderedScanLine) {                                            //If we rendered the scanline, don"t run this again.
+    if (!this.renderedScanLine) {                                            //If we rendered the scanline, don't run this again.
         this.renderedScanLine = true;                                        //Mark rendering.
         if ((this.currentScanLine | 0) < 160) {
             this.gfxRenderer.incrementScanLineQueue();                          //Tell the gfx JIT to queue another line to draw.
@@ -64,7 +64,7 @@ GameBoyAdvanceGraphics.prototype.clockLCDStatePostRender = function () {
     }
 }
 GameBoyAdvanceGraphics.prototype.clockLCDNextLine = function () {
-    /*We"ve now overflowed the LCD scan line state machine counter,
+    /*We've now overflowed the LCD scan line state machine counter,
      which tells us we need to be on a new scan-line and refresh over.*/
     this.renderedScanLine = false;                                  //Unmark line render.
     this.statusFlags = this.statusFlags & 0x5;                      //Un-mark HBlank.
@@ -94,13 +94,13 @@ GameBoyAdvanceGraphics.prototype.clockLCDNextLine = function () {
     else if ((this.currentScanLine | 0) > 1) {
         this.dmaChannel3.gfxDisplaySyncRequest();                   //Display Sync. DMA trigger.
     }
-    this.checkVCounter();                                           //We"re on a new scan line, so check the VCounter for match.
+    this.checkVCounter();                                           //We're on a new scan line, so check the VCounter for match.
     this.isRenderingCheckPreprocess();                              //Update a check value.
     //Recursive clocking of the LCD state:
     this.clockLCDState();
 }
 GameBoyAdvanceGraphics.prototype.updateHBlank = function () {
-    if ((this.statusFlags & 0x2) == 0) {                            //If we were last in HBlank, don"t run this again.
+    if ((this.statusFlags & 0x2) == 0) {                            //If we were last in HBlank, don't run this again.
         this.statusFlags = this.statusFlags | 0x2;                  //Mark HBlank.
         if ((this.IRQFlags & 0x10) != 0) {
             this.irq.requestIRQ(0x2);                               //Check for IRQ.
@@ -125,7 +125,7 @@ GameBoyAdvanceGraphics.prototype.checkVCounter = function () {
 GameBoyAdvanceGraphics.prototype.nextVBlankIRQEventTime = function () {
     var nextEventTime = 0x7FFFFFFF;
     if ((this.IRQFlags & 0x8) != 0) {
-        //Only give a time if we"re allowed to irq:
+        //Only give a time if we're allowed to irq:
         nextEventTime = this.nextVBlankEventTime() | 0;
     }
     return nextEventTime | 0;
@@ -133,11 +133,11 @@ GameBoyAdvanceGraphics.prototype.nextVBlankIRQEventTime = function () {
 GameBoyAdvanceGraphics.prototype.nextHBlankEventTime = function () {
     var time = this.LCDTicks | 0;
     if ((time | 0) < 1006) {
-        //Haven"t reached hblank yet, so hblank offset - current:
+        //Haven't reached hblank yet, so hblank offset - current:
         time = (1006 - (time | 0)) | 0;
     }
     else {
-        //We"re in hblank, so it"s end clock - current + next scanline hblank offset:
+        //We're in hblank, so it's end clock - current + next scanline hblank offset:
         time = (2238 - (time | 0)) | 0;
     }
     return time | 0;
@@ -145,7 +145,7 @@ GameBoyAdvanceGraphics.prototype.nextHBlankEventTime = function () {
 GameBoyAdvanceGraphics.prototype.nextHBlankIRQEventTime = function () {
     var nextEventTime = 0x7FFFFFFF;
     if ((this.IRQFlags & 0x10) != 0) {
-        //Only give a time if we"re allowed to irq:
+        //Only give a time if we're allowed to irq:
         nextEventTime = this.nextHBlankEventTime() | 0;
     }
     return nextEventTime | 0;
@@ -153,7 +153,7 @@ GameBoyAdvanceGraphics.prototype.nextHBlankIRQEventTime = function () {
 GameBoyAdvanceGraphics.prototype.nextVCounterIRQEventTime = function () {
     var nextEventTime = 0x7FFFFFFF;
     if ((this.IRQFlags & 0x20) != 0) {
-        //Only give a time if we"re allowed to irq:
+        //Only give a time if we're allowed to irq:
         nextEventTime = this.nextVCounterEventTime() | 0;
     }
     return nextEventTime | 0;
@@ -161,11 +161,11 @@ GameBoyAdvanceGraphics.prototype.nextVCounterIRQEventTime = function () {
 GameBoyAdvanceGraphics.prototype.nextVBlankEventTime = function () {
     var nextEventTime = this.currentScanLine | 0;
     if ((nextEventTime | 0) < 160) {
-        //Haven"t reached vblank yet, so vblank offset - current:
+        //Haven't reached vblank yet, so vblank offset - current:
         nextEventTime = (160 - (nextEventTime | 0)) | 0;
     }
     else {
-        //We"re in vblank, so it"s end clock - current + next frame vblank offset:
+        //We're in vblank, so it's end clock - current + next frame vblank offset:
         nextEventTime = (388 - (nextEventTime | 0)) | 0;
     }
     //Convert line count to clocks:
@@ -207,7 +207,7 @@ GameBoyAdvanceGraphics.prototype.nextDisplaySyncEventTime = function (delay) {
         nextEventTime = ((nextEventTime | 0) - (this.LCDTicks | 0)) | 0;
     }
     else if ((this.currentScanLine | 0) == 0) {
-        //Doesn"t start until line 2:
+        //Doesn't start until line 2:
         nextEventTime = (2464 - (this.LCDTicks | 0)) | 0;
     }
     else {

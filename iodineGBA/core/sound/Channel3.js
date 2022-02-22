@@ -190,7 +190,7 @@ else {
     GameBoyAdvanceChannel3Synth.prototype.readWAVE32 = function (address) {
         address += this.WAVERAMBankAccessed >> 1;
         return (this.WAVERAM8[address] | (this.WAVERAM8[address | 1] << 8) |
-            (this.WAVERAM8[address | 2] << 16) | (this.WAVERAM8[address | 3] << 24));
+                (this.WAVERAM8[address | 2] << 16) | (this.WAVERAM8[address | 3] << 24));
     }
 }
 GameBoyAdvanceChannel3Synth.prototype.enableCheck = function () {

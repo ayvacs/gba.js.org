@@ -42,7 +42,7 @@ THUMBInstructionSet.prototype.executeDecoded = function () {
      with a 10 bit wide switch, which is slow in JS, and using a function in array computed
      goto trick is not optimal in JavaScript.
      */
-    switch (this.instructionMap[this.execute >> 6] & 0xFF) {    //Leave the "& 0xFF" there, it"s a uint8 type guard.
+    switch (this.instructionMap[this.execute >> 6] & 0xFF) {    //Leave the "& 0xFF" there, it's a uint8 type guard.
         case 0:
             this.CMPimm8();
             break;
@@ -577,7 +577,7 @@ THUMBInstructionSet.prototype.LSL = function () {
             destination = 0;
         }
         else {
-            //Everything Zero"d:
+            //Everything Zero'd:
             this.branchFlags.setCarryFalse();
             destination = 0;
         }
@@ -605,7 +605,7 @@ THUMBInstructionSet.prototype.LSR = function () {
             destination = 0;
         }
         else {
-            //Everything Zero"d:
+            //Everything Zero'd:
             this.branchFlags.setCarryFalse();
             destination = 0;
         }

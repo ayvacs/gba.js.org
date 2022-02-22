@@ -33,7 +33,7 @@ GameBoyAdvanceDMA3.prototype.initialize = function () {
     this.sourceControl = 0;
     this.destinationControl = 0;
     this.gamePakDMA = 0;
-    this.displaySyncEnableDelay = 0;
+	this.displaySyncEnableDelay = 0;
     this.DMACore = this.IOCore.dma;
     this.memory = this.IOCore.memory;
     this.gfxState = this.IOCore.gfxState;
@@ -225,7 +225,7 @@ GameBoyAdvanceDMA3.prototype.gfxDisplaySyncRequest = function () {
     this.requestDMA(0x20 ^ this.displaySyncEnableDelay);
 }
 GameBoyAdvanceDMA3.prototype.gfxDisplaySyncEnableCheck = function () {
-    //Reset the display sync & reassert DMA enable line:
+	//Reset the display sync & reassert DMA enable line:
     if ((this.enabled | 0) == 0x20) {
         if ((this.displaySyncEnableDelay | 0) == 0x20) {
             this.displaySyncEnableDelay = 0;
@@ -402,15 +402,15 @@ GameBoyAdvanceDMA3.prototype.incrementDMAAddresses = function (source, destinati
 GameBoyAdvanceDMA3.prototype.nextEventTime = function () {
     var clocks = 0x7FFFFFFF;
     switch (this.enabled | 0) {
-        //V_BLANK
+            //V_BLANK
         case 0x2:
             clocks = this.gfxState.nextVBlankEventTime() | 0;
             break;
-        //H_BLANK:
+            //H_BLANK:
         case 0x4:
             clocks = this.gfxState.nextHBlankDMAEventTime() | 0;
             break;
-        //DISPLAY_SYNC:
+            //DISPLAY_SYNC:
         case 0x20:
             clocks = this.gfxState.nextDisplaySyncEventTime(this.displaySyncEnableDelay | 0) | 0;
     }

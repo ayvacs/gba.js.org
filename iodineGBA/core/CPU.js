@@ -74,15 +74,15 @@ GameBoyAdvanceCPU.prototype.HLEReset = function () {
 GameBoyAdvanceCPU.prototype.branch = function (branchTo) {
     branchTo = branchTo | 0;
     //if ((branchTo | 0) > 0x3FFF || this.IOCore.BIOSFound) {
-    //Branch to new address:
-    this.registers[15] = branchTo | 0;
-    //Mark pipeline as invalid:
-    this.IOCore.flagBubble();
-    //Next PC fetch has to update the address bus:
-    this.wait.NonSequentialBroadcastClear();
+        //Branch to new address:
+        this.registers[15] = branchTo | 0;
+        //Mark pipeline as invalid:
+        this.IOCore.flagBubble();
+        //Next PC fetch has to update the address bus:
+        this.wait.NonSequentialBroadcastClear();
     /*}
     else {
-        //We"re branching into BIOS, handle specially:
+        //We're branching into BIOS, handle specially:
         if ((branchTo | 0) == 0x130) {
             //IRQ mode exit handling:
             //ROM IRQ handling returns back from its own subroutine back to BIOS at this address.
@@ -144,8 +144,8 @@ GameBoyAdvanceCPU.prototype.IRQinARM = function () {
     //Disable IRQ:
     this.modeFlags = this.modeFlags | 0x80;
     //if (this.IOCore.BIOSFound) {
-    //IRQ exception vector:
-    this.branch(0x18);
+        //IRQ exception vector:
+        this.branch(0x18);
     /*}
     else {
         //HLE the IRQ entrance:
@@ -164,8 +164,8 @@ GameBoyAdvanceCPU.prototype.IRQinTHUMB = function () {
     //Exception always enter ARM mode:
     this.enterARM();
     //if (this.IOCore.BIOSFound) {
-    //IRQ exception vector:
-    this.branch(0x18);
+        //IRQ exception vector:
+        this.branch(0x18);
     /*}
     else {
         //HLE the IRQ entrance:
@@ -181,11 +181,11 @@ GameBoyAdvanceCPU.prototype.HLEIRQEnter = function () {
     this.wait.NonSequentialBroadcast();
     //Push register(s) into memory:
     for (var rListPosition = 0xF; (rListPosition | 0) > -1; rListPosition = ((rListPosition | 0) - 1) | 0) {
-        if ((0x500F & (1 << (rListPosition | 0))) != 0) {
-            //Push a register into memory:
-            currentAddress = ((currentAddress | 0) - 4) | 0;
-            this.memory.memoryWrite32(currentAddress | 0, this.registers[rListPosition | 0] | 0);
-        }
+            if ((0x500F & (1 << (rListPosition | 0))) != 0) {
+                //Push a register into memory:
+                currentAddress = ((currentAddress | 0) - 4) | 0;
+                this.memory.memoryWrite32(currentAddress | 0, this.registers[rListPosition | 0] | 0);
+            }
     }
     //Store the updated base address back into register:
     this.registers[0xD] = currentAddress | 0;
@@ -203,7 +203,7 @@ GameBoyAdvanceCPU.prototype.HLEIRQExit = function () {
     //Updating the address bus away from PC fetch:
     this.wait.NonSequentialBroadcast();
     //Load register(s) from memory:
-    for (var rListPosition = 0; (rListPosition | 0) < 0x10; rListPosition = ((rListPosition | 0) + 1) | 0) {
+    for (var rListPosition = 0; (rListPosition | 0) < 0x10;  rListPosition = ((rListPosition | 0) + 1) | 0) {
         if ((0x500F & (1 << (rListPosition | 0))) != 0) {
             //Load a register from memory:
             this.registers[rListPosition & 0xF] = this.memory.memoryRead32(currentAddress | 0) | 0;
@@ -223,16 +223,16 @@ GameBoyAdvanceCPU.prototype.HLEIRQExit = function () {
 }
 GameBoyAdvanceCPU.prototype.SWI = function () {
     //if (this.IOCore.BIOSFound) {
-    //Mode bits are set to SWI:
-    this.switchMode(0x13);
-    //Save link register:
-    this.registers[14] = this.getLR() | 0;
-    //Disable IRQ:
-    this.modeFlags = this.modeFlags | 0x80;
-    //Exception always enter ARM mode:
-    this.enterARM();
-    //SWI exception vector:
-    this.branch(0x8);
+        //Mode bits are set to SWI:
+        this.switchMode(0x13);
+        //Save link register:
+        this.registers[14] = this.getLR() | 0;
+        //Disable IRQ:
+        this.modeFlags = this.modeFlags | 0x80;
+        //Exception always enter ARM mode:
+        this.enterARM();
+        //SWI exception vector:
+        this.branch(0x8);
     /*}
     else {
         if ((this.modeFlags & 0x20) != 0) {
@@ -250,19 +250,19 @@ GameBoyAdvanceCPU.prototype.SWI = function () {
 GameBoyAdvanceCPU.prototype.UNDEFINED = function () {
     //Only process undefined instruction if BIOS loaded:
     //if (this.IOCore.BIOSFound) {
-    //Mode bits are set to SWI:
-    this.switchMode(0x1B);
-    //Save link register:
-    this.registers[14] = this.getLR() | 0;
-    //Disable IRQ:
-    this.modeFlags = this.modeFlags | 0x80;
-    //Exception always enter ARM mode:
-    this.enterARM();
-    //Undefined exception vector:
-    this.branch(0x4);
+        //Mode bits are set to SWI:
+        this.switchMode(0x1B);
+        //Save link register:
+        this.registers[14] = this.getLR() | 0;
+        //Disable IRQ:
+        this.modeFlags = this.modeFlags | 0x80;
+        //Exception always enter ARM mode:
+        this.enterARM();
+        //Undefined exception vector:
+        this.branch(0x4);
     /*}
     else {
-        //Pretend we didn"t execute the bad instruction then:
+        //Pretend we didn't execute the bad instruction then:
         if ((this.modeFlags & 0x20) != 0) {
             this.THUMB.incrementProgramCounter();
         }

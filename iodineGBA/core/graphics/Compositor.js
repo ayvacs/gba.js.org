@@ -61,7 +61,7 @@ if (typeof SIMD == "object" && typeof SIMD.Int32x4 == "function") {
     GameBoyAdvanceCompositor.prototype.mask3 = SIMD.Int32x4.splat(0x1800000);
     GameBoyAdvanceCompositor.prototype.mask4 = SIMD.Bool32x4.splat(true);
 }
-function generateiodineGBAGFXCompositors() {
+function generateIodineGBAGFXCompositors() {
     function generateCompositors() {
         function generateLoop(compositeType, doEffects, layers) {
             function generateLoopHead(useVectorized, compositeType) {
@@ -78,17 +78,17 @@ function generateiodineGBAGFXCompositors() {
                     if (useVectorized) {
                         //Declare the necessary temporary variables:
                         code +=
-                            "var backdrop = SIMD.Int32x4.splat(this.gfx.backdrop | 0);";
+                                "var backdrop = SIMD.Int32x4.splat(this.gfx.backdrop | 0);";
                         switch (layers) {
                             case 0:
-                                //Don"t need any if no layers to process:
+                                //Don't need any if no layers to process:
                                 break;
                             default:
                                 //Need this temp for more than one layer:
                                 code +=
-                                    checkDeclared(alreadyDeclared) + "workingPixel = this.mask0;" +
-                                    "var test1 = this.mask4;" +
-                                    "var test2 = this.mask4;";
+                                checkDeclared(alreadyDeclared) + "workingPixel = this.mask0;" +
+                                "var test1 = this.mask4;" +
+                                "var test2 = this.mask4;";
                             case 0x1:
                             case 0x2:
                             case 0x4:
@@ -96,19 +96,19 @@ function generateiodineGBAGFXCompositors() {
                             case 0x10:
                                 //Need these temps for one or more layers:
                                 code +=
-                                    checkDeclared(alreadyDeclared) + "currentPixel = this.mask0;" +
-                                    checkDeclared(alreadyDeclared) + "lowerPixel = this.mask0;";
+                                checkDeclared(alreadyDeclared) + "currentPixel = this.mask0;" +
+                                checkDeclared(alreadyDeclared) + "lowerPixel = this.mask0;";
                         }
                     }
                     else {
                         switch (layers) {
                             case 0:
-                                //Don"t need any if no layers to process:
+                                //Don't need any if no layers to process:
                                 break;
                             default:
                                 //Need this temp for more than one layer:
                                 code +=
-                                    checkDeclared(alreadyDeclared) + "workingPixel = 0;";
+                                checkDeclared(alreadyDeclared) + "workingPixel = 0;";
                             case 0x1:
                             case 0x2:
                             case 0x4:
@@ -116,8 +116,8 @@ function generateiodineGBAGFXCompositors() {
                             case 0x10:
                                 //Need these temps for one or more layers:
                                 code +=
-                                    checkDeclared(alreadyDeclared) + "currentPixel = 0;" +
-                                    checkDeclared(alreadyDeclared) + "lowerPixel = 0;";
+                                checkDeclared(alreadyDeclared) + "currentPixel = 0;" +
+                                checkDeclared(alreadyDeclared) + "lowerPixel = 0;";
                         }
                     }
                     return code;
@@ -128,11 +128,11 @@ function generateiodineGBAGFXCompositors() {
                         var code = "";
                         if (useVectorized) {
                             code +=
-                                "lowerPixel = backdrop;";
+                            "lowerPixel = backdrop;";
                         }
                         else {
                             code +=
-                                "lowerPixel = this.gfx.backdrop | 0;";
+                            "lowerPixel = this.gfx.backdrop | 0;";
                         }
                         return code;
                     }
@@ -141,13 +141,13 @@ function generateiodineGBAGFXCompositors() {
                         var code = "";
                         if (useVectorized) {
                             code +=
-                                "lowerPixel = backdrop;" +
-                                "currentPixel = lowerPixel;";
+                            "lowerPixel = backdrop;" +
+                            "currentPixel = lowerPixel;";
                         }
                         else {
                             code +=
-                                "lowerPixel = this.gfx.backdrop | 0;" +
-                                "currentPixel = lowerPixel | 0;";
+                            "lowerPixel = this.gfx.backdrop | 0;" +
+                            "currentPixel = lowerPixel | 0;";
                         }
                         return code;
                     }
@@ -156,22 +156,22 @@ function generateiodineGBAGFXCompositors() {
                         var code = "";
                         if (useVectorized) {
                             code +=
-                                "currentPixel = SIMD.Int32x4.load(this.buffer, xStart | " + layerOffset + ");" +
-                                "currentPixel = SIMD.Int32x4.select(" +
+                            "currentPixel = SIMD.Int32x4.load(this.buffer, xStart | " + layerOffset + ");" +
+                            "currentPixel = SIMD.Int32x4.select(" +
                                 "SIMD.Int32x4.notEqual(" +
-                                "this.mask0," +
-                                "SIMD.Int32x4.and(currentPixel, this.mask1)" +
+                                    "this.mask0," +
+                                    "SIMD.Int32x4.and(currentPixel, this.mask1)" +
                                 ")," +
                                 "lowerPixel," +
                                 "currentPixel" +
-                                ");";
+                            ");";
                         }
                         else {
                             code +=
-                                "currentPixel = this.buffer[xStart | " + layerOffset + "] | 0;" +
-                                "if ((currentPixel & 0x2000000) != 0) {" +
+                            "currentPixel = this.buffer[xStart | " + layerOffset + "] | 0;" +
+                            "if ((currentPixel & 0x2000000) != 0) {" +
                                 "currentPixel = lowerPixel | 0;" +
-                                "}";
+                            "}";
                         }
                         return code;
                     }
@@ -180,33 +180,33 @@ function generateiodineGBAGFXCompositors() {
                         var code = "";
                         if (useVectorized) {
                             code +=
-                                "workingPixel = SIMD.Int32x4.load(this.buffer, xStart | " + layerOffset + ");" +
-                                "test1 = SIMD.Int32x4.lessThanOrEqual(" +
+                            "workingPixel = SIMD.Int32x4.load(this.buffer, xStart | " + layerOffset + ");" +
+                            "test1 = SIMD.Int32x4.lessThanOrEqual(" +
                                 "SIMD.Int32x4.and(workingPixel, this.mask2)," +
                                 "SIMD.Int32x4.and(currentPixel, this.mask3)" +
-                                ");" +
-                                "lowerPixel = SIMD.Int32x4.select(test1, currentPixel, lowerPixel);" +
-                                "currentPixel = SIMD.Int32x4.select(test1, workingPixel, currentPixel);" +
-                                "test2 = SIMD.Int32x4.lessThanOrEqual(" +
+                            ");" +
+                            "lowerPixel = SIMD.Int32x4.select(test1, currentPixel, lowerPixel);" +
+                            "currentPixel = SIMD.Int32x4.select(test1, workingPixel, currentPixel);" +
+                            "test2 = SIMD.Int32x4.lessThanOrEqual(" +
                                 "SIMD.Int32x4.and(workingPixel, this.mask2)," +
                                 "SIMD.Int32x4.and(lowerPixel, this.mask3)" +
-                                ");" +
-                                "lowerPixel = SIMD.Int32x4.select(" +
+                            ");" +
+                            "lowerPixel = SIMD.Int32x4.select(" +
                                 "test1," +
                                 "lowerPixel," +
                                 "SIMD.Int32x4.select(test2, workingPixel, lowerPixel)" +
-                                ");";
+                            ");";
                         }
                         else {
                             code +=
-                                "workingPixel = this.buffer[xStart | " + layerOffset + "] | 0;" +
-                                "if ((workingPixel & 0x3800000) <= (currentPixel & 0x1800000)) {" +
+                            "workingPixel = this.buffer[xStart | " + layerOffset + "] | 0;" +
+                            "if ((workingPixel & 0x3800000) <= (currentPixel & 0x1800000)) {" +
                                 "lowerPixel = currentPixel | 0;" +
                                 "currentPixel = workingPixel | 0;" +
-                                "}" +
-                                "else if ((workingPixel & 0x3800000) <= (lowerPixel & 0x1800000)) {" +
+                            "}" +
+                            "else if ((workingPixel & 0x3800000) <= (lowerPixel & 0x1800000)) {" +
                                 "lowerPixel = workingPixel | 0;" +
-                                "}";
+                            "}";
                         }
                         return code;
                     }
@@ -218,13 +218,13 @@ function generateiodineGBAGFXCompositors() {
                             if (doEffects) {
                                 //Color effects enabled:
                                 code +=
-                                    "SIMD.Int32x4.store(this.buffer, xStart | 0x700, this.mask0);" +
-                                    "SIMD.Int32x4.store(this.buffer, xStart | 0x800, backdrop);";
+                                "SIMD.Int32x4.store(this.buffer, xStart | 0x700, this.mask0);" +
+                                "SIMD.Int32x4.store(this.buffer, xStart | 0x800, backdrop);";
                             }
                             else {
                                 //No effects enabled:
                                 code +=
-                                    "SIMD.Int32x4.store(this.buffer, xStart | 0, backdrop);";
+                                "SIMD.Int32x4.store(this.buffer, xStart | 0, backdrop);";
                             }
                         }
                         else {
@@ -232,12 +232,12 @@ function generateiodineGBAGFXCompositors() {
                             if (doEffects) {
                                 //Color effects enabled:
                                 code +=
-                                    "this.buffer[xStart | 0] = this.colorEffectsRenderer.processPixelNormal(0, this.gfx.backdrop | 0) | 0;";
+                                "this.buffer[xStart | 0] = this.colorEffectsRenderer.processPixelNormal(0, this.gfx.backdrop | 0) | 0;";
                             }
                             else {
                                 //No effects enabled:
                                 code +=
-                                    "this.buffer[xStart | 0] = this.gfx.backdrop | 0;"
+                                "this.buffer[xStart | 0] = this.gfx.backdrop | 0;"
                             }
                         }
                         return code;
@@ -250,13 +250,13 @@ function generateiodineGBAGFXCompositors() {
                             if (doEffects) {
                                 //Color effects enabled:
                                 code +=
-                                    "SIMD.Int32x4.store(this.buffer, xStart | 0x700, lowerPixel);" +
-                                    "SIMD.Int32x4.store(this.buffer, xStart | 0x800, currentPixel);";
+                                "SIMD.Int32x4.store(this.buffer, xStart | 0x700, lowerPixel);" +
+                                "SIMD.Int32x4.store(this.buffer, xStart | 0x800, currentPixel);";
                             }
                             else {
                                 //No effects enabled:
                                 code +=
-                                    "SIMD.Int32x4.store(this.buffer, xStart | 0, currentPixel);";
+                                "SIMD.Int32x4.store(this.buffer, xStart | 0, currentPixel);";
                             }
                         }
                         else {
@@ -264,12 +264,12 @@ function generateiodineGBAGFXCompositors() {
                             if (doEffects) {
                                 //Color effects enabled:
                                 code +=
-                                    "this.buffer[xStart | 0] = this.colorEffectsRenderer.processPixelNormal(lowerPixel | 0, currentPixel | 0) | 0;";
+                                "this.buffer[xStart | 0] = this.colorEffectsRenderer.processPixelNormal(lowerPixel | 0, currentPixel | 0) | 0;";
                             }
                             else {
                                 //No effects enabled:
                                 code +=
-                                    "this.buffer[xStart | 0] = currentPixel | 0;";
+                                "this.buffer[xStart | 0] = currentPixel | 0;";
                             }
                         }
                         return code;
@@ -280,29 +280,29 @@ function generateiodineGBAGFXCompositors() {
                         if (useVectorized) {
                             //Rendering with a sprite layer:
                             code +=
-                                "SIMD.Int32x4.store(this.buffer, xStart | 0x700, lowerPixel);" +
-                                "SIMD.Int32x4.store(this.buffer, xStart | 0x800, currentPixel);";
+                            "SIMD.Int32x4.store(this.buffer, xStart | 0x700, lowerPixel);" +
+                            "SIMD.Int32x4.store(this.buffer, xStart | 0x800, currentPixel);";
                         }
                         else {
                             //Rendering with a sprite layer:
                             code +=
-                                "if ((currentPixel & 0x400000) == 0) {";
+                            "if ((currentPixel & 0x400000) == 0) {";
                             if (doEffects) {
                                 //Color effects enabled:
                                 code +=
-                                    "this.buffer[xStart | 0] = this.colorEffectsRenderer.processPixelNormal(lowerPixel | 0, currentPixel | 0) | 0;";
+                                "this.buffer[xStart | 0] = this.colorEffectsRenderer.processPixelNormal(lowerPixel | 0, currentPixel | 0) | 0;";
                             }
                             else {
                                 //No effects enabled:
                                 code +=
-                                    "this.buffer[xStart | 0] = currentPixel | 0;";
+                                "this.buffer[xStart | 0] = currentPixel | 0;";
                             }
                             code +=
-                                "}" +
-                                "else {" +
+                            "}" +
+                            "else {" +
                                 //Must handle for semi-transparent sprite case:
                                 "this.buffer[xStart | 0] = this.colorEffectsRenderer.processPixelSprite(lowerPixel | 0, currentPixel | 0) | 0;" +
-                                "}";
+                            "}";
                         }
                         return code;
                     }
@@ -671,48 +671,48 @@ function generateiodineGBAGFXCompositors() {
                     if (useVectorized) {
                         switch (compositeType) {
                             case 0:
-                                //Check if we"re processing the sprite layer:
+                                //Check if we're processing the sprite layer:
                                 if (layers < 0x10) {
-                                    //Don"t need color effects processing for the else case:
+                                    //Don't need color effects processing for the else case:
                                     if (doEffects) {
                                         //Effects handling:
                                         code +=
-                                            ";this.colorEffectsRenderer.processFullNormalEffectsNoSprites()";
+                                        ";this.colorEffectsRenderer.processFullNormalEffectsNoSprites()";
                                     }
                                 }
                                 else {
                                     if (doEffects) {
                                         //Effects + semi-transparency handling:
                                         code +=
-                                            ";this.colorEffectsRenderer.processFullNormalEffectsWithSprites()";
+                                        ";this.colorEffectsRenderer.processFullNormalEffectsWithSprites()";
                                     }
                                     else {
                                         //Sprite semi-transparency handling:
                                         code +=
-                                            ";this.colorEffectsRenderer.processFullNoEffectsWithSprites()";
+                                        ";this.colorEffectsRenderer.processFullNoEffectsWithSprites()";
                                     }
                                 }
                                 break;
                             case 1:
-                                //Check if we"re processing the sprite layer:
+                                //Check if we're processing the sprite layer:
                                 if (layers < 0x10) {
-                                    //Don"t need color effects processing for the else case:
+                                    //Don't need color effects processing for the else case:
                                     if (doEffects) {
                                         //Effects handling:
                                         code +=
-                                            ";this.colorEffectsRenderer.processWindowNormalEffectsNoSprites(xStartCopy | 0, xEnd & -4)";
+                                        ";this.colorEffectsRenderer.processWindowNormalEffectsNoSprites(xStartCopy | 0, xEnd & -4)";
                                     }
                                 }
                                 else {
                                     if (doEffects) {
                                         //Effects + semi-transparency handling:
                                         code +=
-                                            ";this.colorEffectsRenderer.processWindowNormalEffectsWithSprites(xStartCopy | 0, xEnd & -4)";
+                                        ";this.colorEffectsRenderer.processWindowNormalEffectsWithSprites(xStartCopy | 0, xEnd & -4)";
                                     }
                                     else {
                                         //Sprite semi-transparency handling:
                                         code +=
-                                            ";this.colorEffectsRenderer.processWindowNoEffectsWithSprites(xStartCopy | 0, xEnd & -4)";
+                                        ";this.colorEffectsRenderer.processWindowNoEffectsWithSprites(xStartCopy | 0, xEnd & -4)";
                                     }
                                 }
                                 break;
@@ -726,17 +726,17 @@ function generateiodineGBAGFXCompositors() {
                     case 0:
                         if (useVectorized) {
                             code +=
-                                generateLocalScopeInit(true, layers, false) +
-                                "for (var xStart = 0; (xStart | 0) < 240; xStart = ((xStart | 0) + 4) | 0) {" +
+                            generateLocalScopeInit(true, layers, false) +
+                            "for (var xStart = 0; (xStart | 0) < 240; xStart = ((xStart | 0) + 4) | 0) {" +
                                 generateLoopBody(true, doEffects, layers) +
-                                "}";
+                            "}";
                         }
                         else {
                             code +=
-                                generateLocalScopeInit(false, layers, false) +
-                                "for (var xStart = 0; (xStart | 0) < 240; xStart = ((xStart | 0) + 1) | 0) {" +
+                            generateLocalScopeInit(false, layers, false) +
+                            "for (var xStart = 0; (xStart | 0) < 240; xStart = ((xStart | 0) + 1) | 0) {" +
                                 generateLoopBody(false, doEffects, layers) +
-                                "}";
+                            "}";
                         }
                         break;
                     //Loop for window compositor:
@@ -746,41 +746,41 @@ function generateiodineGBAGFXCompositors() {
                             "xEnd = xEnd | 0;";
                         if (useVectorized) {
                             code +=
-                                generateLocalScopeInit(false, layers, false) +
-                                "while ((xStart | 0) < (xEnd | 0) && (xStart | 0) <= (xStart | 0x3)) {" +
+                            generateLocalScopeInit(false, layers, false) +
+                            "while ((xStart | 0) < (xEnd | 0) && (xStart | 0) <= (xStart | 0x3)) {" +
                                 generateLoopBody(false, doEffects, layers) +
                                 "xStart = ((xStart | 0) + 1) | 0;" +
-                                "}" +
-                                "var xStartCopy = xStart | 0;" +
-                                generateLocalScopeInit(true, layers, true) +
-                                "while ((xStart | 0) < (xEnd & -4)) {" +
+                            "}" +
+                            "var xStartCopy = xStart | 0;" +
+                            generateLocalScopeInit(true, layers, true) +
+                            "while ((xStart | 0) < (xEnd & -4)) {" +
                                 generateLoopBody(true, doEffects, layers) +
                                 "xStart = ((xStart | 0) + 4) | 0;" +
-                                "}" +
-                                generateLocalScopeInit(false, layers, true) +
-                                "while ((xStart | 0) < (xEnd | 0)) {" +
+                            "}" +
+                            generateLocalScopeInit(false, layers, true) +
+                            "while ((xStart | 0) < (xEnd | 0)) {" +
                                 generateLoopBody(false, doEffects, layers) +
                                 "xStart = ((xStart | 0) + 1) | 0;" +
-                                "}";
+                            "}";
                         }
                         else {
                             code +=
-                                generateLocalScopeInit(false, layers, false) +
-                                "while ((xStart | 0) < (xEnd | 0)) {" +
+                            generateLocalScopeInit(false, layers, false) +
+                            "while ((xStart | 0) < (xEnd | 0)) {" +
                                 generateLoopBody(false, doEffects, layers) +
                                 "xStart = ((xStart | 0) + 1) | 0;" +
-                                "}";
+                            "}";
                         }
                         break;
                     //Loop for OBJ window compositor:
                     case 2:
                         code +=
-                            generateLocalScopeInit(false, layers, false) +
-                            "for (var xStart = 0; (xStart | 0) < 240; xStart = ((xStart | 0) + 1) | 0) {" +
+                        generateLocalScopeInit(false, layers, false) +
+                        "for (var xStart = 0; (xStart | 0) < 240; xStart = ((xStart | 0) + 1) | 0) {" +
                             "if ((this.OBJWindowBuffer[xStart | 0] | 0) < 0x3800000) {" +
-                            generateLoopBody(false, doEffects, layers) +
+                                generateLoopBody(false, doEffects, layers) +
                             "}" +
-                            "}";
+                        "}";
                 }
                 code += generateSIMDColorEffectsExternalCall(useVectorized, layers, compositeType);
                 return code;
@@ -789,7 +789,7 @@ function generateiodineGBAGFXCompositors() {
             return generateLoopHead(typeof SIMD == "object" && typeof SIMD.Int32x4 == "function", compositeType);
         }
         function generateCompositor(compositeType, doEffects) {
-            //Get function suffix we"ll use depending on color effects usage:
+            //Get function suffix we'll use depending on color effects usage:
             var effectsPrefix = (doEffects) ? "special" : "normal";
             //Loop through all possible combinations of layers:
             for (var layers = 0; layers < 0x20; layers++) {
@@ -827,20 +827,20 @@ function generateiodineGBAGFXCompositors() {
                     var code = "";
                     if (coordsSpecified) {
                         code +=
-                            "xStart = xStart | 0;" +
-                            "xEnd = xEnd | 0;";
+                        "xStart = xStart | 0;" +
+                        "xEnd = xEnd | 0;";
                     }
                     code +=
-                        "layers = layers | 0;";
+                    "layers = layers | 0;";
                     return code;
                 }
                 function generateDispatchBody(coordsSpecified, doEffects) {
                     function generateSwitchHead(bodyCode) {
-                        //We"re building a switch statement:
+                        //We're building a switch statement:
                         var code =
-                            "switch (layers | 0) {" +
+                        "switch (layers | 0) {" +
                             bodyCode +
-                            "}";
+                        "}";
                         return code;
                     }
                     function generateSwitchBody(coordsSpecified, doEffects) {
@@ -852,19 +852,19 @@ function generateiodineGBAGFXCompositors() {
                                     if (layers < 0x1F) {
                                         //Not the last case in the list, so specify number:
                                         code +=
-                                            "case " + layers + ":" +
-                                            "{" +
+                                        "case " + layers + ":" +
+                                        "{" +
                                             bodyCode + ";" +
                                             "break" +
-                                            "};";
+                                        "};";
                                     }
                                     else {
                                         //Last case in the list, so place it as default case:
                                         code +=
-                                            "default:" +
-                                            "{" +
+                                        "default:" +
+                                        "{" +
                                             bodyCode +
-                                            "}";
+                                        "}";
                                     }
                                     return code;
                                 }
@@ -875,12 +875,12 @@ function generateiodineGBAGFXCompositors() {
                                     if (doEffects) {
                                         //Special effects:
                                         code +=
-                                            "special";
+                                        "special";
                                     }
                                     else {
                                         //No special effects:
                                         code +=
-                                            "normal";
+                                        "normal";
                                     }
                                     code +=
                                         layers +
@@ -888,7 +888,7 @@ function generateiodineGBAGFXCompositors() {
                                     if (coordsSpecified) {
                                         //Passing some xcoords as parameters:
                                         code +=
-                                            "xStart | 0, xEnd | 0";
+                                        "xStart | 0, xEnd | 0";
                                     }
                                     code +=
                                         ")";
@@ -946,4 +946,4 @@ function generateiodineGBAGFXCompositors() {
     //Build and compile the dispatches for every possible mode/effect combination:
     generateDispatches();
 }
-generateiodineGBAGFXCompositors();
+generateIodineGBAGFXCompositors();
