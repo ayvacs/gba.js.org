@@ -1,6 +1,6 @@
 ---
 name: Custom issue
-about: Suggest features you'd like to see added
+about: A custom issue report
 title: ''
 labels: ''
 assignees: ''
