@@ -1,4 +1,4 @@
-<img width="150" height="150" src="https://raw.githubusercontent.com/ayvacs/gba.js.org/gh-pages/assets/images/macos-11x/apple-touch-icon.png" alt="logo">
+<img width="150" height="150" src="https://raw.githubusercontent.com/ayvacs/gba.js.org/gh-pages/assets/macos-11x/apple-touch-icon.png" alt="logo">
 <br>
 <h3>gba.js.org</h3>
 <sup>MIT License</sup>

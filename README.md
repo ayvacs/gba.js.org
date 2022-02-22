@@ -7,7 +7,7 @@ Licensed under the MIT License (view LICENSE.md for more information)
 -->
 
 <div align="center">
-  <img src="https://raw.githubusercontent.com/ayvacs/gba.js.org/gh-pages/assets/images/readme-card.png">
+  <img src="https://raw.githubusercontent.com/ayvacs/gba.js.org/gh-pages/assets/readme-card.png">
 
   <h1 align="center">GBA Online</h1>
   <p align="center">Easily emulate GameBoy Advance games for free in your browser.</p>
@@ -79,7 +79,7 @@ Licensed under the MIT License (view LICENSE.md for more information)
 
 <br>
 
-<img width="150" height="150" src="https://raw.githubusercontent.com/ayvacs/gba.js.org/gh-pages/assets/images/macos-11x/apple-touch-icon.png" alt="logo">
+<img width="150" height="150" src="https://raw.githubusercontent.com/ayvacs/gba.js.org/gh-pages/assets/macos-11x/apple-touch-icon.png" alt="logo">
 <br>
 <h3>gba.js.org</h3>
 <sup>MIT License</sup>
