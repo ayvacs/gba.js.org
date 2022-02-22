@@ -57,3 +57,9 @@ li {
     padding: 10px;
     background-color: green;
 }
+
+a,
+a:visited {
+    color: white;
+    text-decoration: underline;
+}
