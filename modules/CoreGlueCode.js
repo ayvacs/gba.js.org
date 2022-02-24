@@ -134,20 +134,7 @@ var gameName = games[hashTags];
 var startLetter = hashTags.charAt(0);
 
 if (hashTags.length > 0) {
-    console.log("[PLAYER] Current game: " + gameName + " [" + hashTags + "]");
-
-    // Change page title
-
-    var title = gameName + " on GBA Online";
-    var t;
-    if (startLetter === "-") {
-        t = "[DEBUG] " + title;
-    } else {
-        t = title;
-    };
-
-    document.title = t;
-    console.log("[DOCUMENTNAME] " + t);
+    console.log(`[PLAYER] Current game: ${gameName} [${hashTags}]`);
 
     /*// Add notification
 
