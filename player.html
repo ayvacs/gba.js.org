@@ -32,13 +32,8 @@ Licensed under the MIT License (view LICENSE.md for more information)
     <div id="container">
         <div id="menu" class="paused">
             <ul class="menu" id="menu_top">
-                <li>
-                    <a target="_blank" href="https://github.com/ayvacs/gba.js.org">
-                        <img id="logo-small" src="assets/logo-small.png"></img>
-                    </a>
-                </li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <li>
-                    File
+                <li><a href="../"><img id="logo-small" src="assets/logo-small.png"></img></a></li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <li>File
                     <ul>
                         <li><span>BIOS: </span> <input type="file" id="bios_load" class="files"></li>
                         <li><span>Game: </span> <input type="file" id="rom_load" class="files"></li>
@@ -47,89 +42,40 @@ Licensed under the MIT License (view LICENSE.md for more information)
                 <li id="play" class="show">Play</li>
                 <li id="pause" class="hide">Pause</li>
                 <li id="restart">Restart</li>
-                <li>
-                    Settings
+                <li>Settings
                     <ul>
-                        <li>
-                            <input type="checkbox" id="skip_boot"> Skip Boot Intro
-                        </li>
-                        <li>
-                            <input type="checkbox" id="toggleSmoothScaling" checked="checked"> Smooth Scaling
-                        </li>
-                        <li>
-                            <input type="checkbox" id="toggleDynamicSpeed"> Dynamic Speed
-                        </li>
-                        <li>
-                            <input type="checkbox" id="offthread-cpu" checked="checked"> CPU off-thread
-                        </li>
-                        <li>
-                            <input type="checkbox" id="offthread-gpu" checked="checked"> GPU off-thread
-                        </li>
-                        <li>
-                            <input type="checkbox" id="sound"> Sound
-                        </li>
-                        <li>
-                            GBA Bindings
+                        <li><input type="checkbox" id="skip_boot"> Skip Boot Intro</li>
+                        <li><input type="checkbox" id="toggleSmoothScaling" checked="checked"> Smooth Scaling</li>
+                        <li><input type="checkbox" id="toggleDynamicSpeed"> Dynamic Speed</li>
+                        <li><input type="checkbox" id="offthread-cpu" checked="checked"> CPU off-thread</li>
+                        <li><input type="checkbox" id="offthread-gpu" checked="checked"> GPU off-thread</li>
+                        <li><input type="checkbox" id="sound"> Sound</li>
+                        <li>GBA Bindings
                             <ul>
-                                <li id="key_a">
-                                    <span>A</span>
-                                </li>
-                                <li id="key_b">
-                                    <span>B</span>
-                                </li>
-                                <li id="key_l">
-                                    <span>L</span>
-                                </li>
-                                <li id="key_r">
-                                    <span>R</span>
-                                </li>
-                                <li id="key_start">
-                                    <span>Start</span>
-                                </li>
-                                <li id="key_select">
-                                    <span>Select</span>
-                                </li>
-                                <li id="key_up">
-                                    <span>↑</span>
-                                </li>
-                                <li id="key_down">
-                                    <span>↓</span>
-                                </li>
-                                <li id="key_left">
-                                    <span>←</span>
-                                </li>
-                                <li id="key_right">
-                                    <span>→</span>
-                                </li>
+                                <li id="key_a"><span>A</span></li>
+                                <li id="key_b"><span>B</span></li>
+                                <li id="key_l"><span>L</span></li>
+                                <li id="key_r"><span>R</span></li>
+                                <li id="key_start"><span>Start</span></li>
+                                <li id="key_select"><span>Select</span></li>
+                                <li id="key_up"><span>↑</span></li>
+                                <li id="key_down"><span>↓</span></li>
+                                <li id="key_left"><span>←</span></li>
+                                <li id="key_right"><span>→</span></li>
                             </ul>
                         </li>
-                        <li>
-                            Emulator Bindings
+                        <li>Emulator Bindings
                             <ul>
-                                <li id="key_volumeup">
-                                    <span>Volume Up</span>
+                                <li id="key_volumeup"><span>Volume Up</span>
                                 </li>
-                                <li id="key_volumedown">
-                                    <span>Volume Down</span>
+                                <li id="key_volumedown"><span>Volume Down</span>
                                 </li>
-                                <li id="key_speedup">
-                                    <span>Speed Up</span>
-                                </li>
-                                <li id="key_slowdown">
-                                    <span>Slow Down</span>
-                                </li>
-                                <li id="key_speedreset">
-                                    <span>Speed Reset</span>
-                                </li>
-                                <li id="key_fullscreen">
-                                    <span>Fullscreen</span>
-                                </li>
-                                <li id="key_playpause">
-                                    <span>Play/Pause</span>
-                                </li>
-                                <li id="key_restart">
-                                    <span>Restart</span>
-                                </li>
+                                <li id="key_speedup"><span>Speed Up</span></li>
+                                <li id="key_slowdown"><span>Slow Down</span></li>
+                                <li id="key_speedreset"><span>Speed Reset</span></li>
+                                <li id="key_fullscreen"><span>Fullscreen</span></li>
+                                <li id="key_playpause"><span>Play/Pause</span></li>
+                                <li id="key_restart"><span>Restart</span></li>
                             </ul>
                         </li>
                     </ul>
@@ -145,18 +91,14 @@ Licensed under the MIT License (view LICENSE.md for more information)
                 <li id="saves_menu">
                     Saves
                     <ul id="saves_menu_container">
-                        <li>
-                            <span>Import:</span><input type="file" id="import" class="files">
-                        </li>
+                        <li><span>Import:</span><input type="file" id="import" class="files"></li>
                         <li id="existing_saves">
                             <span>Existing Saves</span>
                             <ul id="existing_saves_list">
 
                             </ul>
                         </li>
-                        <li>
-                            <a href="./" id="export" target="_new">Export All Saves</a>
-                        </li>
+                        <li><a href="./" id="export" target="_new">Export All Saves</a></li>
                     </ul>
                 </li>
                 <li id="fullscreen">Fullscreen</li>
@@ -257,7 +199,16 @@ Licensed under the MIT License (view LICENSE.md for more information)
     <script src="modules/XAudioJS/resampler.js"></script>
     <script src="modules/XAudioJS/XAudioServer.js"></script>
     <script src="modules/CoreGlueCode.js"></script>
-    <script src="modules/PreventLeave.js"></script>
+    
+    <!-- show a warning when leaving the page -->
+    <script>
+        window.addEventListener('beforeunload', function(e) {
+            // Cancel the event
+            e.preventDefault(); // If you prevent default behavior in Mozilla Firefox prompt will always be shown
+            // Chrome requires returnValue to be set
+            e.returnValue = '';
+        });
+    </script>
 </body>
 
 </html>
