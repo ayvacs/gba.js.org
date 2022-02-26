@@ -19,6 +19,7 @@ Licensed under the MIT License (view LICENSE.md for more information)
 
     <meta charset="UTF-8">
     <meta name="google-site-verification" content="EQgtqgYpirWekvBNi5Vi9re6ruqv6WL0MYnzG9b9-lc" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
     <!-- Primary Meta Tags -->
@@ -39,8 +40,6 @@ Licensed under the MIT License (view LICENSE.md for more information)
     <meta property="twitter:title" content="GBA Online">
     <meta property="twitter:description" content="A free, online, and lightweight GameBoy Advance emulator.">
     <meta property="twitter:image" content="https://raw.githubusercontent.com/ayvacs/gba.js.org/gh-pages/assets/repo-card.png">
-
-    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -49,7 +48,7 @@ Licensed under the MIT License (view LICENSE.md for more information)
 
 
     <br><br><br>
-    <img id="repo-card" src="assets/logo-small.png" height="120px">
+    <img id="repo-card" src="assets/logo-small.png" width="682" height="120px">
     <p id="version-card" style="font-size:20px">v1.4.0: Various bug fixes and improvements</p>
 
     <p>Welcome to <b>GBA Online</b>, a modern GameBoy Advance emulator for the web.</p>
@@ -59,7 +58,7 @@ Licensed under the MIT License (view LICENSE.md for more information)
     </button>
     <div class="collapsible-content">
         <p class="collapsible-text">
-            <img src="assets/controls-gba-diagram.png" width="100%"></img>
+            <img src="assets/controls-gba-diagram.png" width="611" height="344"></img>
 
             <u>Emulator Keybinds</u> <br><br>
             <b>Reset Game:</b> R <br>
@@ -215,7 +214,7 @@ Licensed under the MIT License (view LICENSE.md for more information)
 
     <!-- Enable collapsible menus -->
     <script>
-        var divs = $(".collapsible-collapsible");
+        var divs = document.getElementsByClassName("collapsible-collapsible");
 
         for (i = 0; i < divs.length; i++) {
             divs[i].addEventListener("click", function() {
@@ -235,7 +234,7 @@ Licensed under the MIT License (view LICENSE.md for more information)
         var url = document.location.hostname;
         if (url == "localhost" || url == "127.0.0.1") {
             // Locally hosted; change urls from /player to /player.html
-            var elems = $(".playerLink");
+            var elems = document.getElementsByClassName("playerLink");
             for (var i = 0; i < elems.length; i++) {
                 var elem = elems[i];
                 console.log("[LINKFIX] Fixed \"" + elem.innerHTML + "\"");
