@@ -126,7 +126,7 @@ var games = {
     "-DEBUG-thumb": "thumb"
 };
 
-// Change title code
+// Change title
 
 var defaultTitle = document.title;
 var hashTags = location.hash.substr(1); //substr removes the leading #
@@ -135,6 +135,7 @@ var startLetter = hashTags.charAt(0);
 
 if (hashTags.length > 0) {
     console.log(`[PLAYER] Current game: ${gameName} [${hashTags}]`);
+    document.title = `${gameName} on GBA Online`;
 
     /*// Add notification
 
@@ -155,7 +156,6 @@ if (hashTags.length > 0) {
     console.log("No game is currently loaded!");
 };
 
-// Change title code
 
 var IodineGUI = {
     Iodine: null,
