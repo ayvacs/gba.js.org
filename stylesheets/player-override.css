@@ -17,7 +17,6 @@ html {
 }
 
 li {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     font-size: 13px;
     color: #ffffff;
     background: #202124;
@@ -54,9 +53,6 @@ li {
     top: calc(100% - 60px);
     width: 100%;
     font-size: 24px;
-    background: rgba(0, 0, 0, 0.2);
-    box-shadow: rgb(0 0 0 / 0.2) 0px 0px 20px 20px;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
 a,

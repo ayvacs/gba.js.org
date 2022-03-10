@@ -10,6 +10,7 @@
  */
 
 var games = {
+    // "binary-id": "Game Name",
     "advancewars": "Advance Wars",
     "advancewars2": "Advance Wars 2",
     "aladdin": "Aladdin",
