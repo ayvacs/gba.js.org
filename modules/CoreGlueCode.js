@@ -180,46 +180,30 @@ var IodineGUI = {
         toggleOffthreadGraphics: true,
         toggleOffthreadCPU: (navigator.userAgent.indexOf("AppleWebKit") == -1 || (navigator.userAgent.indexOf("Windows NT 10.0") != -1 && navigator.userAgent.indexOf("Trident") == -1)),
         keyZonesGBA: [
-            //Use this to control the GBA key mapping:
-            //A:
-            68,
-            //B:
-            90,
-            //Select:
-            16,
-            //Start:
-            13,
-            //Right:
-            39,
-            //Left:
-            37,
-            //Up:
-            38,
-            //Down:
-            40,
-            //R:
-            83,
-            //L:
-            65
+            // GBA key mapping:
+
+            68, // A
+            90, // B
+            16, // Select
+            13, // Start
+            39, // Right
+            37, // Left
+            38, // Up
+            40, // Down
+            83, // R
+            65  // L
         ],
         keyZonesControl: [
-            //Use this to control the emulator function key mapping:
-            //Volume Down:
-            55,
-            //Volume Up:
-            56,
-            //Speed Up:
-            52,
-            //Slow Down:
-            51,
-            //Reset Speed:
-            53,
-            //Toggle Fullscreen:
-            54,
-            //Play/Pause:
-            80,
-            //Restart:
-            82
+            // Emulator function key mapping:
+
+            55, // Volume down
+            56, // Volume up
+            52, // Speed up
+            51, // Slow down
+            53, // Reset speed
+            54, // Toggle fullscreen
+            80, // Play/pause
+            82  // Restart
         ]
     }
 };
