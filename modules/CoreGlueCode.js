@@ -191,7 +191,7 @@ var IodineGUI = {
             38, // Up (UP):
             40, // Down (DOWN):
             83, // R (S):
-            65 // L (A):
+            65  // L (A):
         ],
         keyZonesControl: [
             // Emulator function key mapping:
@@ -202,8 +202,8 @@ var IodineGUI = {
             51, // Slow Down (3):
             53, // Reset Speed (5):
             54, // Toggle Fullscreen (6):
-            80, // Play/Pause (P):
-            82 // Restart (R):
+            80, // Play/pause (P):
+            82  // Restart (R):
         ]
     }
 };
