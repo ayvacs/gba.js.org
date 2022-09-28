@@ -1,32 +1,32 @@
 ==================================================================
-https://keybase.io/nwts
+https://keybase.io/southcinemaclub
 --------------------------------------------------------------------
 
 I hereby claim:
 
   * I am an admin of https://gba.js.org
-  * I am nwts (https://keybase.io/nwts) on keybase.
-  * I have a public key ASDQPYNQ7unVoIiHu78z2IEwNRGDex-6o5J734Yep9hIaQo
+  * I am southcinemaclub (https://keybase.io/southcinemaclub) on keybase.
+  * I have a public key ASB0vKirrhn6xlygdixTbVT_sCeZEmfjd8evx5-9yQUywAo
 
 To do so, I am signing this object:
 
 {
   "body": {
     "key": {
-      "eldest_kid": "0120fb51d2857c2a95153c343fe57c1e33402a922d422db492741936dab9a380a3c10a",
+      "eldest_kid": "012074bca8abae19fac65ca0762c536d54ffb027991267e377c7afc79fbdc90532c00a",
       "host": "keybase.io",
-      "kid": "0120d03d8350eee9d5a08887bbbf33d881303511837b1fbaa3927bdf861ea7d848690a",
-      "uid": "24dfb319679affe17a41b51183949719",
-      "username": "nwts"
+      "kid": "012074bca8abae19fac65ca0762c536d54ffb027991267e377c7afc79fbdc90532c00a",
+      "uid": "bea10580d9d39c82c6665abfc91be319",
+      "username": "southcinemaclub"
     },
     "merkle_root": {
-      "ctime": 1645213254,
-      "hash": "bfb03c20c2bdeee1bf51b5a4611ba6e036fc5bd20f07350ffb454ac1763805d53e16b1e88bde5b25b3ed348857a23149a046d311add8facabcf38372806de4f3",
-      "hash_meta": "d1b4edfecfe9487a73c19e6ce35b550f77cd170ee95f19ead84cc603d746ce8d",
-      "seqno": 21905536
+      "ctime": 1664398124,
+      "hash": "948cb28e3d2ef23e7977ffb689dbed5555cab9cef7c77f99f5c0ae4e6895bfa560036468ff75dbe7b229c86fed24398e344a1c7beacb16e9e5b8bcd402df1a55",
+      "hash_meta": "9e95a0eacbb35e951b62e9ca46e443a20136bb8358739dcc3d06ba0a03832d76",
+      "seqno": 23276948
     },
     "service": {
-      "entropy": "1qZqoZUPGZyIdqVnFQyNlnry",
+      "entropy": "cJz5XmvC1BZUuoIMKfHFnN2w",
       "hostname": "gba.js.org",
       "protocol": "https:"
     },
@@ -35,22 +35,22 @@ To do so, I am signing this object:
   },
   "client": {
     "name": "keybase.io go client",
-    "version": "5.9.2"
+    "version": "6.0.1"
   },
-  "ctime": 1645213278,
+  "ctime": 1664398122,
   "expire_in": 504576000,
-  "prev": "1ace48f949a939ecdacb3a059a4db4621743eec4309d155ba31fb0f1843e9832",
-  "seqno": 70,
+  "prev": "5a9323cc1f0f43434802aa674cab5af04c7b86243081ddcdec08139ee17bb114",
+  "seqno": 8,
   "tag": "signature"
 }
 
 which yields the signature:
 
-hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEg0D2DUO7p1aCIh7u/M9iBMDURg3sfuqOSe9+GHqfYSGkKp3BheWxvYWTESpcCRsQgGs5I+UmpOezayzoFmk20YhdD7sQwnRVbox+w8YQ+mDLEILH09I1pcxS/C5LNLzEqJoyDV6qvEaNU5AN4tq0Wkrc2AgHCo3NpZ8RAOSBz1e7dtfbTZDrkO6y4P68oqsd3ym+BhOIUdkwOTqKxM9SUbjTVHC8l2Io1I/VpLWzRCz3r7khw5cULO0i1B6hzaWdfdHlwZSCkaGFzaIKkdHlwZQildmFsdWXEIDBatLsQMpmrHXbKMf13/cyGSicHw2PQgGKjbpjnNyeXo3RhZ80CAqd2ZXJzaW9uAQ==
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEgdLyoq64Z+sZcoHYsU21U/7AnmRJn43fHr8efvckFMsAKp3BheWxvYWTESpcCCMQgWpMjzB8PQ0NIAqpnTKta8Ex7hiQwgd3N7AgTnuF7sRTEIL5uPgtQVPpplGA7TbyFshN/nv6ATshGbBZ0VBaWG+juAgHCo3NpZ8RAj9cZtAGKUIh9y5xJKQ7eh5Ym2YWEwdWrjZ54qtPKVl/+T2o8zYGvMLJ81Wi9M/whi3m9M10mGElEQBKFaS8MD6hzaWdfdHlwZSCkaGFzaIKkdHlwZQildmFsdWXEIJUU3XgeTrUAapfoMx6X8OTvzyzH2qDUXbzk9YjxK7bpo3RhZ80CAqd2ZXJzaW9uAQ==
 
 And finally, I am proving ownership of this host by posting or
 appending to this document.
 
-View my publicly-auditable identity here: https://keybase.io/nwts
+View my publicly-auditable identity here: https://keybase.io/southcinemaclub
 
 ==================================================================
