@@ -8,7 +8,9 @@ Licensed under the MIT License (view LICENSE.md for more information)
 
 body,
 html {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+	font-family: tuna, sans-serif;
+	font-weight: 400;
+	font-style: normal;
 }
 
 .menu {
