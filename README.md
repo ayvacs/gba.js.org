@@ -39,3 +39,8 @@ Licensed under the MIT License (view LICENSE.md for more information)
 This repository is licensed under [the MIT License](https://github.com/ayvacs/gba.js.org/blob/main/LICENSE.md).
 
 [A simple explanation of the MIT license](https://softwareengineering.stackexchange.com/a/103341)
+
+
+-Cambio de Roms a versiones europeas y en Español
+-traducción del index
+Por GingerJewMan#0407 y Kyoto#4855
