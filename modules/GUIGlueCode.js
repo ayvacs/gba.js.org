@@ -61,138 +61,31 @@ function registerGUIEvents() {
     addEvent("change", document.getElementById("speedset"), speedChangeFunc);
     addEvent("input", document.getElementById("speedset"), speedChangeFunc);
     addEvent("click", document.getElementById("fullscreen"), toggleFullScreen);
-    addEvent("click", document.getElementById("key_a"), function () {
-        IodineGUI.toMap = IodineGUI.defaults.keyZonesGBA;
-        IodineGUI.toMapIndice = 0;
-    });
-    addEvent("mousedown", document.getElementById("touch-a"), function () {
-        IodineGUI.Iodine.keyDown(0);
-    });
-    addEvent("mouseup", document.getElementById("touch-a"), function () {
-        IodineGUI.Iodine.keyUp(0);
-    });
-    addEvent("click", document.getElementById("key_b"), function () {
-        IodineGUI.toMap = IodineGUI.defaults.keyZonesGBA;
-        IodineGUI.toMapIndice = 1;
-    });
-    addEvent("mousedown", document.getElementById("touch-b"), function () {
-        IodineGUI.Iodine.keyDown(1);
-    });
-    addEvent("mouseup", document.getElementById("touch-b"), function () {
-        IodineGUI.Iodine.keyUp(1);
-    });
-    addEvent("click", document.getElementById("key_select"), function () {
-        IodineGUI.toMap = IodineGUI.defaults.keyZonesGBA;
-        IodineGUI.toMapIndice = 2;
-    });
-    addEvent("mousedown", document.getElementById("touch-select"), function () {
-        IodineGUI.Iodine.keyDown(2);
-    });
-    addEvent("mouseup", document.getElementById("touch-select"), function () {
-        IodineGUI.Iodine.keyUp(2);
-    });
-    addEvent("click", document.getElementById("key_start"), function () {
-        IodineGUI.toMap = IodineGUI.defaults.keyZonesGBA;
-        IodineGUI.toMapIndice = 3;
-    });
-    addEvent("mousedown", document.getElementById("touch-start"), function () {
-        IodineGUI.Iodine.keyDown(3);
-    });
-    addEvent("mouseup", document.getElementById("touch-start"), function () {
-        IodineGUI.Iodine.keyUp(3);
-    });
-    addEvent("click", document.getElementById("key_right"), function () {
-        IodineGUI.toMap = IodineGUI.defaults.keyZonesGBA;
-        IodineGUI.toMapIndice = 4;
-    });
-    addEvent("mousedown", document.getElementById("touch-right"), function () {
-        IodineGUI.Iodine.keyDown(4);
-    });
-    addEvent("mouseup", document.getElementById("touch-right"), function () {
-        IodineGUI.Iodine.keyUp(4);
-    });
-    addEvent("click", document.getElementById("key_left"), function () {
-        IodineGUI.toMap = IodineGUI.defaults.keyZonesGBA;
-        IodineGUI.toMapIndice = 5;
-    });
-    addEvent("mousedown", document.getElementById("touch-left"), function () {
-        IodineGUI.Iodine.keyDown(5);
-    });
-    addEvent("mouseup", document.getElementById("touch-left"), function () {
-        IodineGUI.Iodine.keyUp(5);
-    });
-    addEvent("click", document.getElementById("key_up"), function () {
-        IodineGUI.toMap = IodineGUI.defaults.keyZonesGBA;
-        IodineGUI.toMapIndice = 6;
-    });
-    addEvent("mousedown", document.getElementById("touch-up"), function () {
-        IodineGUI.Iodine.keyDown(6);
-    });
-    addEvent("mouseup", document.getElementById("touch-up"), function () {
-        IodineGUI.Iodine.keyUp(6);
-    });
-    addEvent("click", document.getElementById("key_down"), function () {
-        IodineGUI.toMap = IodineGUI.defaults.keyZonesGBA;
-        IodineGUI.toMapIndice = 7;
-    });
-    addEvent("mousedown", document.getElementById("touch-down"), function () {
-        IodineGUI.Iodine.keyDown(7);
-    });
-    addEvent("mouseup", document.getElementById("touch-down"), function () {
-        IodineGUI.Iodine.keyUp(7);
-    });
-    addEvent("click", document.getElementById("key_r"), function () {
-        IodineGUI.toMap = IodineGUI.defaults.keyZonesGBA;
-        IodineGUI.toMapIndice = 8;
-    });
-    addEvent("mousedown", document.getElementById("touch-r"), function () {
-        IodineGUI.Iodine.keyDown(8);
-    });
-    addEvent("mouseup", document.getElementById("touch-r"), function () {
-        IodineGUI.Iodine.keyUp(8);
-    });
-    addEvent("click", document.getElementById("key_l"), function () {
-        IodineGUI.toMap = IodineGUI.defaults.keyZonesGBA;
-        IodineGUI.toMapIndice = 9;
-    });
-    addEvent("mousedown", document.getElementById("touch-l"), function () {
-        IodineGUI.Iodine.keyDown(9);
-    });
-    addEvent("mouseup", document.getElementById("touch-l"), function () {
-        IodineGUI.Iodine.keyUp(9);
-    });
-    addEvent("click", document.getElementById("key_volumedown"), function () {
-        IodineGUI.toMap = IodineGUI.defaults.keyZonesControl;
-        IodineGUI.toMapIndice = 0;
-    });
-    addEvent("click", document.getElementById("key_volumeup"), function () {
-        IodineGUI.toMap = IodineGUI.defaults.keyZonesControl;
-        IodineGUI.toMapIndice = 1;
-    });
-    addEvent("click", document.getElementById("key_speedup"), function () {
-        IodineGUI.toMap = IodineGUI.defaults.keyZonesControl;
-        IodineGUI.toMapIndice = 2;
-    });
-    addEvent("click", document.getElementById("key_slowdown"), function () {
-        IodineGUI.toMap = IodineGUI.defaults.keyZonesControl;
-        IodineGUI.toMapIndice = 3;
-    });
-    addEvent("click", document.getElementById("key_speedreset"), function () {
-        IodineGUI.toMap = IodineGUI.defaults.keyZonesControl;
-        IodineGUI.toMapIndice = 4;
-    });
-    addEvent("click", document.getElementById("key_fullscreen"), function () {
-        IodineGUI.toMap = IodineGUI.defaults.keyZonesControl;
-        IodineGUI.toMapIndice = 5;
-    });
-    addEvent("click", document.getElementById("key_playpause"), function () {
-        IodineGUI.toMap = IodineGUI.defaults.keyZonesControl;
-        IodineGUI.toMapIndice = 6;
-    });
-    addEvent("click", document.getElementById("key_restart"), function () {
-        IodineGUI.toMap = IodineGUI.defaults.keyZonesControl;
-        IodineGUI.toMapIndice = 7;
-    });
+    
+    let id = 0;
+    for (let key of ["a", "b", "select", "start", "right", "left", "up", "down", "r", "l"]) {
+        let thisId = id++
+        addEvent("click", document.getElementById("key_" + key), function () {
+            IodineGUI.toMap = IodineGUI.defaults.keyZonesGBA;
+            IodineGUI.toMapIndice = thisId;
+        });
+
+        addEvent("mousedown", document.getElementById("touch-" + key), IodineGUI.Iodine.keyDown.bind(IodineGUI.Iodine, thisId));
+        addEvent("touchstart", document.getElementById("touch-" + key), IodineGUI.Iodine.keyDown.bind(IodineGUI.Iodine, thisId));
+
+        addEvent("mouseup", document.getElementById("touch-" + key), IodineGUI.Iodine.keyUp.bind(IodineGUI.Iodine, thisId));
+        addEvent("touchend", document.getElementById("touch-" + key), IodineGUI.Iodine.keyUp.bind(IodineGUI.Iodine, thisId));
+    }
+
+    id = 0
+    for (let key of ["volumedown", "volumeup", "speedup", "slowdown", "speedreset", "fullscreen", "playpause", "restart"]) {
+        let thisId = id++
+        addEvent("click", document.getElementById("key_" + key), function () {
+            IodineGUI.toMap = IodineGUI.defaults.keyZonesControl;
+            IodineGUI.toMapIndice = thisId;
+        });
+    }
+
     addEvent("change", document.getElementById("import"), function (e) {
         if (typeof this.files != "undefined") {
             try {
@@ -549,6 +442,7 @@ function clearTempString() {
     document.getElementById("tempMessage").style.display = "none";
 }
 function resizeCanvasFunc() {
+   
     var container = document.getElementById("main");
     var containerHeight = container.clientHeight || container.offsetHeight || 0;
     var containerWidth = container.clientWidth || container.offsetWidth || 0;
