@@ -32,7 +32,6 @@ Licensed under the MIT License (view LICENSE.md for more information)
 * [particles.js](https://github.com/VincentGarreau/particles.js/)
 * [SWFObject](http://code.google.com/p/swfobject/)
 * [XAudioJS](https://github.com/taisel/XAudioJS)
-* [IodineGBA](https://github.com/taisel/IodineGBA)
 
 ## License
 
