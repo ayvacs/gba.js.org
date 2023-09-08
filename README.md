@@ -7,10 +7,8 @@ Licensed under the MIT License (view LICENSE.md for more information)
 -->
 
 <div align="center">
-  <img src="https://raw.githubusercontent.com/ayvacs/gba.js.org/gh-pages/assets/readme-card.png">
-
   <h1 align="center">GBA Online</h1>
-  <p align="center">Easily emulate GameBoy Advance games for free in your browser</p>
+  <p align="center">Emulate GBA games, free and in your browser!</p>
 
   <p align="center"><a target="_blank" href="https://gba.js.org">🔗 gba.js.org</a></p>
 
@@ -21,11 +19,7 @@ Licensed under the MIT License (view LICENSE.md for more information)
   </p>
 </div>
 
-<br>
-
 ---
-
-<br>
 
 ## Libraries and Frameworks Used
 
@@ -35,6 +29,12 @@ Licensed under the MIT License (view LICENSE.md for more information)
 
 ## License
 
-This repository is licensed under [the MIT License](https://github.com/ayvacs/gba.js.org/blob/main/LICENSE.md).
+Licensed under [the MIT License](https://github.com/ayvacs/gba.js.org/blob/main/LICENSE.md).
 
-[A simple explanation of the MIT license](https://softwareengineering.stackexchange.com/a/103341)
+---
+
+<div align="center">
+    <a align="center" href="https://star-history.com/#ayvacs/gba.js.org&Timeline">
+        <img src="https://api.star-history.com/svg?repos=ayvacs/gba.js.org&type=Timeline">
+    </a>
+</div>
