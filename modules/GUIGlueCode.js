@@ -268,6 +268,66 @@ function registerGUIEvents() {
     else if (typeof document.webkitHidden !== "undefined") {
         addEvent("webkitvisibilitychange", document, webkitVisibilityChangeHandle);
     }
+    addEvent("touchstart", document.getElementById("touch-a"), function () {
+        IodineGUI.Iodine.keyDown(0);
+    });
+    addEvent("touchend", document.getElementById("touch-a"), function () {
+        IodineGUI.Iodine.keyUp(0);
+    });
+    addEvent("touchstart", document.getElementById("touch-b"), function () {
+        IodineGUI.Iodine.keyDown(1);
+    });
+    addEvent("touchend", document.getElementById("touch-b"), function () {
+        IodineGUI.Iodine.keyUp(1);
+    });
+    addEvent("touchstart", document.getElementById("touch-select"), function () {
+        IodineGUI.Iodine.keyDown(2);
+    });
+    addEvent("touchend", document.getElementById("touch-select"), function () {
+        IodineGUI.Iodine.keyUp(2);
+    });
+    addEvent("touchstart", document.getElementById("touch-start"), function () {
+        IodineGUI.Iodine.keyDown(3);
+    });
+    addEvent("touchend", document.getElementById("touch-start"), function () {
+        IodineGUI.Iodine.keyUp(3);
+    });
+    addEvent("touchstart", document.getElementById("touch-right"), function () {
+        IodineGUI.Iodine.keyDown(4);
+    });
+    addEvent("touchend", document.getElementById("touch-right"), function () {
+        IodineGUI.Iodine.keyUp(4);
+    });
+    addEvent("touchstart", document.getElementById("touch-left"), function () {
+        IodineGUI.Iodine.keyDown(5);
+    });
+    addEvent("touchend", document.getElementById("touch-left"), function () {
+        IodineGUI.Iodine.keyUp(5);
+    });
+    addEvent("touchstart", document.getElementById("touch-up"), function () {
+        IodineGUI.Iodine.keyDown(6);
+    });
+    addEvent("touchend", document.getElementById("touch-up"), function () {
+        IodineGUI.Iodine.keyUp(6);
+    });
+    addEvent("touchstart", document.getElementById("touch-down"), function () {
+        IodineGUI.Iodine.keyDown(7);
+    });
+    addEvent("touchend", document.getElementById("touch-down"), function () {
+        IodineGUI.Iodine.keyUp(7);
+    });
+    addEvent("touchstart", document.getElementById("touch-r"), function () {
+        IodineGUI.Iodine.keyDown(8);
+    });
+    addEvent("touchend", document.getElementById("touch-r"), function () {
+        IodineGUI.Iodine.keyUp(8);
+    });
+    addEvent("touchstart", document.getElementById("touch-l"), function () {
+        IodineGUI.Iodine.keyDown(9);
+    });
+    addEvent("touchend", document.getElementById("touch-l"), function () {
+        IodineGUI.Iodine.keyUp(9);
+    });
     //Run on init as well:
     resizeCanvasFunc();
 }
