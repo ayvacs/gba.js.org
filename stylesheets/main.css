@@ -209,9 +209,54 @@ li.hide {
 |-----------------------------------------
  */
 
+.touch-dpad {
+    grid-area: dpad;
+}
+#touch-a {
+    grid-area: a;
+}
+#touch-b {
+    grid-area: b;
+}
+#touch-r {
+    grid-area: r;
+    transform-origin: bottom left;
+}
+#touch-l {
+    grid-area: l;
+    transform-origin: bottom right;
+}
+#touch-select {
+    grid-area: select;
+}
+#touch-start {
+    grid-area: start;
+}
+
+#touch-r, #touch-start {
+    justify-self: end;
+}
+
+.touch-controls, .touch-dpad {
+    --font-size: 0.85rem;
+    font-size: 0px;
+    touch-action: none;
+}
+.touch-controls > *, .touch-dpad > * {
+    font-size: var(--font-size);
+}
+
 .touch-controls {
-    display: flex;
-    padding: 1em;
+    display: grid;
+    align-items: center;
+    justify-content: space-between;
+    justify-items: start;
+    grid-template-columns: minmax(9em, 100%) auto auto;
+    grid-template-areas:
+        "l ............ r"
+        "dpad b a"
+        "select . start";
+    padding: calc(1 * var(--font-size));
     position: absolute;
     bottom: 0px;
     left: 0px;
@@ -219,45 +264,185 @@ li.hide {
 }
 
 .touch-controls button {
+    position: relative;
     display: inline-block;
     -webkit-appearance: none;
     border: 0;
     outline: 0;
-    background: #fff;
-    opacity: 0.7;
+    background: #c7c7c7;
+    color: #a9a9a9;
+    font-weight: bold;
     width: 3em;
     height: 3em;
     line-height: 3em;
     text-align: center;
     cursor: pointer;
-    transition: .1s ease;
-    margin: .5em;
+    transition: all .1s ease;
+    margin: 0;
+    padding: 0;
+}
+.touch-controls button:focus, .touch-controls button:active {
+    -webkit-tap-highlight-color: transparent;
 }
 
-.touch-controls button:active {
+.touch-controls button:active,
+.touch-controls button.pressed {
     transform: scale(0.95);
-    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.4) inset;
+    box-shadow: 0 0 10px 0 #000 inset;
 }
 
-.touch-dpad,
-.touch-buttons {
-    flex-grow: 1;
-    text-align: center;
+.touch-dpad button:active:after,
+.touch-dpad button.pressed:after {
+    transform: scale(0.95);
 }
 
-.touch-buttons {
-    align-self: flex-end;
+.touch-dpad {
+    margin-left: calc(3 * var(--font-size));
+    width: calc(9 * var(--font-size));
+    height: calc(9 * var(--font-size));
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
 }
 
-.touch-dpad--up {
-    flex-grow: 1;
+#touch-up, #touch-down {
+    margin-inline: 3em;
+}
+
+#touch-up {
+    border-radius: 15% 15% 0 0;
+    transform-origin: bottom;
+}
+#touch-right {
+    border-radius: 0 15% 15% 0;
+    transform-origin: left;
+}
+#touch-down {
+    border-radius: 0 0 15% 15%;
+    transform-origin: top;
+}
+
+#touch-left {
+    border-radius: 15% 0 0 15%;
+    transform-origin: right;
+}
+
+#touch-up:before, #touch-right:before, #touch-down:before, #touch-left:before {
     width: 100%;
+    height: 100%;
+    content: " ";
+    display: block;
+    background: linear-gradient(0deg, #c7c7c7 1%, transparent 50%);
+}
+#touch-right:before {
+    background: linear-gradient(90deg, #c7c7c7 1%, transparent 50%);
+}
+#touch-down:before {
+    background: linear-gradient(180deg, #c7c7c7 1%, transparent 50%);
+}
+#touch-left:before {
+    background: linear-gradient(270deg, #c7c7c7 1%, transparent 50%);
 }
 
+#touch-up:after, #touch-right:after, #touch-down:after, #touch-left:after, #center-placeholder:after {
+    position: absolute;
+    content: " ";
+    border-width: 0em 0.7em 1em;
+    border-style: solid;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-color: transparent transparent #a9a9a9 transparent;
+}
+#touch-right:after {
+    transform: translate(-50%, -50%) rotate(90deg);
+}
+#touch-down:after {
+    transform: translate(-50%, -50%) rotate(180deg);
+}
+#touch-left:after {
+    transform: translate(-50%, -50%) rotate(270deg);
+}
 
-/* Only show controls on portrait mode screens */
+#center-placeholder {
 
-@media screen and (min-aspect-ratio: 1/1) {
+}
+.touch-controls #center-placeholder:active,
+.touch-controls #center-placeholder.pressed {
+    transform: none;
+    box-shadow: none;
+}
+#center-placeholder:after {
+    border-width: 0;
+    border-radius: 50%;
+    width: 1.5em;
+    height: 1.5em;
+    background: #c7c7c7;
+    box-shadow: -1px -1px 10px 0px #a9a9a9 inset;
+}
+
+#touch-a, #touch-b {
+    border-radius: 50%;
+    margin: 1em;
+}
+
+#touch-r, #touch-l, #touch-select, #touch-start {
+    position: relative;
+    height: 2em;
+    line-height: 2em;
+    border-radius: 1em;
+}
+
+#touch-r, #touch-l {
+    width: 4em;
+    border-radius: 0.5em;
+}
+#touch-r {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 33% 100%, 33% 50%, 0 50%);
+}
+#touch-l {
+    clip-path: polygon(0 0, 100% 0, 100% 50%, 66% 50%, 66% 100%, 0 100%);
+}
+
+#touch-select, #touch-start {
+    width: auto;
+    margin-top: 1em;
+    border: 1px solid #7f7f7f80;
+    background: transparent;
+    color: #7f7f7f80;
+    font-weight: normal;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    padding-left: 0.6em;
+}
+#touch-select:after, #touch-start:after {
+    content: "";
+    display: inline-block;
+    width: 2em;
+    height: 2em;
+    border-radius: 50%;
+    background: white;
+    transform-origin: center;
+    transform: scale(0.6);
+}
+.touch-controls #touch-select:active,
+.touch-controls #touch-select.pressed,
+.touch-controls #touch-start:active,
+.touch-controls #touch-start.pressed {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 #000 inset;
+}
+.touch-controls #touch-select:active:after,
+.touch-controls #touch-select.pressed:after,
+.touch-controls #touch-start:active:after,
+.touch-controls #touch-start.pressed:after {
+    transform: scale(0.57);
+    box-shadow: 0 0 10px 0 #000 inset;
+}
+
+/* Only show controls on touch screens */
+@media (pointer: fine) {
     .touch-controls {
         display: none;
     }
