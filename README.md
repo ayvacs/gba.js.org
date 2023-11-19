@@ -7,8 +7,8 @@ Licensed under the MIT License (view LICENSE.md for more information)
 -->
 
 <div align="center">
-  <h1 align="center">GBA Online</h1>
-  <p align="center">Emulate GBA games, free and in your browser!</p>
+  <img align="center" height="38" src="https://raw.githubusercontent.com/ayvacs/gba.js.org/main/assets/logo-small.png">
+  <p align="center">Emulate GBA games for free in your browser!</p>
 
   <p align="center"><a target="_blank" href="https://gba.js.org">🔗 gba.js.org</a></p>
 
@@ -21,6 +21,14 @@ Licensed under the MIT License (view LICENSE.md for more information)
 
 ---
 
+## Getting Started
+
+The emulator is located at [gba.js.org](https://gba.js.org).
+
+Want to host it yourself? Check out the [latest release](https://github.com/ayvacs/gba.js.org/releases/latest).
+
+---
+
 ## Libraries and Frameworks Used
 
 * [particles.js](https://github.com/VincentGarreau/particles.js/)
@@ -29,7 +37,7 @@ Licensed under the MIT License (view LICENSE.md for more information)
 
 ## License
 
-Licensed under [the MIT License](https://github.com/ayvacs/gba.js.org/blob/main/LICENSE.md).
+GBA Online is licensed under [the MIT License](https://github.com/ayvacs/gba.js.org/blob/main/LICENSE.md). All ROMs packaged with this directory are copyright &copy; their original creator(s).
 
 ---
 
