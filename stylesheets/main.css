@@ -15,7 +15,9 @@ Licensed under the MIT License (view LICENSE.md for more information)
 
 html,
 body {
-    font-family: Open Sans, Arial, sans-serif;
+    font-family: "Red Hat Display", sans-serif;
+	font-weight: 400;
+	font-style: normal;
     height: 100%;
     width: 100%;
     margin: 0;
@@ -31,6 +33,19 @@ body {
     user-select: none;
 }
 
+#logo-small {
+    position: fixed;
+    height: 13px;
+    top: 12px;
+    /*right: 13px;*/
+}
+
+a,
+a:visited {
+    color: white;
+    text-decoration: underline;
+}
+
 
 /* reset all list items */
 
@@ -38,6 +53,12 @@ ul {
     list-style: none;
     padding: 0;
     margin: 0;
+}
+
+li {
+    font-size: 13px;
+    color: #ffffff;
+    background: #202124;
 }
 
 #container {
@@ -95,7 +116,8 @@ canvas.texturePixelated {
 |-----------------------------------------
  */
 
-.message {
+.message,
+#tempMessage {
     background: #6cc27d;
     padding: 1em 2em;
     text-align: center;
@@ -108,6 +130,16 @@ canvas.texturePixelated {
     vertical-align: bottom;
     font-family: monospace;
     z-index: 1;
+}
+
+#loadedGameMsg {
+    color: black;
+    position: absolute;
+    display: inline-block;
+    text-align: center;
+    top: calc(100% - 60px);
+    width: 100%;
+    font-size: 24px;
 }
 
 
@@ -136,6 +168,8 @@ div#menu {
     border-bottom: 1px solid rgba(0, 0, 0, .1);
     transition: .3s ease;
     cursor: pointer;
+    box-shadow: 0 0 48px 48px rgba(0, 0, 0, 0.1);
+    background: #202124;
 }
 
 
