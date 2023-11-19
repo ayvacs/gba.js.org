@@ -31,7 +31,6 @@ Want to host it yourself? Check out the [latest release](https://github.com/ayva
 
 ## Libraries and Frameworks Used
 
-* [particles.js](https://github.com/VincentGarreau/particles.js/)
 * [SWFObject](http://code.google.com/p/swfobject/)
 * [XAudioJS](https://github.com/taisel/XAudioJS)
 
