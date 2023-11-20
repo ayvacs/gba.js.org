@@ -11,13 +11,11 @@
 
 // Change title
 
-var defaultTitle = document.title;
-var hashTags = location.hash.substr(1); //substr removes the leading #
-var gameName = games[hashTags];
-var startLetter = hashTags.charAt(0);
+var hashTag = location.hash.substr(1);
+var gameName = games[hashTag];
 
-if (hashTags.length > 0) {
-    console.log(`[PLAYER] Current game: ${gameName} [${hashTags}]`);
+if (hashTag.length > 0 && gameName) {
+    console.log(`[PLAYER] Current game: ${gameName} [${hashTag}]`);
     document.title = `${gameName} on GBA Online`;
 
     // Add notification
@@ -35,7 +33,6 @@ if (hashTags.length > 0) {
         }, 3000);
     }, 3000);
 } else {
-    document.title = defaultTitle;
     console.log("No game is currently loaded!");
 };
 
@@ -106,9 +103,12 @@ window.onload = function() {
     registerGUIEvents();
     //Register GUI settings.
     registerGUISettings();
-    if (!games[location.hash.substr(1)]) {
-        alert("Invalid game request!");
-        return;
+    if (!games[hashTag]) {
+        if (confirm("Invalid game request! Go to the homepage to select a game?")) {
+            window.location.href = "../";
+        } else {
+            return;
+        };
     }
     //Download the BIOS:
     downloadBIOS();
@@ -120,7 +120,7 @@ function downloadBIOS() {
 
 function registerBIOS() {
     processDownload(this, attachBIOS);
-    downloadROM(location.hash.substr(1));
+    downloadROM(hashTag);
 }
 
 function downloadROM(gamename) {
