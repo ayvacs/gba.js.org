@@ -6,9 +6,13 @@ Licensed under the MIT License (view the LICENSE file for more information)
 
 -->
 
+<br>
+
 <div align="center">
   <img align="center" height="38" src="https://raw.githubusercontent.com/ayvacs/gba.js.org/main/assets/logo-small.png">
+  
   <br>
+
   <p align="center">Emulate GBA games for free in your browser!</p>
 
   <p align="center"><a target="_blank" href="https://gba.js.org">🔗 gba.js.org</a></p>
