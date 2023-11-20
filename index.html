@@ -96,12 +96,16 @@ Licensed under the MIT License (view LICENSE.md for more information)
         var gamesList = document.getElementById("gamesList");
         var debugGamesList = document.getElementById("debugGamesList");
 
+        var playerLink = "player#";
+        if (["localhost", "127.0.0.1"].includes(document.location.hostname)) {
+            playerLink = "player.html#";
+        };
 
         for (i in games) {
             if (i.charAt(0) != "-") {
-                gamesList.innerHTML += `<a class="playerLink" href=".player/#${i}">${games[i]}</a><br>`;
+                gamesList.innerHTML += `<a class="playerLink" href="${playerLink}${i}">${games[i]}</a><br>`;
             } else {
-                debugGamesList.innerHTML += `<a class="playerLink" href=".player/#${i}">${games[i]}</a><br>`;
+                debugGamesList.innerHTML += `<a class="playerLink" href="${playerLink}${i}">${games[i]}</a><br>`;
             };
         };
     </script>
@@ -120,20 +124,6 @@ Licensed under the MIT License (view LICENSE.md for more information)
                     content.style.maxHeight = content.scrollHeight + "px";
                 };
             });
-        };
-    </script>
-
-    <!-- Fix links while hosting locally -->
-    <script>
-        var url = document.location.hostname;
-        if (url == "localhost" || url == "127.0.0.1") {
-            // Locally hosted; change urls from /player to /player.html
-            var elems = document.getElementsByClassName("playerLink");
-            for (var i = 0; i < elems.length; i++) {
-                var elem = elems[i];
-                //console.log("[LINKFIX] Fixed \"" + elem.innerHTML + "\"");
-                elem.href = elem.href.replace("player#", "player.html#");
-            };
         };
     </script>
 </body>
