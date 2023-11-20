@@ -8,6 +8,7 @@ Licensed under the MIT License (view LICENSE.md for more information)
 
 <div align="center">
   <img align="center" height="38" src="https://raw.githubusercontent.com/ayvacs/gba.js.org/main/assets/logo-small.png">
+  <br>
   <p align="center">Emulate GBA games for free in your browser!</p>
 
   <p align="center"><a target="_blank" href="https://gba.js.org">🔗 gba.js.org</a></p>
@@ -34,9 +35,13 @@ Want to host it yourself? Check out the [latest release](https://github.com/ayva
 * [SWFObject](http://code.google.com/p/swfobject/)
 * [XAudioJS](https://github.com/taisel/XAudioJS)
 
+---
+
 ## License
 
-GBA Online is licensed under [the MIT License](https://github.com/ayvacs/gba.js.org/blob/main/LICENSE.md). All ROMs packaged with this directory are copyright &copy; their original creator(s).
+The repository's license is located at the **LICENSE** file.
+
+GBA Online is licensed under the MIT License. All ROMs included with the code are copyright &copy; their original creator(s). If you own a ROM or other file included with the code and wish to remove it, please email me. My email is also included in the **LICENSE** file.
 
 ---
 
