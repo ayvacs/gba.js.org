@@ -9,8 +9,6 @@
  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-// Change title
-
 var hashTag = location.hash.substr(1);
 var gameName = games[hashTag];
 
@@ -19,11 +17,7 @@ if (hashTag.length > 0 && gameName) {
     document.title = `${gameName} on GBA Online`;
 
     // Add notification
-
-    var t = document.createElement("p");
-    t.innerHTML = "Loaded \"" + gameName + "\"";
-    t.id = "loadedGameMsg";
-    document.body.appendChild(t);
+    document.body.innerHTML += `<p id="loadedGameMsg">Loaded "${gameName}"</p>`
 
     // fade out after 3secs
     setTimeout(function () {
@@ -34,8 +28,10 @@ if (hashTag.length > 0 && gameName) {
     }, 3000);
 } else {
     console.log("No game is currently loaded!");
+    if (confirm("Invalid game request! Go to the homepage to select a game?")) {
+        window.location.href = "../";
+    };
 };
-
 
 var IodineGUI = {
     Iodine: null,
@@ -103,13 +99,6 @@ window.onload = function() {
     registerGUIEvents();
     //Register GUI settings.
     registerGUISettings();
-    if (!games[hashTag]) {
-        if (confirm("Invalid game request! Go to the homepage to select a game?")) {
-            window.location.href = "../";
-        } else {
-            return;
-        };
-    }
     //Download the BIOS:
     downloadBIOS();
 }
