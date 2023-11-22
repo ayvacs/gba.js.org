@@ -8,4 +8,6 @@ Licensed under the MIT License (view the LICENSE file for more information)
 
 All files in this directory are copyright &copy; their original creator(s).
 
-I did/do not own, create, claim to own, or claim to create any files in this directory.
+### Copyright Notice
+
+This repository is licensed under the MIT License. All ROMs included with the code are copyright &copy; their original creator(s). If you created or represent one who created a ROM or other file included in this repository and wish to remove it, please email me. My email is included in the **LICENSE** file.

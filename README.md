@@ -45,7 +45,9 @@ Want to host it yourself? Check out the [latest release](https://github.com/ayva
 
 The repository's license is located at the **LICENSE** file.
 
-GBA Online is licensed under the MIT License. All ROMs included with the code are copyright &copy; their original creator(s). If you own a ROM or other file included with the code and wish to remove it, please email me. My email is also included in the **LICENSE** file.
+### Copyright Notice
+
+This repository is licensed under the MIT License. All ROMs included with the code are copyright &copy; their original creator(s). If you created or represent one who created a ROM or other file included in this repository and wish to remove it, please email me. My email is included in the **LICENSE** file.
 
 ---
 
