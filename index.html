@@ -102,9 +102,7 @@ Licensed under the MIT License (view the LICENSE file for more information)
         };
 
         for (i in games) {
-            if (i.charAt(0) != "-") {
-                gamesList.innerHTML += `<a class="playerLink" href="${playerLink}${i}">${games[i]}</a><br>`;
-            } else {
+            if (i.charAt(0) == "-") {
                 debugGamesList.innerHTML += `<a class="playerLink" href="${playerLink}${i}">${games[i]}</a><br>`;
             };
         };
