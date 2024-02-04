@@ -237,6 +237,13 @@ Licensed under the MIT License (view LICENSE.md for more information)
     <script>
         particlesJS.load("particles-js", "modules/particles/shapes.json");
     </script>
+	<script type="module">
+		import {checkAccount} from '/modules/user/account.js';
+
+		if (!checkAccount()) {
+			window.location.href = "/signin.html";
+		}
+	</script>
 </body>
 
 </html>
