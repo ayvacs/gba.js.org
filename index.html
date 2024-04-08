@@ -50,7 +50,7 @@ Licensed under the MIT License (view LICENSE.md for more information)
 
     <br><br><br>
     <img id="repo-card" src="assets/logo-small.png" width="682" height="120px" alt="Website header">
-    <p id="version-card" style="font-size:20px">v1.4.5</p>
+    <p id="version-card" style="font-size:20px">v1.4.6</p>
 
     <p>Easily emulate GameBoy Advance games for free in your browser. Completely open source!</p>
 
@@ -215,20 +215,6 @@ Licensed under the MIT License (view LICENSE.md for more information)
                     content.style.maxHeight = content.scrollHeight + "px";
                 };
             });
-        };
-    </script>
-
-    <!-- Fix links while hosting locally -->
-    <script>
-        var url = document.location.hostname;
-        if (url == "localhost" || url == "127.0.0.1") {
-            // Locally hosted; change urls from /player to /player.html
-            var elems = document.getElementsByClassName("playerLink");
-            for (var i = 0; i < elems.length; i++) {
-                var elem = elems[i];
-                console.log("[LINKFIX] Fixed \"" + elem.innerHTML + "\"");
-                elem.href = elem.href.replace("player#", "player.html#");
-            };
         };
     </script>
 

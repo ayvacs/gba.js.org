@@ -236,7 +236,7 @@ window.onload = function() {
 }
 
 function downloadBIOS() {
-    downloadFile("binaries/gba_bios.bin", registerBIOS);
+    downloadFile("../binaries/gba_bios.bin", registerBIOS);
 }
 
 function registerBIOS() {
@@ -246,7 +246,7 @@ function registerBIOS() {
 
 function downloadROM(gamename) {
     writeRedTemporaryText("Downloading \"" + games[gamename] + ".\"");
-    downloadFile("binaries/" + gamename + ".gba", registerROM);
+    downloadFile("../binaries/" + gamename + ".gba", registerROM);
 }
 
 function registerROM() {
