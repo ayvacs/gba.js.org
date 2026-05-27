@@ -226,20 +226,19 @@ XAudioServer.prototype.setupWebAudio = function () {
     XAudioJSWebAudioAudioNode.connect(XAudioJSWebAudioContextHandle.destination);																//Send and chain the output of the audio manipulation to the system audio output.
 	this.resetCallbackAPIAudioBuffer(XAudioJSWebAudioContextHandle.sampleRate);
 	/*
-     Firefox has a bug in its web audio implementation...
-     The node may randomly stop playing on Mac OS X for no
-     good reason. Keep a watchdog timer to restart the failed
-     node if it glitches. Google Chrome never had this issue.
+     The script processor node can stop firing for no good reason on some
+     platforms: historically on Firefox/Mac OS X, and on iOS Safari after
+     an auto screen-lock interruption (the AudioContext state stays "running"
+     but onaudioprocess never gets called again). Keep a watchdog timer to
+     restart the failed node if it glitches. Also resume the context when
+     it goes to "suspended" / "interrupted" (iOS uses the latter).
      */
     XAudioJSWebAudioWatchDogLast = (new Date()).getTime();
-    if (!XAudioJSWebAudioWatchDogTimer && navigator.userAgent.indexOf('Gecko/') > -1) {
-        if (XAudioJSWebAudioWatchDogTimer) {
-            clearInterval(XAudioJSWebAudioWatchDogTimer);
-        }
+    if (!XAudioJSWebAudioWatchDogTimer) {
         var parentObj = this;
         XAudioJSWebAudioWatchDogTimer = setInterval(function () {
 			if(typeof XAudioJSWebAudioContextHandle.state != "undefined") {
-				if (XAudioJSWebAudioContextHandle.state === 'suspended') {
+				if (XAudioJSWebAudioContextHandle.state === 'suspended' || XAudioJSWebAudioContextHandle.state === 'interrupted') {
 					XAudioJSWebAudioWatchDogLast = (new Date()).getTime();
 					try {
 						XAudioJSWebAudioContextHandle.resume();
