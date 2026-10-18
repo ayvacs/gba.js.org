@@ -1,5 +1,11 @@
 "use strict";
 function keyDown(e) {
+    if (IodineGUI.toMap) {
+        if (e.preventDefault) {
+            e.preventDefault();
+        }
+        return;
+    }
     var keyCode = e.keyCode | 0;
     for (var keyMapIndex = 0; (keyMapIndex | 0) < 10; keyMapIndex = ((keyMapIndex | 0) + 1) | 0) {
         if ((IodineGUI.defaults.keyZonesGBA[keyMapIndex | 0] | 0) == (keyCode | 0)) {
@@ -32,13 +38,12 @@ function keyUp(keyCode) {
 }
 function keyUpPreprocess(e) {
     var keyCode = e.keyCode | 0;
+    //Release the old game binding before changing mappings or pausing the emulator:
+    keyUpGBA(keyCode);
     //If we"re not mapping a key:
     if (!IodineGUI.toMap) {
         //Check for emulator binding:
-        if (!keyUp(keyCode | 0)) {
-            //Check for GBA binding:
-            keyUpGBA(keyCode);
-        }
+        keyUp(keyCode | 0);
     }
     else {
         //Map a key binding:
