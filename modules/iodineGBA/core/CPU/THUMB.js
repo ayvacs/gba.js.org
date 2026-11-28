@@ -680,6 +680,7 @@ THUMBInstructionSet.prototype.TST = function () {
 }
 THUMBInstructionSet.prototype.NEG = function () {
     var source = this.read3OffsetLowRegister() | 0;
+    this.branchFlags.setCarry(source === 0 ? -1 : 0);
     if ((source | 0) != -0x80000000) {
         //Perform Subtraction:
         source = (-(source | 0)) | 0;
